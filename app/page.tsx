@@ -111,7 +111,7 @@ export default function LandingPage() {
         <section id="cta" className="w-full py-12 md:py-24 lg:py-32 border-t bg-gradient-to-tr from-primary/10 via-background to-secondary/10">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 max-w-[1140px] mx-auto">
             <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Ready to Tame Your Inbox?</h2>
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Ready to Bring Harmony to Your Inbox?</h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Download Harmony today and experience email freedom. Available exclusively on the App Store.
               </p>
