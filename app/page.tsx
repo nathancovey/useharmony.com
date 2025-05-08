@@ -9,8 +9,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/mockup.png",
-        width: 400,
-        height: 711,
+        width: 675,
+        height: 1200,
         alt: "Harmony App Interface"
       }
     ]
