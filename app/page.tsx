@@ -92,17 +92,33 @@ export default function LandingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full py-20 lg:py-32 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
-        <div className="container px-4 md:px-6 max-w-[1140px] mx-auto">
-          <div className="grid gap-8 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_450px] items-center">
-            <div className="flex flex-col justify-center space-y-6 text-center lg:text-left">
-              <h1 className="text-6xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-gradient-to-r from-primary to-primary-accent text-transparent bg-clip-text">
+      <section className="w-full pt-36 pb-20 lg:pt-64 lg:pb-32 bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative">
+        {/* GIF Background Layer */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="w-2/3 h-2/3 relative flex justify-center items-center mx-auto mt-12">
+            <Image
+              src="/images/phone.gif"
+              alt="Harmony App Background"
+              layout="fill"
+              objectFit="contain"
+              className=""
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Content Layer */}
+        <div className="container px-4 md:px-6 max-w-[1140px] mx-auto relative z-10 flex justify-center items-center min-h-[inherit]">
+          {/* Glassmorphism Container */}
+          <div className="backdrop-blur-3xl bg-background/50 rounded-2xl p-10 border border-white/10 max-w-2xl mt-24 shadow-lg">
+            <div className="flex flex-col items-center justify-center space-y-6 text-center">
+              <h1 className="text-6xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text">
                 AI Email Voice Assistant
               </h1>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl lg:mx-0">
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                 Reach Inbox Zero on the go. Let Harmony read your emails and manage them with simple voice commands while you walk or drive.
               </p>
-              <div className="mx-auto lg:mx-0 w-full sm:max-w-lg">
+              <div className="mx-auto w-full sm:max-w-lg">
                 <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-2">
                   <Input
                     type="email"
@@ -118,16 +134,6 @@ export default function LandingPage() {
                   </Button>
                 </form>
               </div>
-            </div>
-            <div className="mx-auto flex aspect-[9/16] w-full max-w-[250px] items-center justify-center lg:order-last lg:w-full lg:max-w-[250px] xl:max-w-[350px]">
-              <Image
-                src="/images/mockup.png"
-                alt="Harmony App Interface Mockup"
-                width={300}
-                height={533}
-                className="w-full h-auto"
-                priority
-              />
             </div>
           </div>
         </div>
