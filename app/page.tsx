@@ -1,26 +1,94 @@
+'use client'
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { toast } from "sonner"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp"
 import { Mail, Star, Trash2, ArrowRight } from "lucide-react"
 import Image from "next/image"
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  description: "Harmony is your AI email voice assistant. Read and manage your emails hands-free while walking or driving. Your emails stay private on your device.",
-  openGraph: {
-    images: [
-      {
-        url: "/images/mockup.png",
-        width: 675,
-        height: 1200,
-        alt: "Harmony App Interface"
-      }
-    ]
-  },
-  twitter: {
-    images: ["/images/mockup.png"]
-  }
-}
 
 export default function LandingPage() {
+  const [email, setEmail] = useState("")
+  const [otp, setOtp] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
+  const [isVerifying, setIsVerifying] = useState(false)
+  const [isOtpDialogOpen, setIsOtpDialogOpen] = useState(false)
+  const [otpError, setOtpError] = useState<string | null>(null)
+
+  const handleEmailSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsLoading(true)
+    setOtpError(null)
+    setOtp("")
+
+    try {
+      const response = await fetch('/api/send-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send OTP')
+      }
+
+      setIsOtpDialogOpen(true)
+      toast.info("Verification code sent to your email.")
+
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : "Something went wrong. Please try again."
+      toast.error(errorMessage)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const handleVerifyOtp = async () => {
+    setIsVerifying(true)
+    setOtpError(null)
+
+    try {
+      const response = await fetch('/api/verify-otp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, otp }),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to verify OTP')
+      }
+
+      setIsOtpDialogOpen(false)
+      toast.success("Thanks for joining the waitlist!")
+      setEmail("")
+      setOtp("")
+
+    } catch (error: unknown) {
+        const errorMessage = error instanceof Error ? error.message : "Verification failed. Please try again."
+        setOtpError(errorMessage)
+    } finally {
+        setIsVerifying(false)
+    }
+  }
+
   return (
     <>
       {/* Hero Section */}
@@ -28,21 +96,27 @@ export default function LandingPage() {
         <div className="container px-4 md:px-6 max-w-[1140px] mx-auto">
           <div className="grid gap-8 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_450px] items-center">
             <div className="flex flex-col justify-center space-y-6 text-center lg:text-left">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-gradient-to-r from-primary to-primary-accent text-transparent bg-clip-text">
+              <h1 className="text-6xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-gradient-to-r from-primary to-primary-accent text-transparent bg-clip-text">
                 AI Email Voice Assistant
               </h1>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl lg:mx-0">
                 Reach Inbox Zero on the go. Let Harmony read your emails and manage them with simple voice commands while you walk or drive.
               </p>
-              <div className="space-x-4 mx-auto lg:mx-0">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-                  <a href="https://x.com/nathan_covey" target="_blank" rel="noopener noreferrer">
-                    Follow on X for Updates
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <a href="#features">Learn More</a>
-                </Button>
+              <div className="mx-auto lg:mx-0 w-full sm:max-w-lg">
+                <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-2">
+                  <Input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                    className="w-full flex-1 h-16 sm:h-12 text-lg"
+                    required
+                    disabled={isLoading || isOtpDialogOpen}
+                  />
+                  <Button type="submit" disabled={isLoading || isOtpDialogOpen} size="lg" className="w-full sm:w-auto h-14 sm:h-12">
+                    {isLoading ? "Sending..." : "Join Waitlist"}
+                  </Button>
+                </form>
               </div>
             </div>
             <div className="mx-auto flex aspect-[9/16] w-full max-w-[250px] items-center justify-center lg:order-last lg:w-full lg:max-w-[250px] xl:max-w-[350px]">
@@ -134,6 +208,50 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      <Dialog open={isOtpDialogOpen} onOpenChange={setIsOtpDialogOpen}>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle>Enter Verification Code</DialogTitle>
+            <DialogDescription>
+              We sent a 6-digit code to {email}. Please enter it below to verify your email address.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <div className="flex justify-center">
+              <InputOTP
+                maxLength={6}
+                value={otp}
+                onChange={(value) => setOtp(value)}
+              >
+                <InputOTPGroup>
+                  <InputOTPSlot index={0} />
+                  <InputOTPSlot index={1} />
+                  <InputOTPSlot index={2} />
+                </InputOTPGroup>
+                <InputOTPSeparator />
+                <InputOTPGroup>
+                  <InputOTPSlot index={3} />
+                  <InputOTPSlot index={4} />
+                  <InputOTPSlot index={5} />
+                </InputOTPGroup>
+              </InputOTP>
+            </div>
+            {otpError && (
+              <p className="text-center text-sm text-red-500">{otpError}</p>
+            )}
+          </div>
+          <DialogFooter>
+            <Button
+                onClick={handleVerifyOtp}
+                disabled={isVerifying || otp.length !== 6}
+                className="w-full cursor-pointer"
+            >
+              {isVerifying ? "Verifying..." : "Verify Email"}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </>
   )
 }
