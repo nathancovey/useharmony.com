@@ -3,6 +3,14 @@
 import { useEffect, useState } from 'react'
 import { GradientText } from '@/components/ui/gradient-text'
 
+const CLIENT_CACHE_KEY = 'waitlistCountClientCache'
+const CLIENT_CACHE_EXPIRY_MS = 60 * 1000 // 60 seconds client-side cache
+
+interface CachedWaitlistCount {
+  count: string
+  timestamp: number
+}
+
 function truncateNumber(num: number): string {
   if (num < 1000) {
     return num.toString()
@@ -24,9 +32,9 @@ function truncateNumber(num: number): string {
 // Revised truncateNumber based on examples: 54, 123, 1.2k, 100k
 function formatWaitlistCount(num: number): string {
   if (num < 1000) {
-    return num.toString() // 54, 123
+    return num.toString()
   }
-  if (num < 100000) { // 1000 to 99999
+  if (num < 100000) {
     const thousands = num / 1000
     // Show one decimal place if not a whole number, e.g., 1.2k, 10.5k, but 10k, 99k
     return (Math.floor(thousands * 10) / 10).toFixed(thousands % 1 === 0 ? 0 : 1) + 'k' // 1.2k, 10k, 99.9k
@@ -40,27 +48,49 @@ export function WaitlistCount() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    async function fetchCount() {
+    async function fetchAndSetCount() {
       setIsLoading(true)
       try {
+        // Try to load from client-side cache first
+        const cachedDataString = localStorage.getItem(CLIENT_CACHE_KEY)
+        if (cachedDataString) {
+          const cachedData = JSON.parse(cachedDataString) as CachedWaitlistCount
+          if (Date.now() - cachedData.timestamp < CLIENT_CACHE_EXPIRY_MS) {
+            setCount(cachedData.count)
+            setIsLoading(false)
+            return // Use cached data
+          }
+        }
+
+        // If not in cache or expired, fetch from API
         const response = await fetch('/api/get-waitlist-count')
         if (!response.ok) {
-          throw new Error('Failed to fetch waitlist count')
+          throw new Error('Failed to fetch waitlist count from API')
         }
         const data = await response.json()
         if (data.error) {
           throw new Error(data.error)
         }
-        setCount(formatWaitlistCount(data.count))
+        
+        const formattedCount = formatWaitlistCount(data.count)
+        setCount(formattedCount)
+
+        // Save to client-side cache
+        const newCachedData: CachedWaitlistCount = {
+          count: formattedCount,
+          timestamp: Date.now(),
+        }
+        localStorage.setItem(CLIENT_CACHE_KEY, JSON.stringify(newCachedData))
+
       } catch (error) {
-        console.error('Error fetching waitlist count:', error)
-        setCount('N/A') // Display N/A or similar on error
+        console.error('Error in WaitlistCount component:', error)
+        setCount('--') // Display fallback on error
       } finally {
         setIsLoading(false)
       }
     }
 
-    fetchCount()
+    fetchAndSetCount()
   }, [])
 
   if (isLoading) {
@@ -73,7 +103,7 @@ export function WaitlistCount() {
     )
   }
 
-  if (!count || count === 'N/A') {
+  if (!count) { // Covers null or '--' if error occurred before loading state turned false
     return (
       <div className="flex items-center justify-center rounded-full bg-background px-2 py-0.5 border border-white/10">
         <GradientText className="text-sm font-bold">
