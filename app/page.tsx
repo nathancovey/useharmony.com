@@ -18,7 +18,7 @@ import {
   InputOTPSeparator,
   InputOTPSlot,
 } from "@/components/ui/input-otp"
-import { Mail, Star, Trash2, ArrowRight } from "lucide-react"
+import { Mail, Star, Trash2, ArrowRight, Mic } from "lucide-react"
 import Image from "next/image"
 import { GradientText } from "@/components/ui/gradient-text"
 import { motion } from "motion/react"
@@ -215,7 +215,7 @@ export default function LandingPage() {
             </div>
              <div className="grid gap-1 p-4 rounded-lg border bg-card text-card-foreground hover:shadow-md transition-shadow">
                <div className="flex items-center gap-2">
-                 <Mail className="h-5 w-5 text-secondary" />
+                 <Mic className="h-5 w-5 text-secondary" />
                  <h3 className="text-lg font-bold">Voice Control</h3>
                </div>
               <p className="text-sm text-muted-foreground">Control everything hands-free using natural voice commands.</p>
