@@ -21,6 +21,8 @@ import {
 import { Mail, Star, Trash2, ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { GradientText } from "@/components/ui/gradient-text"
+import { motion } from "motion/react"
+import { Avatar, AvatarImage } from "@/components/ui/avatar"
 
 export default function LandingPage() {
   const [email, setEmail] = useState("")
@@ -29,6 +31,7 @@ export default function LandingPage() {
   const [isVerifying, setIsVerifying] = useState(false)
   const [isOtpDialogOpen, setIsOtpDialogOpen] = useState(false)
   const [otpError, setOtpError] = useState<string | null>(null)
+  const [isHovered, setIsHovered] = useState(false)
 
   const handleEmailSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -94,8 +97,8 @@ export default function LandingPage() {
     <>
       {/* Hero Section */}
       <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative">
-        <div className="container px-4 md:px-6 max-w-[1000px] mx-auto py-12 lg:py-24">
-          {/* Content Layer */}
+                  <div className="container px-4 md:px-6 max-w-[1000px] mx-auto py-12 lg:py-24">
+            {/* Content Layer */}
           <div className="flex flex-col-reverse lg:flex-row items-center justify-between w-full gap-12">
             {/* Text Content */}
             <div className="w-full lg:w-1/2">
@@ -108,15 +111,20 @@ export default function LandingPage() {
                 </p>
                 <div className="w-full sm:max-w-lg">
                   <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-2">
-                    <Input
-                      type="email"
-                      placeholder="Enter your email"
-                      value={email}
-                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                      className="w-full flex-1 h-16 sm:h-12 text-lg"
-                      required
-                      disabled={isLoading || isOtpDialogOpen}
-                    />
+                    <div className="w-full">
+                      <label htmlFor="email" className="sr-only">Email</label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="Enter your email"
+                        value={email}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                        className="w-full flex-1 h-16 sm:h-12 text-lg"
+                        required
+                        disabled={isLoading || isOtpDialogOpen}
+                      />
+                    </div>
                     <Button type="submit" disabled={isLoading || isOtpDialogOpen} size="lg" className="w-full sm:w-auto h-14 sm:h-12 flex items-center gap-2">
                       {isLoading ? "Sending..." : "Join Waitlist"}
                       <div className="hidden sm:flex items-center justify-center rounded-full bg-background px-2 py-0.5 border border-white/10">
@@ -126,6 +134,27 @@ export default function LandingPage() {
                       </div>
                     </Button>
                   </form>
+                </div>
+                <div className="flex items-center gap-2 justify-center lg:justify-start">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    onHoverStart={() => setIsHovered(true)}
+                    onHoverEnd={() => setIsHovered(false)}
+                  >
+                    <a href="https://x.com/nathan_covey" target="_blank" rel="noopener noreferrer">
+                      <Avatar className="size-8 cursor-pointer">
+                        {isHovered ? (
+                          <div className="flex items-center justify-center size-full text-2xl bg-primary/10">
+                            👋
+                          </div>
+                        ) : (
+                          <AvatarImage src="/images/nathan.jpg" alt="Nathan Covey" />
+                        )}
+                      </Avatar>
+                    </a>
+                  </motion.div>
+                  <span className="text-muted-foreground text-sm">Created by Nathan Covey</span>
                 </div>
               </div>
             </div>
