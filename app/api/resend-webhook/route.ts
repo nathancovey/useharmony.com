@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
 import { kv } from '@vercel/kv'
-import crypto from 'crypto'
+import { Webhook } from 'svix'
 
-const RESEND_WEBHOOK_SECRET = process.env.RESEND_WEBHOOK_SECRET
+// We'll assume this secret is for Svix for now. If Resend provides a *different* one for Svix, use that.
+const WEBHOOK_SECRET = process.env.RESEND_WEBHOOK_SECRET 
 
 interface ResendContactData {
   audience_id: string
@@ -17,79 +18,39 @@ interface ResendWebhookEvent {
 
 export async function POST(request: Request) {
   console.log('!!! /api/resend-webhook ENDPOINT HIT - TOP OF FUNCTION !!!')
-
-  // Log all headers for debugging
   console.log('Received headers:', JSON.stringify(Object.fromEntries(request.headers.entries()), null, 2))
 
-  if (!RESEND_WEBHOOK_SECRET) {
-    console.error('Resend webhook secret (RESEND_WEBHOOK_SECRET) is not configured.')
+  if (!WEBHOOK_SECRET) {
+    console.error('Webhook secret (RESEND_WEBHOOK_SECRET) is not configured.')
     return NextResponse.json({ error: 'Webhook secret not configured' }, { status: 500 })
   }
 
   const rawBody = await request.text()
-  const signatureHeader = request.headers.get('resend-signature')
+  
+  // Convert Next.js Headers object to a plain object for Svix library
+  const headers: Record<string, string> = {}
+  request.headers.forEach((value, key) => {
+    headers[key] = value
+  })
+  // Log the transformed headers to ensure Svix headers are present as expected by the library
+  console.log('Headers passed to Svix library:', JSON.stringify(headers, null, 2))
 
-  if (!signatureHeader) {
-    console.warn('Resend webhook called without resend-signature header. Actual headers received shown above.')
-    return NextResponse.json({ error: 'Missing Resend signature' }, { status: 401 })
-  }
+  const wh = new Webhook(WEBHOOK_SECRET)
 
+  let verifiedPayload: ResendWebhookEvent
   try {
-    const parts = signatureHeader.split(',')
-    const timestampPart = parts.find(part => part.startsWith('t='))
-    const signaturePart = parts.find(part => part.startsWith('v1='))
-
-    if (!timestampPart || !signaturePart) {
-      console.warn('Invalid resend-signature header format:', signatureHeader)
-      throw new Error('Invalid signature header format')
-    }
-
-    const timestamp = timestampPart.substring(2)
-    const signature = signaturePart.substring(3)
-
-    const nowInSeconds = Math.floor(Date.now() / 1000)
-    const webhookTimestampInSeconds = parseInt(timestamp, 10)
-
-    if (isNaN(webhookTimestampInSeconds)) {
-        console.warn('Invalid timestamp in resend-signature header:', timestamp)
-        throw new Error('Invalid timestamp in signature')
-    }
-
-    if (Math.abs(nowInSeconds - webhookTimestampInSeconds) > (5 * 60)) {
-      console.warn(`Resend webhook timestamp too old or too far in future. Current: ${nowInSeconds}, Webhook: ${webhookTimestampInSeconds}`)
-      return NextResponse.json({ error: 'Timestamp validation failed' }, { status: 401 })
-    }
-
-    const signedPayload = `${timestamp}.${rawBody}`
-    const expectedSignature = crypto
-      .createHmac('sha256', RESEND_WEBHOOK_SECRET)
-      .update(signedPayload)
-      .digest('hex')
-
-    if (!crypto.timingSafeEqual(Buffer.from(expectedSignature, 'hex'), Buffer.from(signature, 'hex'))) {
-      console.warn('Invalid Resend webhook signature.')
-      throw new Error('Invalid signature') 
-    }
-  } catch (error: any) {
-    if (error.message !== 'Invalid signature' && error.message !== 'Invalid signature header format' && error.message !== 'Invalid timestamp in signature') {
-        console.error('Resend signature verification process error:', error.message)
-    }
-    return NextResponse.json({ error: 'Invalid signature' }, { status: 401 })
+    verifiedPayload = wh.verify(rawBody, headers) as ResendWebhookEvent
+    console.log('Svix signature verified successfully! Event type:', verifiedPayload.type)
+  } catch (err: any) {
+    console.error('Svix signature verification failed:', err.message)
+    return NextResponse.json({ error: 'Signature verification failed' }, { status: 401 })
   }
 
-  let event: ResendWebhookEvent
-  try {
-    event = JSON.parse(rawBody) as ResendWebhookEvent
-  } catch (error) {
-    console.error('Failed to parse Resend webhook JSON body:', error)
-    return NextResponse.json({ error: 'Invalid JSON payload' }, { status: 400 })
-  }
-
-  if (event.type === 'contact.created') {
+  if (verifiedPayload.type === 'contact.created') {
     try {
-      const audienceId = event.data?.audience_id
+      const audienceId = verifiedPayload.data?.audience_id
       if (!audienceId) {
-        console.warn('Missing audience_id in contact.created event data:', event.data)
+        console.warn('Missing audience_id in contact.created event data:', verifiedPayload.data)
         return new Response(null, { status: 200 })
       }
       
@@ -103,5 +64,6 @@ export async function POST(request: Request) {
     }
   }
 
+  console.log('Received webhook event type other than contact.created. Type:', verifiedPayload.type)
   return new Response(null, { status: 200 })
 } 
