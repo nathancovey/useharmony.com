@@ -118,12 +118,12 @@ export default function LandingPage() {
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                    className="w-full flex-1 h-16 sm:h-12 text-lg"
+                    className="w-full flex-1 h-14 text-md"
                     required
                     disabled={isLoading || isOtpDialogOpen}
                   />
                 </div>
-                <Button type="submit" disabled={isLoading || isOtpDialogOpen} size="lg" className="w-full sm:w-auto h-14 sm:h-12 flex items-center gap-2">
+                <Button type="submit" disabled={isLoading || isOtpDialogOpen} size="lg" className="w-full sm:w-auto h-14 flex items-center gap-2">
                   {isLoading ? "Sending..." : "Join Waitlist"}
                   <WaitlistCount />
                 </Button>
