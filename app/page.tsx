@@ -98,75 +98,70 @@ export default function LandingPage() {
     <>
       {/* Hero Section */}
       <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative">
-                  <div className="container px-4 md:px-6 max-w-[1000px] mx-auto py-12 lg:py-24">
-            {/* Content Layer */}
-          <div className="flex flex-col-reverse lg:flex-row items-center justify-between w-full gap-12">
-            {/* Text Content */}
-            <div className="w-full lg:w-1/2">
-              <div className="flex flex-col space-y-6 text-center lg:text-left">
-                <h1 className="text-6xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text">
-                  AI Email Voice Assistant
-                </h1>
-                <p className="text-muted-foreground md:text-xl">
-                  Reach Inbox Zero on the go. Let Harmony read your emails and manage them with simple voice commands while you walk or drive.
-                </p>
-                <div className="w-full sm:max-w-lg">
-                  <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-2">
-                    <div className="w-full">
-                      <label htmlFor="email" className="sr-only">Email</label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="Enter your email"
-                        value={email}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                        className="w-full flex-1 h-16 sm:h-12 text-lg"
-                        required
-                        disabled={isLoading || isOtpDialogOpen}
-                      />
-                    </div>
-                    <Button type="submit" disabled={isLoading || isOtpDialogOpen} size="lg" className="w-full sm:w-auto h-14 sm:h-12 flex items-center gap-2">
-                      {isLoading ? "Sending..." : "Join Waitlist"}
-                      <WaitlistCount />
-                    </Button>
-                  </form>
+        <div className="w-full max-w-[1000px] flex flex-col-reverse lg:flex-row items-center justify-center gap-16 lg:gap-14 px-4 md:px-6 py-12 lg:py-24">
+          {/* Text Content */}
+          <div className="w-full max-w-[500px] flex flex-col items-center lg:items-start">
+            <h1 className="text-6xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text text-center lg:text-left">
+              AI Email Voice Assistant
+            </h1>
+            <p className="text-muted-foreground md:text-xl mt-6 text-center lg:text-left">
+              Reach Inbox Zero on the go. Let Harmony read your emails and manage them with simple voice commands while you walk or drive.
+            </p>
+            <div className="w-full sm:max-w-lg mt-6">
+              <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-2">
+                <div className="w-full">
+                  <label htmlFor="email" className="sr-only">Email</label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                    className="w-full flex-1 h-16 sm:h-12 text-lg"
+                    required
+                    disabled={isLoading || isOtpDialogOpen}
+                  />
                 </div>
-                <div className="flex items-center gap-2 justify-center lg:justify-start">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    onHoverStart={() => setIsHovered(true)}
-                    onHoverEnd={() => setIsHovered(false)}
-                  >
-                    <a href="https://x.com/nathan_covey" target="_blank" rel="noopener noreferrer">
-                      <Avatar className="size-8 cursor-pointer">
-                        {isHovered ? (
-                          <div className="flex items-center justify-center size-full text-xl bg-primary/10">
-                            👋
-                          </div>
-                        ) : (
-                          <AvatarImage src="/images/nathan.jpg" alt="Nathan Covey" />
-                        )}
-                      </Avatar>
-                    </a>
-                  </motion.div>
-                  <span className="text-muted-foreground text-sm">Created by Nathan Covey</span>
-                </div>
-              </div>
+                <Button type="submit" disabled={isLoading || isOtpDialogOpen} size="lg" className="w-full sm:w-auto h-14 sm:h-12 flex items-center gap-2">
+                  {isLoading ? "Sending..." : "Join Waitlist"}
+                  <WaitlistCount />
+                </Button>
+              </form>
             </div>
+            <div className="flex items-center gap-2 justify-center lg:justify-start mt-6">
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onHoverStart={() => setIsHovered(true)}
+                onHoverEnd={() => setIsHovered(false)}
+              >
+                <a href="https://x.com/nathan_covey" target="_blank" rel="noopener noreferrer">
+                  <Avatar className="size-8 cursor-pointer">
+                    {isHovered ? (
+                      <div className="flex items-center justify-center size-full text-xl bg-primary/10">
+                        👋
+                      </div>
+                    ) : (
+                      <AvatarImage src="/images/nathan.jpg" alt="Nathan Covey" />
+                    )}
+                  </Avatar>
+                </a>
+              </motion.div>
+              <span className="text-muted-foreground text-sm">Created by Nathan Covey</span>
+            </div>
+          </div>
 
-            {/* Phone Mockup */}
-            <div className="w-full lg:w-1/2 flex justify-center">
-              <div className="relative w-full max-w-[320px] aspect-[9/16]">
-                <Image
-                  src="/images/phone.gif"
-                  alt="Harmony App Background"
-                  layout="fill"
-                  objectFit="contain"
-                  priority
-                />
-              </div>
+          {/* Phone Mockup */}
+          <div className="w-full max-w-[320px] flex items-center justify-center">
+            <div className="relative w-full aspect-[9/16]">
+              <Image
+                src="/images/phone.gif"
+                alt="Harmony App Background"
+                layout="fill"
+                objectFit="contain"
+                priority
+              />
             </div>
           </div>
         </div>
