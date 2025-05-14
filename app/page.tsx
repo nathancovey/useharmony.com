@@ -246,13 +246,13 @@ export default function LandingPage() {
       <Dialog open={isOtpDialogOpen} onOpenChange={setIsOtpDialogOpen}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Enter Verification Code</DialogTitle>
-            <DialogDescription>
+            <DialogTitle className="text-2xl">Enter Verification Code</DialogTitle>
+            <DialogDescription className="text-lg">
               We sent a 6-digit code to {email}. Please enter it below to verify your email address.
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4 py-4">
-            <div className="flex justify-center">
+            <div className="flex justify-center scale-110">
               <InputOTP
                 maxLength={6}
                 value={otp}
@@ -279,7 +279,7 @@ export default function LandingPage() {
             <Button
                 onClick={handleVerifyOtp}
                 disabled={isVerifying || otp.length !== 6}
-                className="w-full cursor-pointer"
+                className="w-full cursor-pointer h-14 text-lg"
             >
               {isVerifying ? "Verifying..." : "Verify Email"}
             </Button>
