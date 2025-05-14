@@ -17,26 +17,9 @@ interface ResendWebhookEvent {
 
 export async function POST(request: Request) {
   console.log('!!! /api/resend-webhook ENDPOINT HIT - TOP OF FUNCTION !!!')
-  // Immediately return 200 for diagnostic purposes
-  // return NextResponse.json({ message: "Webhook received by diagnostic handler" }, { status: 200 })
-  // ^^^ The above is better if Resend needs a JSON body for success. 
-  // If Resend is happy with any 200 (even empty), the Response(null) is fine.
-  // Let's use a simple Response for now to minimize potential issues.
-  // IMPORTANT: This bypasses all signature verification and logic. FOR DIAGNOSTIC PURPOSES ONLY.
 
-  // Original code starts here, effectively commented out for now by the early return if uncommented:
-  // if (!RESEND_WEBHOOK_SECRET) { ... }
-
-  // For this test, we will return directly. If the log appears, then we investigate further.
-  // If the log DOES NOT appear, the issue is before this code (URL, Vercel routing, etc.)
-
-  // To make the test cleaner, let's just return the success and keep the original code below it,
-  // relying on the fact that the return statement will exit the function.
-
-  // return new Response(null, { status: 200 }) // If using this, comment out the original code below.
-
-  // Let's try to run the original code but add the top log.
-  // The issue might be that Resend isn't getting *any* 2xx response if there's an early error.
+  // Log all headers for debugging
+  console.log('Received headers:', JSON.stringify(Object.fromEntries(request.headers.entries()), null, 2))
 
   if (!RESEND_WEBHOOK_SECRET) {
     console.error('Resend webhook secret (RESEND_WEBHOOK_SECRET) is not configured.')
@@ -47,7 +30,7 @@ export async function POST(request: Request) {
   const signatureHeader = request.headers.get('resend-signature')
 
   if (!signatureHeader) {
-    console.warn('Resend webhook called without resend-signature header.')
+    console.warn('Resend webhook called without resend-signature header. Actual headers received shown above.')
     return NextResponse.json({ error: 'Missing Resend signature' }, { status: 401 })
   }
 
