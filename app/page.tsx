@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/input-otp"
 import { Mail, Star, Trash2, ArrowRight } from "lucide-react"
 import Image from "next/image"
+import { GradientText } from "@/components/ui/gradient-text"
 
 export default function LandingPage() {
   const [email, setEmail] = useState("")
@@ -92,47 +93,53 @@ export default function LandingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full pt-36 pb-20 lg:pt-64 lg:pb-32 bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative">
-        {/* GIF Background Layer */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="w-2/3 h-2/3 relative flex justify-center items-center mx-auto mt-12">
-            <Image
-              src="/images/phone.gif"
-              alt="Harmony App Background"
-              layout="fill"
-              objectFit="contain"
-              className=""
-              priority
-            />
-          </div>
-        </div>
+      <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative">
+        <div className="container px-4 md:px-6 max-w-[1000px] mx-auto py-12 lg:py-24">
+          {/* Content Layer */}
+          <div className="flex flex-col-reverse lg:flex-row items-center justify-between w-full gap-12">
+            {/* Text Content */}
+            <div className="w-full lg:w-1/2">
+              <div className="flex flex-col space-y-6 text-center lg:text-left">
+                <h1 className="text-6xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text">
+                  AI Email Voice Assistant
+                </h1>
+                <p className="text-muted-foreground md:text-xl">
+                  Reach Inbox Zero on the go. Let Harmony read your emails and manage them with simple voice commands while you walk or drive.
+                </p>
+                <div className="w-full sm:max-w-lg">
+                  <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-2">
+                    <Input
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                      className="w-full flex-1 h-16 sm:h-12 text-lg"
+                      required
+                      disabled={isLoading || isOtpDialogOpen}
+                    />
+                    <Button type="submit" disabled={isLoading || isOtpDialogOpen} size="lg" className="w-full sm:w-auto h-14 sm:h-12 flex items-center gap-2">
+                      {isLoading ? "Sending..." : "Join Waitlist"}
+                      <div className="hidden sm:flex items-center justify-center rounded-full bg-background px-2 py-0.5 border border-white/10">
+                        <GradientText className="text-sm font-bold">
+                          2.1k
+                        </GradientText>
+                      </div>
+                    </Button>
+                  </form>
+                </div>
+              </div>
+            </div>
 
-        {/* Content Layer */}
-        <div className="container px-4 md:px-6 max-w-[1140px] mx-auto relative z-10 flex justify-center items-center min-h-[inherit]">
-          {/* Glassmorphism Container */}
-          <div className="backdrop-blur-3xl bg-background/50 rounded-2xl p-10 border border-white/10 max-w-2xl mt-24 shadow-lg">
-            <div className="flex flex-col items-center justify-center space-y-6 text-center">
-              <h1 className="text-6xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text">
-                AI Email Voice Assistant
-              </h1>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                Reach Inbox Zero on the go. Let Harmony read your emails and manage them with simple voice commands while you walk or drive.
-              </p>
-              <div className="mx-auto w-full sm:max-w-lg">
-                <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-2">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                    className="w-full flex-1 h-16 sm:h-12 text-lg"
-                    required
-                    disabled={isLoading || isOtpDialogOpen}
-                  />
-                  <Button type="submit" disabled={isLoading || isOtpDialogOpen} size="lg" className="w-full sm:w-auto h-14 sm:h-12">
-                    {isLoading ? "Sending..." : "Join Waitlist"}
-                  </Button>
-                </form>
+            {/* Phone Mockup */}
+            <div className="w-full lg:w-1/2 flex justify-center">
+              <div className="relative w-full max-w-[320px] aspect-[9/16]">
+                <Image
+                  src="/images/phone.gif"
+                  alt="Harmony App Background"
+                  layout="fill"
+                  objectFit="contain"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -141,7 +148,7 @@ export default function LandingPage() {
 
       {/* Features Section */}
       <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-        <div className="container px-4 md:px-6 max-w-[1140px] mx-auto">
+        <div className="container px-4 md:px-6 max-w-[1000px] mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="inline-block rounded-lg bg-secondary/10 px-3 py-1 text-sm text-secondary-foreground font-semibold">Key Features</div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Effortless Email Management</h2>
