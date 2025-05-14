@@ -23,6 +23,7 @@ import Image from "next/image"
 import { GradientText } from "@/components/ui/gradient-text"
 import { motion } from "motion/react"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
+import { WaitlistCount } from '@/components/WaitlistCount'
 
 export default function LandingPage() {
   const [email, setEmail] = useState("")
@@ -127,11 +128,7 @@ export default function LandingPage() {
                     </div>
                     <Button type="submit" disabled={isLoading || isOtpDialogOpen} size="lg" className="w-full sm:w-auto h-14 sm:h-12 flex items-center gap-2">
                       {isLoading ? "Sending..." : "Join Waitlist"}
-                      <div className="hidden sm:flex items-center justify-center rounded-full bg-background px-2 py-0.5 border border-white/10">
-                        <GradientText className="text-sm font-bold">
-                          2.1k
-                        </GradientText>
-                      </div>
+                      <WaitlistCount />
                     </Button>
                   </form>
                 </div>
@@ -145,7 +142,7 @@ export default function LandingPage() {
                     <a href="https://x.com/nathan_covey" target="_blank" rel="noopener noreferrer">
                       <Avatar className="size-8 cursor-pointer">
                         {isHovered ? (
-                          <div className="flex items-center justify-center size-full text-2xl bg-primary/10">
+                          <div className="flex items-center justify-center size-full text-xl bg-primary/10">
                             👋
                           </div>
                         ) : (
