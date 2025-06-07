@@ -34,6 +34,9 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
             <Link className="text-xs hover:underline underline-offset-4" href="/privacy">
               Privacy Policy
             </Link>
+            <Link className="text-xs hover:underline underline-offset-4" href="/contact">
+              Contact Us
+            </Link>
           </nav>
         </div>
       </footer>
