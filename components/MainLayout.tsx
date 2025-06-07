@@ -25,6 +25,9 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         <div className="flex flex-col sm:flex-row items-center justify-between w-full max-w-[1000px] mx-auto">
           <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} Harmony Life LLC. All rights reserved.</p>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6 mt-2 sm:mt-0">
+            <Link className="text-xs hover:underline underline-offset-4" href="/company">
+              Company
+            </Link>
             <Link className="text-xs hover:underline underline-offset-4" href="/terms">
               Terms of Service
             </Link>
