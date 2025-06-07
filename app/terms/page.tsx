@@ -2,8 +2,18 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "Terms of Service for Harmony - the AI email voice assistant that helps you manage your inbox hands-free. Read our terms and conditions.",
+  title: "Terms of Service - Legal Terms & Conditions",
+  description: "Terms of Service for Harmony AI Email Assistant - the voice-controlled Gmail management app. Read our legal terms and conditions for using our AI email assistant service.",
+  keywords: ["terms of service", "legal terms", "terms and conditions", "AI email assistant terms", "Gmail assistant legal", "voice command terms"],
+  alternates: {
+    canonical: "https://harmony.com.ai/terms"
+  },
+  openGraph: {
+    title: "Terms of Service - Harmony AI Email Assistant",
+    description: "Legal terms and conditions for using Harmony, the AI-powered voice email assistant.",
+    url: "https://harmony.com.ai/terms",
+    type: "website"
+  },
   robots: {
     index: true,
     follow: true
