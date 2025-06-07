@@ -6,7 +6,7 @@ import { PrivacySection } from "@/components/PrivacySection"
 import { CTASection } from "@/components/CTASection"
 
 export const metadata: Metadata = {
-  title: "Harmony - #1 AI Email Voice Assistant for Gmail | Hands-Free Email Management",
+  title: "Harmony - AI Email Voice Assistant",
   description: "The best AI Gmail assistant for voice-controlled email management. Let Harmony AI read your emails aloud and manage your inbox hands-free while walking or driving. Voice commands for Gmail productivity.",
   keywords: [
     "AI email assistant", 
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     canonical: "https://harmony.com.ai"
   },
   openGraph: {
-    title: "Harmony - #1 AI Email Voice Assistant for Gmail",
+    title: "Harmony - AI Email Voice Assistant",
     description: "The best AI Gmail assistant for voice-controlled email management. Manage your inbox hands-free with voice commands.",
     url: "https://harmony.com.ai",
     type: "website"
   },
   twitter: {
-    title: "Harmony - #1 AI Email Voice Assistant for Gmail",
+    title: "Harmony - AI Email Voice Assistant",
     description: "The best AI Gmail assistant for voice-controlled email management. Manage your inbox hands-free with voice commands."
   }
 }
