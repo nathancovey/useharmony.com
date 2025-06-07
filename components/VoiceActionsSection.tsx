@@ -24,7 +24,7 @@ export function VoiceActionsSection() {
                <Send className="h-5 w-5 text-blue-500" />
                <h3 className="text-lg font-bold">Send</h3>
              </div>
-            <p className="text-sm text-muted-foreground">Compose and send new emails using natural voice commands and AI assistance.</p>
+            <p className="text-sm text-muted-foreground">Compose and send new emails. And get them read back to you before sending.</p>
           </div>
           <div className="grid gap-1 p-4 rounded-lg border bg-card text-card-foreground hover:shadow-md transition-shadow">
             <div className="flex items-center gap-2">
@@ -38,7 +38,7 @@ export function VoiceActionsSection() {
                <Trash2 className="h-5 w-5 text-destructive" />
                <h3 className="text-lg font-bold">Delete</h3>
              </div>
-            <p className="text-sm text-muted-foreground">Remove unwanted emails instantly with simple voice commands.</p>
+            <p className="text-sm text-muted-foreground">Easily move emails to trash. You can do this for just one email or a whole batch.</p>
           </div>
           <div className="grid gap-1 p-4 rounded-lg border bg-card text-card-foreground hover:shadow-md transition-shadow">
              <div className="flex items-center gap-2">
@@ -52,7 +52,7 @@ export function VoiceActionsSection() {
                <UserX className="h-5 w-5 text-orange-500" />
                <h3 className="text-lg font-bold">Unsubscribe</h3>
              </div>
-            <p className="text-sm text-muted-foreground">Automatically unsubscribe from mailing lists and newsletters with voice commands.</p>
+            <p className="text-sm text-muted-foreground">Tell Harmony to unsubscribe you from annoying newsletters and stop the spam.</p>
           </div>
         </div>
       </div>

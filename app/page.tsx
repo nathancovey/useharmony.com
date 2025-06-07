@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { HeroSection } from "@/components/HeroSection"
-import { HowItWorksSection } from "@/components/HowItWorksSection"
+import { HowItWorksSection } from "@/components/UseCaseSection"
 import { VoiceActionsSection } from "@/components/VoiceActionsSection"
 import { PrivacySection } from "@/components/PrivacySection"
 import { CTASection } from "@/components/CTASection"
