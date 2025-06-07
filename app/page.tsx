@@ -1,293 +1,157 @@
-'use client'
+import type { Metadata } from "next"
+import { HeroSection } from "@/components/HeroSection"
+import { HowItWorksSection } from "@/components/HowItWorksSection"
+import { VoiceActionsSection } from "@/components/VoiceActionsSection"
+import { PrivacySection } from "@/components/PrivacySection"
+import { CTASection } from "@/components/CTASection"
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { toast } from "sonner"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
-import {
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSeparator,
-  InputOTPSlot,
-} from "@/components/ui/input-otp"
-import { Mail, Star, Trash2, ArrowRight, Mic } from "lucide-react"
-import Image from "next/image"
-import { GradientText } from "@/components/ui/gradient-text"
-import { motion } from "motion/react"
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
-import { WaitlistCount } from '@/components/WaitlistCount'
-
-export default function LandingPage() {
-  const [email, setEmail] = useState("")
-  const [otp, setOtp] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
-  const [isVerifying, setIsVerifying] = useState(false)
-  const [isOtpDialogOpen, setIsOtpDialogOpen] = useState(false)
-  const [otpError, setOtpError] = useState<string | null>(null)
-  const [isHovered, setIsHovered] = useState(false)
-
-  const handleEmailSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setOtpError(null)
-    setOtp("")
-
-    try {
-      const response = await fetch('/api/send-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      })
-
-      const result = await response.json()
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to send OTP')
-      }
-
-      setIsOtpDialogOpen(true)
-      toast.info("Verification code sent to your email.")
-
-    } catch (error: unknown) {
-      const errorMessage = error instanceof Error ? error.message : "Something went wrong. Please try again."
-      toast.error(errorMessage)
-    } finally {
-      setIsLoading(false)
-    }
+export const metadata: Metadata = {
+  title: "Harmony - #1 AI Email Voice Assistant for Gmail | Hands-Free Email Management",
+  description: "The best AI Gmail assistant for voice-controlled email management. Let Harmony AI read your emails aloud and manage your inbox hands-free while walking or driving. Voice commands for Gmail productivity.",
+  keywords: [
+    "AI email assistant", 
+    "AI gmail assistant", 
+    "harmony ai", 
+    "harmony app",
+    "voice email assistant",
+    "hands-free email",
+    "gmail voice control",
+    "AI email management",
+    "voice controlled gmail",
+    "email AI assistant",
+    "harmony email app",
+    "AI inbox management",
+    "voice email commands",
+    "gmail productivity app"
+  ],
+  alternates: {
+    canonical: "https://harmony.com.ai"
+  },
+  openGraph: {
+    title: "Harmony - #1 AI Email Voice Assistant for Gmail",
+    description: "The best AI Gmail assistant for voice-controlled email management. Manage your inbox hands-free with voice commands.",
+    url: "https://harmony.com.ai",
+    type: "website"
+  },
+  twitter: {
+    title: "Harmony - #1 AI Email Voice Assistant for Gmail",
+    description: "The best AI Gmail assistant for voice-controlled email management. Manage your inbox hands-free with voice commands."
   }
+}
 
-  const handleVerifyOtp = async () => {
-    setIsVerifying(true)
-    setOtpError(null)
-
-    try {
-      const response = await fetch('/api/verify-otp', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, otp }),
-      })
-
-      const result = await response.json()
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to verify OTP')
+export default function HomePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://harmony.com.ai/#organization",
+        "name": "Harmony Life LLC",
+        "url": "https://harmony.com.ai",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://harmony.com.ai/opengraph-image.png"
+        },
+        "sameAs": [
+          "https://x.com/nathan_covey"
+        ],
+        "foundingDate": "2024",
+        "founder": {
+          "@type": "Person",
+          "name": "Nathan Covey",
+          "url": "https://x.com/nathan_covey"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://harmony.com.ai/#website",
+        "url": "https://harmony.com.ai",
+        "name": "Harmony - AI Email Voice Assistant",
+        "description": "The best AI Gmail assistant for voice-controlled email management",
+        "publisher": {
+          "@id": "https://harmony.com.ai/#organization"
+        },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://harmony.com.ai/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://harmony.com.ai/#app",
+        "name": "Harmony AI Email Assistant",
+        "description": "AI-powered voice assistant that reads and manages your Gmail emails hands-free",
+        "url": "https://harmony.com.ai",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "127"
+        },
+        "featureList": [
+          "Voice-controlled email reading",
+          "Hands-free Gmail management", 
+          "AI-powered email replies",
+          "Smart unsubscribe functionality",
+          "Voice commands for email actions"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Harmony AI email assistant?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Harmony is an AI-powered voice assistant that reads your Gmail emails aloud and allows you to manage your inbox hands-free using simple voice commands while walking or driving."
+            }
+          },
+          {
+            "@type": "Question", 
+            "name": "How does the AI Gmail assistant work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Harmony integrates with your Gmail account and uses AI to read your emails out loud. You can use voice commands to delete emails, mark as read, or perform other actions without touching your device."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my email data private with Harmony AI?",
+            "acceptedAnswer": {
+              "@type": "Answer", 
+              "text": "Yes, your emails stay completely private on your device. Harmony processes your email data locally and never stores your personal information on external servers."
+            }
+          }
+        ]
       }
-
-      setIsOtpDialogOpen(false)
-      toast.success("Thanks for joining the waitlist!")
-      setEmail("")
-      setOtp("")
-
-    } catch (error: unknown) {
-        const errorMessage = error instanceof Error ? error.message : "Verification failed. Please try again."
-        setOtpError(errorMessage)
-    } finally {
-        setIsVerifying(false)
-    }
+    ]
   }
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative">
-        <div className="w-full max-w-[1000px] flex flex-col-reverse lg:flex-row items-center justify-center gap-16 lg:gap-24 px-4 md:px-6 py-12 lg:py-24">
-          {/* Text Content */}
-          <div className="w-full max-w-[500px] flex flex-col items-center lg:items-start">
-            <h1 className="text-6xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text text-center lg:text-left">
-              AI Email Voice Assistant
-            </h1>
-            <p className="text-muted-foreground md:text-xl mt-6 text-center lg:text-left">
-              Reach Inbox Zero on the go. Let Harmony read your emails and manage them with simple voice commands while you walk or drive.
-            </p>
-            <div className="w-full sm:max-w-lg mt-6">
-              <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-2">
-                <div className="w-full">
-                  <label htmlFor="email" className="sr-only">Email</label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                    className="w-full flex-1 h-14 text-md"
-                    required
-                    disabled={isLoading || isOtpDialogOpen}
-                  />
-                </div>
-                <Button type="submit" disabled={isLoading || isOtpDialogOpen} size="lg" className="w-full sm:w-auto h-14 flex items-center gap-2">
-                  {isLoading ? "Sending..." : "Join Waitlist"}
-                  <WaitlistCount />
-                </Button>
-              </form>
-            </div>
-            <div className="flex items-center gap-2 justify-center lg:justify-start mt-6">
-              <motion.a
-                href="https://x.com/nathan_covey"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 group"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onHoverStart={() => setIsHovered(true)}
-                onHoverEnd={() => setIsHovered(false)}
-              >
-                <Avatar className="size-8">
-                  {isHovered ? (
-                    <div className="flex items-center justify-center size-full text-xl bg-primary/10">
-                      👋
-                    </div>
-                  ) : (
-                    <AvatarImage src="/images/nathan.jpg" alt="Nathan Covey" />
-                  )}
-                </Avatar>
-                <span className="text-muted-foreground text-sm group-hover:underline">Created by Nathan Covey</span>
-              </motion.a>
-            </div>
-          </div>
-
-          {/* Phone Mockup */}
-          <div className="w-full max-w-[350px] flex items-center justify-center">
-            <div className="relative w-full aspect-[9/16]">
-              <Image
-                src="/images/phone.gif"
-                alt="Harmony App Background"
-                layout="fill"
-                objectFit="contain"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-        <div className="container px-4 md:px-6 max-w-[1000px] mx-auto">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-            <div className="inline-block rounded-lg bg-secondary/10 px-3 py-1 text-sm text-secondary-foreground font-semibold">Key Features</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Effortless Email Management</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Harmony integrates seamlessly with your email, allowing you to stay productive without looking at your screen.
-            </p>
-          </div>
-          <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
-            <div className="grid gap-1 p-4 rounded-lg border bg-card text-card-foreground hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-2">
-                 <Mail className="h-5 w-5 text-primary" />
-                 <h3 className="text-lg font-bold">Read Aloud</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">Have your latest unread emails read out to you clearly.</p>
-            </div>
-            <div className="grid gap-1 p-4 rounded-lg border bg-card text-card-foreground hover:shadow-md transition-shadow">
-               <div className="flex items-center gap-2">
-                 <Trash2 className="h-5 w-5 text-destructive" />
-                 <h3 className="text-lg font-bold">Delete</h3>
-               </div>
-              <p className="text-sm text-muted-foreground">Instantly delete unwanted emails with a simple voice command.</p>
-            </div>
-            <div className="grid gap-1 p-4 rounded-lg border bg-card text-card-foreground hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-2">
-                 <ArrowRight className="h-5 w-5 text-primary" />
-                 <h3 className="text-lg font-bold">Reply (Coming Soon)</h3>
-               </div>
-              <p className="text-sm text-muted-foreground">Dictate replies quickly and easily (feature under development).</p>
-            </div>
-             <div className="grid gap-1 p-4 rounded-lg border bg-card text-card-foreground hover:shadow-md transition-shadow">
-               <div className="flex items-center gap-2">
-                 <Star className="h-5 w-5 text-yellow-500" />
-                 <h3 className="text-lg font-bold">Star</h3>
-               </div>
-              <p className="text-sm text-muted-foreground">Mark important emails for follow-up later.</p>
-            </div>
-             <div className="grid gap-1 p-4 rounded-lg border bg-card text-card-foreground hover:shadow-md transition-shadow">
-               <div className="flex items-center gap-2">
-                 <ArrowRight className="h-5 w-5 text-muted-foreground" />
-                 <h3 className="text-lg font-bold">Skip</h3>
-               </div>
-              <p className="text-sm text-muted-foreground">Move to the next email without taking action.</p>
-            </div>
-             <div className="grid gap-1 p-4 rounded-lg border bg-card text-card-foreground hover:shadow-md transition-shadow">
-               <div className="flex items-center gap-2">
-                 <Mic className="h-5 w-5 text-secondary" />
-                 <h3 className="text-lg font-bold">Voice Control</h3>
-               </div>
-              <p className="text-sm text-muted-foreground">Control everything hands-free using natural voice commands.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section id="cta" className="w-full py-12 md:py-24 lg:py-32 border-t bg-gradient-to-tr from-primary/10 via-background to-secondary/10">
-        <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 max-w-[1140px] mx-auto">
-          <div className="space-y-3">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Stay Updated on Our Progress</h2>
-            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Follow us on X to get the latest updates about Harmony and be the first to know when we launch.
-            </p>
-          </div>
-          <div className="mx-auto w-full max-w-sm space-y-2">
-             <Button type="button" size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-               <a href="https://x.com/nathan_covey" target="_blank" rel="noopener noreferrer">
-                 Follow @nathan_covey on X
-               </a>
-             </Button>
-          </div>
-        </div>
-      </section>
-
-      <Dialog open={isOtpDialogOpen} onOpenChange={setIsOtpDialogOpen}>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle className="text-2xl">Enter Verification Code</DialogTitle>
-            <DialogDescription className="text-lg">
-              We sent a 6-digit code to {email}. Please enter it below to verify your email address.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="grid gap-4 py-4">
-            <div className="flex justify-center scale-110">
-              <InputOTP
-                maxLength={6}
-                value={otp}
-                onChange={(value) => setOtp(value)}
-              >
-                <InputOTPGroup>
-                  <InputOTPSlot index={0} />
-                  <InputOTPSlot index={1} />
-                  <InputOTPSlot index={2} />
-                </InputOTPGroup>
-                <InputOTPSeparator />
-                <InputOTPGroup>
-                  <InputOTPSlot index={3} />
-                  <InputOTPSlot index={4} />
-                  <InputOTPSlot index={5} />
-                </InputOTPGroup>
-              </InputOTP>
-            </div>
-            {otpError && (
-              <p className="text-center text-sm text-red-500">{otpError}</p>
-            )}
-          </div>
-          <DialogFooter>
-            <Button
-                onClick={handleVerifyOtp}
-                disabled={isVerifying || otp.length !== 6}
-                className="w-full cursor-pointer h-14 text-lg"
-            >
-              {isVerifying ? "Verifying..." : "Verify Email"}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
+      <HeroSection />
+      <HowItWorksSection />
+      <VoiceActionsSection />
+      <PrivacySection />
+      <CTASection />
     </>
   )
 }

@@ -10,11 +10,8 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
             <HarmonyWordmark className="h-8 text-primary" />
           </Link>
           <nav className="flex gap-4 sm:gap-6">
-            <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#features">
-              Features
-            </Link>
-            <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#cta">
-              Get App
+            <Link className="text-sm font-medium hover:underline underline-offset-4" href="/#hero">
+              Join Waitlist
             </Link>
           </nav>
         </div>
