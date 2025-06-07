@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { GradientText } from "@/components/ui/gradient-text"
-import { Home, Mail, MessageCircle, ArrowLeft } from "lucide-react"
+import { MessageCircle, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import type { Metadata } from "next"
 

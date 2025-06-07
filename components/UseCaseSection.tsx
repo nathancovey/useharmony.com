@@ -7,7 +7,7 @@ export function HowItWorksSection() {
     <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
       <div className="container px-4 md:px-6 max-w-[1000px] mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary font-semibold">The Problem</div>
+          <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary font-semibold">Introducing Passive Email</div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Email but Hands-Free and Eyes-Free</h2>
           <p className="max-w-[600px] text-muted-foreground md:text-xl/snug lg:text-base/snug xl:text-xl/snug">
             One reason you love podcasts and audiobooks is because you can do it passively, without your eyes or hands. Harmony makes this possible for email.
