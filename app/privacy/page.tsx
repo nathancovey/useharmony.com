@@ -74,6 +74,9 @@ export default function PrivacyPage() {
               <p className="mb-4">
                 This data is used exclusively for providing email functionality within Harmony. No Google user data is used for advertising or marketing purposes.
               </p>
+              <p className="mb-4">
+                Google Workspace APIs are not used to develop, improve, or train generalized AI and/or ML models.
+              </p>
 
               <h3 className="text-xl font-medium mb-2">3.2 Data Sharing</h3>
             <p className="mb-4">
