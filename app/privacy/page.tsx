@@ -53,7 +53,7 @@ export default function PrivacyPage() {
             <h3 className="text-xl font-medium mb-2">2.2 Data Processing and Storage</h3>
             <ul className="list-disc ml-6 space-y-2 mb-4">
               <li>All email data is processed in accordance with Google API Services User Data Policy</li>
-              <li>We only process and display email data - copies are stored locally on your device and can be deleted at any time through the settings page</li>
+              <li>We only process and display email data in real-time - no copies are stored anywhere</li>
               <li>All data transmission is encrypted using industry-standard protocols</li>
             </ul>
           </div>
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
 
               <h3 className="text-xl font-medium mb-2">3.2 Data Sharing</h3>
             <p className="mb-4">
-              Google user data is never shared with third parties except as required for core service functionality. When necessary, we only work with service providers who comply with Google API Services User Data Policy and are bound by strict confidentiality agreements.
+              Google user data is never shared with or sold to third parties. We never sell your data to anyone - Harmony makes money through its subscription model. When necessary for core service functionality, we only work with service providers who comply with Google API Services User Data Policy and are bound by strict confidentiality agreements.
             </p>
           </div>
         </section>
@@ -97,9 +97,9 @@ export default function PrivacyPage() {
           <ul className="list-disc ml-6 space-y-2 mb-4">
             <li>Right to revoke access to your Google account at any time</li>
             <li>Right to request deletion of any cached data</li>
-            <li>Right to export your data</li>
             <li>Right to lodge complaints about data handling</li>
             <li>Right to request information about how your data is processed</li>
+            <li>Right to delete your account and all data associated with it</li>
           </ul>
         </section>
 
@@ -113,9 +113,9 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">7. Data Retention and Deletion</h2>
           <ul className="list-disc ml-6 space-y-2 mb-4">
-            <li>Email data is processed in real-time and locally stored on your device, never stored by us</li>
-            <li>All Google user data is permanently deleted when you revoke application access</li>
-            <li>You can immediately delete all stored data through the settings page</li>
+            <li>Email data is processed in real-time only - no storage occurs anywhere</li>
+            <li>No email data is retained after processing</li>
+            <li>You can revoke application access at any time through your Google account settings</li>
           </ul>
         </section>
 
