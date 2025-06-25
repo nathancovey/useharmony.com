@@ -29,18 +29,18 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       <footer className="w-full shrink-0 px-4 md:px-6 border-t bg-background">
         <div className="w-full max-w-[1000px] mx-auto py-12">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
-            <div className="flex flex-col space-y-3">
-              <div className="flex justify-start">
+            <div className="flex flex-col space-y-3 items-center lg:items-start">
+              <div className="flex justify-center lg:justify-start">
                 <HarmonyWordmark className="h-10 text-primary" />
               </div>
               <div className="max-w-sm">
-                <p className="text-base text-muted-foreground">
+                <p className="text-base text-muted-foreground text-center lg:text-left">
                   <Link href="/company" className="text-primary hover:underline underline-offset-4">
                     Our mission
                   </Link> is to help you fulfill your mission.
                 </p>
               </div>
-              <div className="flex gap-4 mt-4">
+              <div className="flex gap-4 mt-4 justify-center lg:justify-start">
                 <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <LinkedInIcon size={32} className="text-muted-foreground hover:text-primary transition-colors" />
                 </Link>
