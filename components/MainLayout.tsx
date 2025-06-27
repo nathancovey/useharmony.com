@@ -15,7 +15,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
             <HarmonyWordmark className="h-8 text-primary" />
           </Link>
           <nav className="flex gap-4 sm:gap-6">
-            <Link className="text-sm font-medium hover:underline underline-offset-4" href="https://testflight.apple.com/join/euq7AhMy" target="_blank" rel="noopener noreferrer">
+            <Link className="text-sm font-medium hover:underline underline-offset-4" href="https://apps.apple.com/us/app/harmony-ai-email-assistant/id6746949011" target="_blank" rel="noopener noreferrer">
               Download
             </Link>
           </nav>
