@@ -1,3 +1,5 @@
+'use client';
+
 import { HarmonyWordmark } from "@/components/icons/HarmonyWordmark"
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon"
 import { XIcon } from "@/components/icons/XIcon"
@@ -6,11 +8,31 @@ import Link from "next/link"
 import { FooterUpdatesForm } from "@/components/FooterUpdatesForm"
 import { Card, CardContent, CardHeader, CardDescription } from "@/components/ui/card"
 import AnnouncementBar from "@/components/AnnouncementBar"
+import { useEffect, useRef, useState } from "react"
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
+  const headerWrapperRef = useRef<HTMLDivElement>(null)
+  const [headerHeight, setHeaderHeight] = useState(80) // reasonable default in px
+
+  useEffect(() => {
+    if (!headerWrapperRef.current) return
+
+    // Set initial height
+    setHeaderHeight(headerWrapperRef.current.offsetHeight)
+
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setHeaderHeight(entry.contentRect.height)
+      }
+    })
+
+    observer.observe(headerWrapperRef.current)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="fixed top-0 left-0 right-0 z-50">
+      <div ref={headerWrapperRef} className="fixed top-0 left-0 right-0 z-50">
         <AnnouncementBar 
           message="Harmony now available on iOS 🎉" 
           href="https://apps.apple.com/us/app/harmony-ai-email-assistant/id6746949011"
@@ -29,7 +51,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         </header>
       </div>
 
-      <main className="flex-1 pt-20">
+      <main className="flex-1" style={{ paddingTop: headerHeight }}>
         {children}
       </main>
 
