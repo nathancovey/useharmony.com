@@ -5,8 +5,8 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar"
 
 export function HeroSection() {
   return (
-    <section id="hero" className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative">
-      <div className="w-full max-w-[1000px] flex flex-col-reverse lg:flex-row items-center justify-center gap-16 lg:gap-24 px-4 md:px-6 py-8 lg:py-16">
+    <section id="hero" className="w-full flex justify-center bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative pt-4 md:pt-8">
+      <div className="w-full max-w-[1000px] flex flex-col-reverse lg:flex-row items-center justify-center gap-16 lg:gap-24 px-4 md:px-6 py-2 md:py-4 lg:py-6">
         {/* Text Content */}
         <div className="w-full max-w-[500px] flex flex-col items-center lg:items-start">
           <div className="flex items-center gap-2 px-4 py-1 rounded-2xl border bg-background/70 backdrop-blur">
