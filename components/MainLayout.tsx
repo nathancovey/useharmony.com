@@ -4,12 +4,18 @@ import { XIcon } from "@/components/icons/XIcon"
 import { SlackIcon } from "@/components/icons/SlackIcon"
 import Link from "next/link"
 import { FooterUpdatesForm } from "@/components/FooterUpdatesForm"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardDescription } from "@/components/ui/card"
+import AnnouncementBar from "@/components/AnnouncementBar"
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-6 h-16 flex items-center bg-background shadow-sm border-b">
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <AnnouncementBar 
+          message="Harmony now available on iOS 🎉" 
+          href="https://apps.apple.com/us/app/harmony-ai-email-assistant/id6746949011"
+        />
+        <header className="px-4 lg:px-6 h-16 flex items-center bg-background shadow-sm border-b">
         <div className="flex items-center justify-between w-full max-w-[1000px] mx-auto">
           <Link className="flex items-center justify-center" href="/">
             <HarmonyWordmark className="h-8 text-primary" />
@@ -20,9 +26,10 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
             </Link>
           </nav>
         </div>
-      </header>
+        </header>
+      </div>
 
-      <main className="flex-1 pt-16">
+      <main className="flex-1 pt-20">
         {children}
       </main>
 

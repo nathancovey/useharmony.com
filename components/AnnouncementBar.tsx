@@ -1,0 +1,67 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { X } from 'lucide-react';
+
+interface AnnouncementBarProps {
+  message: string;
+  href?: string;
+  storageKey?: string;
+}
+
+export default function AnnouncementBar({ 
+  message, 
+  href,
+  storageKey = 'announcement-dismissed' 
+}: AnnouncementBarProps) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const dismissedTime = localStorage.getItem(storageKey);
+    if (dismissedTime) {
+      const timeElapsed = Date.now() - parseInt(dismissedTime);
+      const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
+      
+      if (timeElapsed < oneHour) {
+        return; // Still within 1 hour, keep hidden
+      }
+    }
+    
+    setIsVisible(true);
+  }, [storageKey]);
+
+  const handleClose = () => {
+    setIsVisible(false);
+    localStorage.setItem(storageKey, Date.now().toString());
+  };
+
+  if (!isVisible) return null;
+
+  return (
+    <div className="bg-primary text-white py-2 px-4 relative w-full">
+      <div className="max-w-[1000px] mx-auto flex items-center justify-between">
+        <div className="flex-1 text-center text-sm">
+          {href ? (
+            <a 
+              href={href} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:underline underline-offset-4"
+            >
+              {message}
+            </a>
+          ) : (
+            message
+          )}
+        </div>
+        <button
+          onClick={handleClose}
+          className="ml-4 p-1 hover:bg-white/10 rounded-full transition-colors cursor-pointer"
+          aria-label="Close announcement"
+        >
+          <X size={16} />
+        </button>
+      </div>
+    </div>
+  );
+}
