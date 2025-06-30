@@ -1,4 +1,4 @@
-import { Shield, Lock, UserX } from "lucide-react"
+import { Shield, Lock, UserX, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
 export function PrivacySection() {
@@ -12,7 +12,7 @@ export function PrivacySection() {
             We built Harmony with <Link href="/privacy" className="underline hover:text-primary">privacy</Link> at its core. Your email data is yours alone, and we take every measure to keep it that way.
           </p>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-3 md:gap-12">
+        <div className="mx-auto grid max-w-5xl items-start gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-12">
           <div className="flex flex-col items-center text-center space-y-4">
             <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/20">
               <Shield className="h-8 w-8 text-green-600 dark:text-green-400" />
@@ -43,6 +43,17 @@ export function PrivacySection() {
               <h3 className="text-xl font-bold">No Data Sales</h3>
               <p className="text-muted-foreground">
                 We never sell your data to third parties. Harmony makes money through its subscription model.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center text-center space-y-4">
+            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/20">
+              <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400" />
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-bold">3rd-Party Audited</h3>
+              <p className="text-muted-foreground">
+                Harmony successfully passed an intensive CASA security audit conducted by an independent third party.
               </p>
             </div>
           </div>
