@@ -70,10 +70,10 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                 </p>
               </div>
               <div className="flex gap-4 mt-4 justify-center lg:justify-start">
-                <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <Link href="https://www.linkedin.com/company/findharmony/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <LinkedInIcon size={32} className="text-muted-foreground hover:text-primary transition-colors" />
                 </Link>
-                <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <Link href="https://x.com/harmonyAIapp" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                   <XIcon size={32} className="text-muted-foreground hover:text-primary transition-colors" />
                 </Link>
                 <Link href="https://slack.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
