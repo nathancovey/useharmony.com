@@ -12,13 +12,13 @@ export function HeroSection() {
           <div className="flex items-center gap-2 px-4 py-1 rounded-2xl border bg-background/70 backdrop-blur">
             <div className="flex -space-x-2">
               <Avatar>
-                <AvatarImage src="/images/nathan.jpg" />
+                <AvatarImage src="/images/nathan.jpg" alt="Nathan Covey" />
               </Avatar>
               <Avatar>
-                <AvatarImage src="https://randomuser.me/api/portraits/women/68.jpg" />
+                <AvatarImage src="https://randomuser.me/api/portraits/women/68.jpg" alt="woman User avatar" />
               </Avatar>
               <Avatar>
-                <AvatarImage src="https://randomuser.me/api/portraits/men/75.jpg" />
+                <AvatarImage src="https://randomuser.me/api/portraits/men/75.jpg" alt="man User avatar" />
               </Avatar>
             </div>
             <span className="text-sm text-muted-foreground whitespace-nowrap">Loved by my mom with a ⭐ 5.0 rating</span>

@@ -39,7 +39,8 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         />
         <header className="px-4 lg:px-6 h-16 flex items-center bg-background shadow-sm border-b">
         <div className="flex items-center justify-between w-full max-w-[1000px] mx-auto">
-          <Link className="flex items-center justify-center" href="/">
+          <Link className="flex items-center justify-center" href="/" aria-label="Harmony Home">
+            <span className="sr-only">Harmony Home</span>
             <HarmonyWordmark className="h-8 text-primary" />
           </Link>
           <nav className="flex gap-4 sm:gap-6">
@@ -64,19 +65,22 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
               </div>
               <div className="max-w-sm">
                 <p className="text-base text-muted-foreground text-center lg:text-left">
-                  <Link href="/company" className="text-primary hover:underline underline-offset-4">
+                  <Link href="/company" className="underline underline-offset-4">
                     Our mission
                   </Link> is to help you fulfill your mission.
                 </p>
               </div>
               <div className="flex gap-4 mt-4 justify-center lg:justify-start">
-                <Link href="https://www.linkedin.com/company/findharmony/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <Link href="https://www.linkedin.com/company/findharmony/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
+                  <span className="sr-only">LinkedIn</span>
                   <LinkedInIcon size={32} className="text-muted-foreground hover:text-primary transition-colors" />
                 </Link>
-                <Link href="https://x.com/harmonyAIapp" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <Link href="https://x.com/harmonyAIapp" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="X (formerly Twitter)">
+                  <span className="sr-only">X (formerly Twitter)</span>
                   <XIcon size={32} className="text-muted-foreground hover:text-primary transition-colors" />
                 </Link>
-                <Link href="https://slack.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                <Link href="https://harmony-pnf8776.slack.com/join/shared_invite/zt-370vljb9t-x2Y~~63yQTGfMvoC_8wIrQ#/shared-invite/email" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Slack Community">
+                  <span className="sr-only">Slack Community</span>
                   <SlackIcon size={32} className="text-muted-foreground hover:text-primary transition-colors" />
                 </Link>
               </div>
