@@ -44,8 +44,6 @@ export default function AnnouncementBar({
           {href ? (
             <a 
               href={href} 
-              target="_blank" 
-              rel="noopener noreferrer"
               className="hover:underline underline-offset-4"
             >
               {message}
