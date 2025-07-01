@@ -1,0 +1,1 @@
+export const IOS_APP_STORE_URL = "https://apps.apple.com/us/app/harmony-ai-email-assistant/id6746949011"; 

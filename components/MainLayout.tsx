@@ -9,6 +9,7 @@ import { FooterUpdatesForm } from "@/components/FooterUpdatesForm"
 import { Card, CardContent, CardHeader, CardDescription } from "@/components/ui/card"
 import AnnouncementBar from "@/components/AnnouncementBar"
 import { useEffect, useRef, useState } from "react"
+import { IOS_APP_STORE_URL } from "@/lib/constants"
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
   const headerWrapperRef = useRef<HTMLDivElement>(null)
@@ -44,7 +45,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
             <HarmonyWordmark className="h-8 text-primary" />
           </Link>
           <nav className="flex gap-4 sm:gap-6">
-            <Link className="text-sm font-medium hover:underline underline-offset-4" href="https://apps.apple.com/us/app/harmony-ai-email-assistant/id6746949011" target="_blank" rel="noopener noreferrer">
+            <Link className="text-sm font-medium hover:underline underline-offset-4" href={IOS_APP_STORE_URL} target="_blank" rel="noopener noreferrer">
               Download
             </Link>
           </nav>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { IOS_APP_STORE_URL } from '@/lib/constants'
 import { AppStoreBadge } from '@/components/icons/AppStoreBadge'
 import { Card, CardContent } from '@/components/ui/card'
 import { HarmonyAppIcon } from '@/components/icons/HarmonyAppIcon'
@@ -30,7 +31,7 @@ export function HarmonyAppPromotion() {
 
             <div className="flex justify-start">
               <Link
-                href="https://apps.apple.com/us/app/harmony-ai-email-assistant/id6746949011"
+                href={IOS_APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-transform hover:scale-105"

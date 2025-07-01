@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { IOS_APP_STORE_URL } from "@/lib/constants"
 import { AppStoreBadge } from "@/components/icons/AppStoreBadge"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 
@@ -29,7 +30,7 @@ export function HeroSection() {
           <p className="text-muted-foreground md:text-xl mt-6 text-center lg:text-left">
             <strong>Reach Inbox Zero hands-free.</strong> Harmony reads your emails aloud and lets you manage them with simple voice commands while you drive or exercise.
           </p>
-          <Link href="https://apps.apple.com/us/app/harmony-ai-email-assistant/id6746949011" target="_blank" rel="noopener noreferrer" className="mt-8">
+          <Link href={IOS_APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="mt-8">
             <AppStoreBadge className="h-14" />
           </Link>
         </div>
