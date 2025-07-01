@@ -105,6 +105,9 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
               <Link className="text-xs hover:underline underline-offset-4" href="/company">
                 Company
               </Link>
+              <Link className="text-xs hover:underline underline-offset-4" href="/blog">
+                Blog
+              </Link>
               <Link className="text-xs hover:underline underline-offset-4" href="/terms">
                 Terms of Service
               </Link>
