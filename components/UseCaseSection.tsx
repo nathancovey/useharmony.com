@@ -80,7 +80,7 @@ export function HowItWorksSection() {
               <GmailIcon width={24} height={24} />
               <div className="text-center sm:text-left">
                 <p className="font-medium">Gmail</p>
-                <p className="text-sm text-green-600 dark:text-green-400">Available Now</p>
+                <p className="text-sm text-green-700 dark:text-green-300 font-medium">Available Now</p>
               </div>
             </div>
             <div className="flex items-center gap-3 opacity-60">
@@ -89,7 +89,7 @@ export function HowItWorksSection() {
               </div>
               <div className="text-center sm:text-left">
                 <p className="font-medium">Outlook & Others</p>
-                <p className="text-sm text-muted-foreground">Coming Later</p>
+                <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">Coming Later</p>
               </div>
             </div>
           </div>
