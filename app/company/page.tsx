@@ -12,7 +12,16 @@ export const metadata: Metadata = {
     title: "Company - Harmony AI Email Assistant",
     description: "Learn about Harmony's mission to build the greatest AI executive assistant in the world.",
     url: "https://harmony.com.ai/company",
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Harmony - AI Email Voice Assistant",
+        type: "image/png",
+      },
+    ],
   },
   robots: {
     index: true,

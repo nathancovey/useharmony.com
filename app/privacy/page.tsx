@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "Privacy Policy - Data Protection & Email Privacy",
-  description: "Privacy Policy for Harmony AI Email Assistant - Learn how we protect your data. Your emails stay on your device, and we only process voice commands to help manage your inbox securely.",
+  description: "Privacy Policy for Harmony AI Email Assistant. Learn how we protect your data: emails are not stored and only voice commands are processed securely.",
   keywords: ["privacy policy", "data protection", "email privacy", "Gmail security", "AI assistant privacy", "voice command privacy"],
   alternates: {
     canonical: "https://harmony.com.ai/privacy"
@@ -12,7 +12,16 @@ export const metadata: Metadata = {
     title: "Privacy Policy - Harmony AI Email Assistant",
     description: "Learn how Harmony protects your email data and privacy. Your emails stay secure on your device.",
     url: "https://harmony.com.ai/privacy",
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Harmony - AI Email Voice Assistant",
+        type: "image/png",
+      },
+    ],
   },
   robots: {
     index: true,

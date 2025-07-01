@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "Terms of Service - Legal Terms & Conditions",
-  description: "Terms of Service for Harmony AI Email Assistant - the voice-controlled Gmail management app. Read our legal terms and conditions for using our AI email assistant service.",
+  description: "Terms of Service for Harmony AI Email Assistant, the voice-controlled Gmail management app. Read terms and conditions for using our AI email assistant.",
   keywords: ["terms of service", "legal terms", "terms and conditions", "AI email assistant terms", "Gmail assistant legal", "voice command terms"],
   alternates: {
     canonical: "https://harmony.com.ai/terms"
@@ -12,7 +12,16 @@ export const metadata: Metadata = {
     title: "Terms of Service - Harmony AI Email Assistant",
     description: "Legal terms and conditions for using Harmony, the AI-powered voice email assistant.",
     url: "https://harmony.com.ai/terms",
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Harmony - AI Email Voice Assistant",
+        type: "image/png",
+      },
+    ],
   },
   robots: {
     index: true,

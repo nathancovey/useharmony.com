@@ -7,7 +7,7 @@ import { CTASection } from "@/components/CTASection"
 
 export const metadata: Metadata = {
   title: "Harmony - AI Email Voice Assistant",
-  description: "The best AI Gmail assistant for voice-controlled email management. Let Harmony AI read your emails aloud and manage your inbox hands-free while walking or driving. Voice commands for Gmail productivity.",
+  description: "Harmony AI is the best Gmail assistant for voice-controlled email. Hear emails aloud and manage your inbox hands-free while walking or driving.",
   keywords: [
     "AI email assistant", 
     "AI gmail assistant", 
