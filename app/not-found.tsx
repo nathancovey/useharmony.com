@@ -7,7 +7,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Page Not Found - 404 Error",
-  description: "The page you're looking for doesn't exist. Return to Harmony AI Email Assistant homepage or contact our support team.",
+  description: "The page you’re looking for doesn’t exist. Return to Harmony AI Email Assistant homepage or contact our support team.",
   robots: {
     index: false,
     follow: true,
@@ -28,7 +28,7 @@ export default function NotFound() {
               Page Not Found
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-[500px] mx-auto">
-              Oops! The page you're looking for seems to have wandered off. Don't worry, even our AI sometimes gets confused about directions.
+              Oops! The page you’re looking for seems to have wandered off. Don’t worry, even our AI sometimes gets confused about directions.
             </p>
           </div>
         </div>

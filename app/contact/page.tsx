@@ -45,7 +45,7 @@ export default function ContactPage() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold tracking-tight mb-4">Contact Us</h1>
           <p className="text-lg text-muted-foreground">
-            We'd love to hear from you. Get in touch with our team.
+            We’d love to hear from you. Get in touch with our team.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 Email Support
               </CardTitle>
               <CardDescription>
-                Send us an email and we'll get back to you as soon as possible.
+                Send us an email and we’ll get back to you as soon as possible.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -91,7 +91,7 @@ export default function ContactPage() {
 
         <div className="mt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            Whether you have questions, feedback, or need technical support, we're here to help.
+            Whether you have questions, feedback, or need technical support, we’re here to help.
           </p>
         </div>
       </div>
