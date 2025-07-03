@@ -34,7 +34,7 @@ export function FooterUpdatesForm() {
     setOtp("")
 
     try {
-      const response = await fetch('/api/send-otp', {
+      const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -62,7 +62,7 @@ export function FooterUpdatesForm() {
     setOtpError(null)
 
     try {
-      const response = await fetch('/api/verify-otp', {
+      const response = await fetch('/api/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, otp }),
