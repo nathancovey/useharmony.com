@@ -7,12 +7,16 @@ interface AnnouncementBarProps {
   message: string;
   href?: string;
   storageKey?: string;
+  target?: '_blank' | '_self';
+  rel?: string;
 }
 
 export default function AnnouncementBar({ 
   message, 
   href,
-  storageKey = 'announcement-dismissed' 
+  storageKey = 'announcement-dismissed',
+  target = '_self',
+  rel
 }: AnnouncementBarProps) {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -45,6 +49,8 @@ export default function AnnouncementBar({
             <a 
               href={href} 
               className="hover:underline underline-offset-4"
+              target={target}
+              rel={rel}
             >
               {message}
             </a>

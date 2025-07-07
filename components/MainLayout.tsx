@@ -37,6 +37,8 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         <AnnouncementBar 
           message="🎉 Upvote us on Tiny Startups ↗" 
           href="https://www.tinystartups.com/"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
         />
         <header className="px-4 lg:px-6 h-16 flex items-center bg-background shadow-sm border-b">
         <div className="flex items-center justify-between w-full max-w-[1000px] mx-auto">
