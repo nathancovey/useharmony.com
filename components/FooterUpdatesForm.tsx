@@ -93,7 +93,7 @@ export function FooterUpdatesForm() {
         <form onSubmit={handleEmailSubmit} className="flex gap-2">
           <Input
             type="email"
-            placeholder="Enter your email"
+            placeholder="Your email"
             value={email}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             className="flex-1"
@@ -101,7 +101,7 @@ export function FooterUpdatesForm() {
             disabled={isLoading || isOtpDialogOpen}
           />
           <Button type="submit" disabled={isLoading || isOtpDialogOpen}>
-            {isLoading ? "..." : "Sign Up"}
+            {isLoading ? "..." : "Get Updates"}
           </Button>
         </form>
       </div>

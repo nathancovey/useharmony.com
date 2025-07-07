@@ -5,8 +5,6 @@ import { LinkedInIcon } from "@/components/icons/LinkedInIcon"
 import { XIcon } from "@/components/icons/XIcon"
 import { SlackIcon } from "@/components/icons/SlackIcon"
 import Link from "next/link"
-import { FooterUpdatesForm } from "@/components/FooterUpdatesForm"
-import { Card, CardContent, CardHeader, CardDescription } from "@/components/ui/card"
 import AnnouncementBar from "@/components/AnnouncementBar"
 import { useEffect, useRef, useState } from "react"
 import { IOS_APP_STORE_URL } from "@/lib/constants"
@@ -60,66 +58,66 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       </main>
 
       <footer className="w-full shrink-0 px-4 md:px-6 border-t bg-background">
-        <div className="w-full max-w-[1000px] mx-auto py-12">
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
-            <div className="flex flex-col space-y-3 items-center lg:items-start">
-              <div className="flex justify-center lg:justify-start">
-                <HarmonyWordmark className="h-10 text-primary" />
-              </div>
-              <div className="max-w-sm">
-                <p className="text-base text-muted-foreground text-center lg:text-left">
-                  <Link href="/company" className="underline underline-offset-4">
-                    Our mission
-                  </Link> is to help you fulfill your mission.
+        <div className="w-full max-w-[1000px] mx-auto py-16">
+          <div className="flex flex-col lg:flex-row items-start justify-between gap-6">
+            <div className="flex flex-col gap-3">
+              <div className="max-w-sm pb-4">
+                <p className="text-lg text-muted-foreground">
+                  <Link href="/company" className="hover:underline hover:underline-offset-4 hover:decoration-primary">
+                    <span className="bg-primary/10 text-primary px-2 py-1 rounded-sm">
+                      Our mission
+                    </span>
+                  </Link> is to build an AI executive assistant that brings harmony to your life.
                 </p>
               </div>
-              <div className="flex gap-4 mt-4 justify-center lg:justify-start">
-                <Link href="https://www.linkedin.com/company/findharmony/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
-                  <span className="sr-only">LinkedIn</span>
-                  <LinkedInIcon size={32} className="text-muted-foreground hover:text-primary transition-colors" />
+              <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} Harmony Life LLC. All rights reserved.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
+              <div className="flex flex-col gap-2">
+                <h4 className="text-base font-medium text-foreground mb-1">Company</h4>
+                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="/company">
+                  About
                 </Link>
-                <Link href="https://x.com/harmonyAIapp" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="X (formerly Twitter)">
-                  <span className="sr-only">X (formerly Twitter)</span>
-                  <XIcon size={32} className="text-muted-foreground hover:text-primary transition-colors" />
+                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="/blog">
+                  Blog
                 </Link>
-                <Link href="https://harmony-pnf8776.slack.com/join/shared_invite/zt-370vljb9t-x2Y~~63yQTGfMvoC_8wIrQ#/shared-invite/email" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Slack Community">
-                  <span className="sr-only">Slack Community</span>
-                  <SlackIcon size={32} className="text-muted-foreground hover:text-primary transition-colors" />
+                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="https://new.harmony.com.ai/changelog" target="_blank" rel="noopener noreferrer">
+                  Changelog
+                </Link>
+                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="https://new.harmony.com.ai/feature-request" target="_blank" rel="noopener noreferrer">
+                  Give Feedback
                 </Link>
               </div>
+              <div className="flex flex-col gap-2">
+                <h4 className="text-base font-medium text-foreground mb-1">Legal</h4>
+                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="/terms">
+                  Terms of Service
+                </Link>
+                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="/privacy">
+                  Privacy Policy
+                </Link>
+                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="/contact">
+                  Contact Us
+                </Link>
+              </div>
+              <div className="flex flex-col gap-2">
+                <h4 className="text-base font-medium text-foreground mb-1">Connect</h4>
+                <div className="flex gap-4">
+                  <Link href="https://www.linkedin.com/company/findharmony/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
+                    <span className="sr-only">LinkedIn</span>
+                    <LinkedInIcon size={24} className="text-muted-foreground hover:text-primary transition-colors" />
+                  </Link>
+                  <Link href="https://x.com/harmonyAIapp" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="X (formerly Twitter)">
+                    <span className="sr-only">X (formerly Twitter)</span>
+                    <XIcon size={24} className="text-muted-foreground hover:text-primary transition-colors" />
+                  </Link>
+                  <Link href="https://harmony-pnf8776.slack.com/join/shared_invite/zt-370vljb9t-x2Y~~63yQTGfMvoC_8wIrQ#/shared-invite/email" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Slack Community">
+                    <span className="sr-only">Slack Community</span>
+                    <SlackIcon size={24} className="text-muted-foreground hover:text-primary transition-colors" />
+                  </Link>
+                </div>
+              </div>
             </div>
-            <Card className="lg:flex-1 lg:max-w-md">
-              <CardHeader>
-                <CardDescription className="text-base text-muted-foreground">
-                  Get email updates for major Harmony announcements.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <FooterUpdatesForm />
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-        <div className="border-t">
-          <div className="flex flex-col sm:flex-row items-center justify-between w-full max-w-[1000px] mx-auto py-6">
-            <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} Harmony Life LLC. All rights reserved.</p>
-            <nav className="sm:ml-auto flex gap-4 sm:gap-6 mt-2 sm:mt-0">
-              <Link className="text-xs hover:underline underline-offset-4" href="/company">
-                Company
-              </Link>
-              <Link className="text-xs hover:underline underline-offset-4" href="/blog">
-                Blog
-              </Link>
-              <Link className="text-xs hover:underline underline-offset-4" href="/terms">
-                Terms of Service
-              </Link>
-              <Link className="text-xs hover:underline underline-offset-4" href="/privacy">
-                Privacy Policy
-              </Link>
-              <Link className="text-xs hover:underline underline-offset-4" href="/contact">
-                Contact Us
-              </Link>
-            </nav>
           </div>
         </div>
       </footer>

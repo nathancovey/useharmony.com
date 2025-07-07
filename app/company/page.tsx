@@ -37,16 +37,13 @@ const Highlight = ({ children }: { children: React.ReactNode }) => (
 
 const missionPoints = [
   <>
-    The vision for Harmony is <Highlight>much bigger</Highlight> than just email.
+    Our mission is to build an AI executive assistant that brings <Highlight>harmony to your life.</Highlight>
   </>,
   <>
-    We’re building the <Highlight>greatest AI executive assistant</Highlight> in the world.
+    This assistant will not only help you organize your email, calendar, and tasks, but <Highlight>understand your priorities</Highlight>, roles, and goals.
   </>,
   <>
-    But it won’t just help you organize your email, calendar, tasks. It will help you <Highlight>prioritize and plan</Highlight>.
-  </>,
-  <>
-    It will help you <Highlight>fulfill your life’s mission</Highlight>.
+    We are getting closer to this every day.
   </>,
 ]
 
@@ -57,9 +54,9 @@ export default function CompanyPage() {
         <div className="container mx-auto px-4">
           <Card className="max-w-2xl mx-auto backdrop-blur-md bg-white/10 dark:bg-white/5 border-white/20 hover:shadow-md transition-shadow">
             <CardContent className="p-8 md:p-10 text-left">
-              <h2 className="text-3xl font-bold mb-8 text-foreground leading-tight">
+              <h1 className="text-3xl font-bold mb-8 text-foreground leading-tight">
                 Mission
-              </h2>
+              </h1>
               <div className="space-y-6">
                 {missionPoints.map((point, index) => (
                   <p key={index} className="text-muted-foreground text-2xl leading-relaxed">
@@ -72,13 +69,13 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-8">
         <div className="container mx-auto px-4">
           <Card className="max-w-2xl mx-auto backdrop-blur-md bg-white/10 dark:bg-white/5 border-white/20 hover:shadow-md transition-shadow">
             <CardContent className="p-8 md:p-10 text-left">
-              <h2 className="text-3xl font-bold mb-8 text-foreground leading-tight">
+              <h1 className="text-3xl font-bold mb-8 text-foreground leading-tight">
                 Careers
-              </h2>
+              </h1>
               <div className="space-y-4">
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Want to join us on our mission? We’re always looking for passionate individuals who share our vision of building the world’s greatest AI executive assistant.

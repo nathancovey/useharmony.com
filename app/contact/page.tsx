@@ -41,7 +41,7 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="container mx-auto px-4 py-8 max-w-2xl">
+      <div className="container mx-auto px-4 py-16 max-w-2xl">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold tracking-tight mb-4">Contact Us</h1>
           <p className="text-lg text-muted-foreground">
@@ -62,7 +62,7 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <Button asChild className="w-full">
-                <a href="mailto:nathan@harmony.com.ai">
+                <a href="mailto:nathan@harmony.com.ai" target="_blank" rel="noopener noreferrer">
                   nathan@harmony.com.ai
                 </a>
               </Button>
