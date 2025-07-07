@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Terms of Service - Legal Terms & Conditions",
+  title: "Terms - Harmony AI",
   description: "Terms of Service for Harmony AI Email Assistant, the voice-controlled Gmail management app. Read terms and conditions for using our AI email assistant.",
   keywords: ["terms of service", "legal terms", "terms and conditions", "AI email assistant terms", "Gmail assistant legal", "voice command terms"],
   alternates: {

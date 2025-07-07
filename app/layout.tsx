@@ -39,10 +39,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  title: {
-    default: "Harmony - AI Email Voice Assistant",
-    template: "%s | Harmony"
-  },
+  title: "Harmony AI",
   description: "Let Harmony read your emails and manage them with simple voice commands while you walk or drive. Your emails stay private on your device.",
   keywords: ["email assistant", "voice commands", "email management", "AI assistant", "productivity", "email voice control"],
   authors: [{ name: "Nathan Covey", url: "https://x.com/nathan_covey" }],

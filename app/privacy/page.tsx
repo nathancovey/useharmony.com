@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Data Protection & Email Privacy",
+  title: "Privacy - Harmony AI",
   description: "Privacy Policy for Harmony AI Email Assistant. Learn how we protect your data: emails are not stored and only voice commands are processed securely.",
   keywords: ["privacy policy", "data protection", "email privacy", "Gmail security", "AI assistant privacy", "voice command privacy"],
   alternates: {

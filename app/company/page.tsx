@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Card, CardContent } from '../../components/ui/card'
 
 export const metadata: Metadata = {
-  title: "Company - Our Mission & Vision",
+  title: "Company - Harmony AI",
   description: "Learn about Harmony’s mission to build the greatest AI executive assistant in the world. Join us on our journey to help you fulfill your life’s mission.",
   keywords: ["company", "mission", "vision", "AI assistant", "careers", "team"],
   alternates: {
