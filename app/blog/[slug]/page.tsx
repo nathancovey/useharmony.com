@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     : undefined
 
   return {
-    title: `${post.title} - Harmony AI Blog`,
+    title: post.title,
     description: post.subtitle || `Read ${post.title} on the Harmony AI blog`,
     openGraph: {
       title: post.title,
