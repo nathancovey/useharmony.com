@@ -5,6 +5,7 @@ import { LinkedInIcon } from "@/components/icons/LinkedInIcon"
 import { XIcon } from "@/components/icons/XIcon"
 import { SlackIcon } from "@/components/icons/SlackIcon"
 import Link from "next/link"
+import Image from "next/image"
 import AnnouncementBar from "@/components/AnnouncementBar"
 import { useEffect, useRef, useState } from "react"
 import { IOS_APP_STORE_URL } from "@/lib/constants"
@@ -71,6 +72,9 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                 </p>
               </div>
               <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} Harmony Life LLC. All rights reserved.</p>
+              <a href="https://startupfa.me/s/harmony-ai?utm_source=harmony.com.ai" target="_blank" className="mt-2 inline-block">
+                <Image src="https://startupfa.me/badges/featured-badge-small.webp" alt="Featured on Startup Fame" width="180" height="29" unoptimized />
+              </a>
             </div>
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
               <div className="flex flex-col gap-2">
