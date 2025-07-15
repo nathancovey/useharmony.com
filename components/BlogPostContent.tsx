@@ -142,7 +142,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
 
       <header className="mb-12">
         <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground text-left leading-relaxed">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground text-left leading-normal">
             {post.title}
           </h1>
         </div>
