@@ -10,6 +10,20 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blog - Harmony AI',
     description: 'Stay updated with the latest insights on AI email management, productivity tips, and Harmony app updates.',
+    url: 'https://harmony.com.ai/blog',
+    type: 'website',
+    siteName: 'Harmony',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Harmony - AI Email Voice Assistant'
+      }
+    ]
+  },
+  alternates: {
+    canonical: 'https://harmony.com.ai/blog'
   }
 }
 

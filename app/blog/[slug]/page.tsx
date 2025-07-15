@@ -35,13 +35,20 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     ? urlFor(post.featuredImage).width(1200).height(630).url()
     : undefined
 
+  const postUrl = `https://harmony.com.ai/blog/${slug}`
+
   return {
     title: post.title,
     description: post.subtitle || `Read ${post.title} on the Harmony AI blog`,
+    alternates: {
+      canonical: postUrl
+    },
     openGraph: {
       title: post.title,
       description: post.subtitle || `Read ${post.title} on the Harmony AI blog`,
       type: 'article',
+      url: postUrl,
+      siteName: 'Harmony',
       publishedTime: post.publishedAt,
       authors: post.author?.name ? [post.author.name] : undefined,
       images: ogImage ? [
