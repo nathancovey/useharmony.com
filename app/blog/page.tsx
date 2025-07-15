@@ -2,6 +2,8 @@ import { getBlogPosts } from '@/lib/sanity'
 import { BlogCard } from '@/components/BlogCard'
 import type { Metadata } from 'next'
 
+export const revalidate = 60
+
 export const metadata: Metadata = {
   title: 'Blog - Harmony AI',
   description: 'Stay updated with the latest insights on AI email management, productivity tips, and Harmony app updates.',
