@@ -2,7 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { IOS_APP_STORE_URL } from "@/lib/constants"
 import { AppStoreBadge } from "@/components/icons/AppStoreBadge"
-import { GmailBadge } from "@/components/icons/GmailBadge"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 
 export function HeroSection() {
@@ -35,7 +34,7 @@ export function HeroSection() {
             <Link href={IOS_APP_STORE_URL} target="_blank" rel="noopener noreferrer">
               <AppStoreBadge className="h-14 shadow-lg" />
             </Link>
-            <GmailBadge />
+            <a href="https://www.tinystartups.com/launch/harmony-ai" target="_blank"><img src="https://cdn.prod.website-files.com/657b3d8ca1cab4015f06c850/680a4d679063da73487739e0_No1prgold-caps-removebg-preview.png" alt="#1 Product of the Week on Tiny Startups" style={{width: '149px', height: '45.5px'}} width="149" height="45.5" /></a>
           </div>
         </div>
 
