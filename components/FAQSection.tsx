@@ -43,7 +43,7 @@ export function FAQSection() {
                   What voice commands can I use with Harmony?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Harmony can handle a wide variety of voice commands including: "Can you catch me up on my most recent emails?", "Delete that first email", "Move all these emails to my receipts folder", "Write a draft reply", "Send this email", and "Unsubscribe me from this list". You can speak naturally and the AI will understand your intent.
+                  Harmony can handle a wide variety of voice commands including: &ldquo;Can you catch me up on my most recent emails?&rdquo;, &ldquo;Delete that first email&rdquo;, &ldquo;Move all these emails to my receipts folder&rdquo;, &ldquo;Write a draft reply&rdquo;, &ldquo;Send this email&rdquo;, and &ldquo;Unsubscribe me from this list&rdquo;. You can speak naturally and the AI will understand your intent.
                 </AccordionContent>
               </AccordionItem>
               
