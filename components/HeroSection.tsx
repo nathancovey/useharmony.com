@@ -41,7 +41,7 @@ export function HeroSection() {
         </div>
 
         {/* Phone Mockup */}
-        <div className="w-full max-w-[380px] flex items-center justify-center">
+        <div className="w-full max-w-[350px] flex items-center justify-center">
           <div className="relative w-full aspect-[9/16]">
             <Image
               src="/images/harmony_ai_app_mockup.png"
