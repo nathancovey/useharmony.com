@@ -52,7 +52,7 @@ export function FAQSection() {
                   Why combine email management with driving time?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  According to McKinsey, the average knowdlge worker spends 2.6 hours a day on email and 1 hour a day in the car - these seem like the perfect two things to combine! Harmony allows you to productively manage your inbox during commutes, walks, or any time when you can't look at your screen, making better use of your time.
+                  According to McKinsey, the average knowdlge worker spends 2.6 hours a day on email and 1 hour a day in the car - these seem like the perfect two things to combine! Harmony allows you to productively manage your inbox during commutes, walks, or any time when you can&apos;t look at your screen, making better use of your time.
                 </AccordionContent>
               </AccordionItem>
               
@@ -61,7 +61,7 @@ export function FAQSection() {
                   What email providers does Harmony support?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Currently, Harmony integrates with Gmail accounts. We're working on expanding support to other email providers in future updates based on user feedback and demand.
+                  Currently, Harmony integrates with Gmail accounts. We&apos;re working on expanding support to other email providers in future updates based on user feedback and demand.
                 </AccordionContent>
               </AccordionItem>
               
@@ -70,7 +70,7 @@ export function FAQSection() {
                   Can Harmony permanently delete my emails?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  No, Harmony cannot permanently delete emails. When you ask it to "delete" an email, it moves the email to your trash folder, ensuring that any mistakes are recoverable. This is one of our built-in safety measures to protect your important correspondence.
+                  No, Harmony cannot permanently delete emails. When you ask it to &quot;delete&quot; an email, it moves the email to your trash folder, ensuring that any mistakes are recoverable. This is one of our built-in safety measures to protect your important correspondence.
                 </AccordionContent>
               </AccordionItem>
               
