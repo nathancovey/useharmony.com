@@ -28,7 +28,7 @@ export function HeroSection() {
             AI Email Voice Assistant
           </h1>
           <p className="text-muted-foreground md:text-xl mt-6 text-center lg:text-left">
-            <strong>Reach Inbox Zero hands-free.</strong> Harmony reads your emails aloud and lets you manage them with simple voice commands while you drive or exercise.
+            <strong>Reach Inbox Zero hands-free.</strong> Harmony reads your emails aloud and lets you manage them with your voice while you drive or exercise.
           </p>
           <div className="flex flex-row items-center gap-4 mt-8">
             <Link href={IOS_APP_STORE_URL} target="_blank" rel="noopener noreferrer">
