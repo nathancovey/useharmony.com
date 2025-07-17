@@ -34,7 +34,9 @@ export function HeroSection() {
             <Link href={IOS_APP_STORE_URL} target="_blank" rel="noopener noreferrer">
               <AppStoreBadge className="h-14 shadow-lg" />
             </Link>
-            <a href="https://www.tinystartups.com/launch/harmony-ai" target="_blank"><img src="https://cdn.prod.website-files.com/657b3d8ca1cab4015f06c850/680a4d679063da73487739e0_No1prgold-caps-removebg-preview.png" alt="#1 Product of the Week on Tiny Startups" style={{width: '149px', height: '45.5px'}} width="149" height="45.5" /></a>
+            <a href="https://www.tinystartups.com/launch/harmony-ai" target="_blank" rel="noopener noreferrer">
+              <Image src="/images/tinystartups.png" alt="#1 Product of the Week on Tiny Startups" width={149} height={46} priority />
+            </a>
           </div>
         </div>
 
@@ -42,7 +44,7 @@ export function HeroSection() {
         <div className="w-full max-w-[380px] flex items-center justify-center">
           <div className="relative w-full aspect-[9/16]">
             <Image
-              src="/images/mockup.png"
+              src="/images/harmony_ai_app_mockup.png"
               alt="Harmony AI Email Assistant App - Voice-controlled Gmail management interface"
               fill
               style={{ objectFit: "contain" }}

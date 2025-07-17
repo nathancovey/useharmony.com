@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/HeroSection"
 import { HowItWorksSection } from "@/components/UseCaseSection"
 import { VoiceActionsSection } from "@/components/VoiceActionsSection"
 import { PrivacySection } from "@/components/PrivacySection"
+import { FAQSection } from "@/components/FAQSection"
 import { CTASection } from "@/components/CTASection"
 
 export const metadata: Metadata = {
@@ -113,26 +114,50 @@ export default function HomePage() {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is Harmony AI email assistant?",
+            "name": "What is Harmony and how does it work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Harmony is an AI-powered voice assistant that reads your Gmail emails aloud and allows you to manage your inbox hands-free using simple voice commands while walking or driving."
-            }
-          },
-          {
-            "@type": "Question", 
-            "name": "How does the AI Gmail assistant work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Harmony integrates with your Gmail account and uses AI to read your emails out loud. You can use voice commands to delete emails, mark as read, or perform other actions without touching your device."
+              "text": "Harmony is an AI-powered voice assistant that integrates with your Gmail to help you manage email hands-free. After connecting your Gmail account, you can simply tap your inbox and start chatting with the assistant using voice commands. You can ask it to read your emails, delete messages, send replies, move emails to folders, and even unsubscribe from lists."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my email data private with Harmony AI?",
+            "name": "Is my email data safe and private?",
             "acceptedAnswer": {
-              "@type": "Answer", 
-              "text": "Yes, your emails stay completely private on your device. Harmony processes your email data locally and never stores your personal information on external servers."
+              "@type": "Answer",
+              "text": "Absolutely. We take privacy seriously with multiple safeguards: emails are never sent without confirmation, emails cannot be permanently deleted (mistakes are recoverable), none of your emails are stored or saved by us, all connections are secure and encrypted, and no data is ever sold or used for AI training purposes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What voice commands can I use with Harmony?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Harmony can handle a wide variety of voice commands including: 'Can you catch me up on my most recent emails?', 'Delete that first email', 'Move all these emails to my receipts folder', 'Write a draft reply', 'Send this email', and 'Unsubscribe me from this list'. You can speak naturally and the AI will understand your intent."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why combine email management with driving time?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "According to McKinsey, the average knowledge worker spends 2.6 hours a day on email and 1 hour a day in the car - these seem like the perfect two things to combine! Harmony allows you to productively manage your inbox during commutes, walks, or any time when you can't look at your screen, making better use of your time."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Harmony permanently delete my emails?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, Harmony cannot permanently delete emails. When you ask it to 'delete' an email, it moves the email to your trash folder, ensuring that any mistakes are recoverable. This is one of our built-in safety measures to protect your important correspondence."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will Harmony send emails without my permission?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Never. Harmony always asks for confirmation before sending any email. This ensures you maintain complete control over your email communications and prevents any accidental sends."
             }
           }
         ]
@@ -151,6 +176,7 @@ export default function HomePage() {
       <HowItWorksSection />
       <VoiceActionsSection />
       <PrivacySection />
+      <FAQSection />
       <CTASection />
     </>
   )
