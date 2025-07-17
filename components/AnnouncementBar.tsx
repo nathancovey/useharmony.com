@@ -44,6 +44,7 @@ export default function AnnouncementBar({
   return (
     <div className="bg-primary text-white py-2 px-4 relative w-full">
       <div className="max-w-[1000px] mx-auto flex items-center justify-between">
+        <div className="w-8 flex-shrink-0"></div>
         <div className="flex-1 text-center text-sm">
           {href ? (
             <a 
@@ -60,7 +61,7 @@ export default function AnnouncementBar({
         </div>
         <button
           onClick={handleClose}
-          className="ml-4 p-1 hover:bg-white/10 rounded-full transition-colors cursor-pointer"
+          className="w-8 h-8 flex items-center justify-center hover:bg-white/10 rounded-full transition-colors cursor-pointer flex-shrink-0"
           aria-label="Close announcement"
         >
           <X size={16} />
