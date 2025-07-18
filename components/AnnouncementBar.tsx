@@ -42,7 +42,7 @@ export default function AnnouncementBar({
   if (!isVisible) return null;
 
   return (
-    <div className="bg-primary text-white py-2 px-4 relative w-full">
+    <div className="bg-primary text-white py-1 px-4 relative w-full">
       <div className="max-w-[1000px] mx-auto flex items-center justify-between">
         <div className="w-8 flex-shrink-0"></div>
         <div className="flex-1 text-center text-sm">
