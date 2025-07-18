@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         hostname: 'cdn.sanity.io',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+        pathname: '/**',
+      },
     ],
   },
   async headers() {
