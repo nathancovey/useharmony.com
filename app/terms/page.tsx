@@ -33,7 +33,7 @@ export default function TermsPage() {
   return (
     <div className="container max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4">Terms of Service</h1>
-      <p className="text-gray-500 mb-8">Last updated: June 25, 2025</p>
+      <p className="text-gray-500 mb-8">Last updated: July 20, 2025</p>
       
       <div className="space-y-6">
         <section>
@@ -64,25 +64,21 @@ export default function TermsPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">3. Service Description</h2>
           <p className="mb-4">
-            Our application provides voice-controlled email management through Gmail integration. The service allows you to interact with your emails using voice commands while keeping your email data secure.
+            Our application provides voice-controlled management of your Gmail, Google Calendar, and Contacts. Harmony lets you read, draft, send, and organize emails, create or modify calendar events, and access contact information using natural-language commands while keeping your data secure.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">4. Google Account Integration</h2>
           <p className="mb-4">
-            Our service requires Google authentication to access your Gmail account. We access emails, contacts, and labels solely to provide our services.
+            Our service requires Google authentication to access your Gmail, Google Calendar, and Contacts data. We access emails, calendar events, contacts, and labels solely to provide core functionality. OAuth tokens are stored encrypted on our servers, and you can revoke access at any time.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">5. Data Usage and Privacy</h2>
           <p className="mb-4">
-            We do <strong>not</strong> store any email data, either locally on your device or on our servers. Email content is processed and displayed in real-time only. We collect anonymized usage data to improve our services, and voice commands are processed through OpenAI&apos;s services. Please review our{' '}
-            <Link href="/privacy" className="text-blue-600 hover:underline">
-              Privacy Policy
-            </Link>{' '}
-            for full details.
+            We do <strong>not</strong> store any email, calendar, or contacts content, either locally on your device or on our servers. All Google data is processed in real time only. OAuth tokens are encrypted at rest on our servers. We collect anonymized usage analytics and crash reports to improve our services, and voice commands are processed through OpenAI&apos;s services; snippets of relevant text may be transmitted but nothing is stored. Please review our <Link href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link> for full details.
           </p>
         </section>
 

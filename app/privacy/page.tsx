@@ -33,7 +33,7 @@ export default function PrivacyPage() {
   return (
     <div className="container max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
-      <p className="text-gray-500 mb-8">Last updated: June 9th, 2025</p>
+      <p className="text-gray-500 mb-8">Last updated: July 20, 2025</p>
       
       <div className="space-y-6">
         <section>
@@ -52,11 +52,11 @@ export default function PrivacyPage() {
           <div className="ml-4">
             <h3 className="text-xl font-medium mb-2">2.1 Authentication and Access</h3>
             <ul className="list-disc ml-6 space-y-2 mb-4">
-              <li>We request access to your Gmail data only after receiving your explicit consent</li>
+              <li>We request access to your Gmail, Google Calendar, and Contacts data only after receiving your explicit consent</li>
               <li>We use secure OAuth 2.0 authentication provided by Google</li>
               <li>Your Google account credentials are never stored on our servers</li>
               <li>You can revoke access to your Google account at any time through the settings page in the app</li>
-              <li>We access only the necessary Gmail API scopes required for email functionality</li>
+              <li>We access only the minimum Gmail, Calendar, and Contacts API scopes required for Harmony to function</li>
             </ul>
 
             <h3 className="text-xl font-medium mb-2">2.2 Data Processing and Storage</h3>
@@ -64,6 +64,7 @@ export default function PrivacyPage() {
               <li>All email data is processed in accordance with Google API Services User Data Policy</li>
               <li>We only process and display email data in real-time - no copies are stored anywhere</li>
               <li>All data transmission is encrypted using industry-standard protocols</li>
+              <li>OAuth access and refresh tokens are stored encrypted on our servers with regular secret rotation and access logging</li>
             </ul>
           </div>
         </section>
@@ -77,11 +78,12 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc ml-6 space-y-2 mb-4">
                 <li>Email content and metadata through Gmail API</li>
-                <li>Contact information for email functionality</li>
+                <li>Calendar events (titles, times, attendees) through Google Calendar API</li>
+                <li>Contact information through Google People API</li>
                 <li>Email attachments when necessary</li>
               </ul>
               <p className="mb-4">
-                This data is used exclusively for providing email functionality within Harmony. No Google user data is used for advertising or marketing purposes.
+                This data is used exclusively for providing email, calendar, and contact functionality within Harmony. No Google user data is used for advertising or marketing purposes.
               </p>
               <p className="mb-4">
                 Google Workspace APIs are not used to develop, improve, or train generalized AI and/or ML models.
@@ -91,13 +93,17 @@ export default function PrivacyPage() {
             <p className="mb-4">
               Google user data is never shared with or sold to third parties. We never sell your data to anyone - Harmony makes money through its subscription model. When necessary for core service functionality, we only work with service providers who comply with Google API Services User Data Policy and are bound by strict confidentiality agreements.
             </p>
+            <h3 className="text-xl font-medium mb-2">3.3 Analytics and Crash Reporting</h3>
+            <p className="mb-4">
+              We collect anonymized usage analytics and crash reports to identify bugs and improve performance. These reports never contain Google user data or personally identifiable information.
+            </p>
           </div>
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">4. Voice Command Processing</h2>
           <p className="mb-4">
-            Voice commands are processed through OpenAI&apos;s services. These commands are transmitted securely and are not stored permanently. We ensure that no sensitive email data is included in voice command processing.
+            Voice commands are processed through OpenAI&apos;s services. The minimal text necessary to fulfill your request (such as snippets of email, calendar, or contact content) may be included in these requests. All transmissions are encrypted and nothing is stored after processing.
           </p>
         </section>
 
@@ -115,7 +121,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">6. Limited Use Disclosure</h2>
           <p className="mb-4">
-            Our use and transfer to any other app of information received from Google APIs will adhere to the Google API Services User Data Policy, including the Limited Use requirements.
+            Our use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Google API Services User Data Policy</a>, including the Limited Use requirements.
           </p>
         </section>
 
@@ -123,7 +129,8 @@ export default function PrivacyPage() {
           <h2 className="text-2xl font-semibold mb-4">7. Data Retention and Deletion</h2>
           <ul className="list-disc ml-6 space-y-2 mb-4">
             <li>Email data is processed in real-time only - no storage occurs anywhere</li>
-            <li>No email data is retained after processing</li>
+            <li>OAuth tokens are retained only while your account is active and are deleted immediately when you revoke access or delete your account</li>
+            <li>No Google data is retained after processing</li>
             <li>You can revoke application access at any time through your Google account settings</li>
           </ul>
         </section>
