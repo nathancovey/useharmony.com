@@ -34,7 +34,7 @@ export function FAQSection() {
                   Is my email data safe and private?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Absolutely. We take privacy seriously with multiple safeguards: emails are never sent without confirmation, emails cannot be permanently deleted (mistakes are recoverable), none of your emails are stored or saved by us, all connections are secure and encrypted, and no data is ever sold or used for AI training purposes.
+                  Absolutely. We take privacy seriously with multiple safeguards: emails are never sent without confirmation, emails cannot be permanently deleted (mistakes are recoverable), none of your emails are stored or saved by us, and all connections are secure and encrypted. We never sell your data to anyone, period. Your data is only used to personalize the Harmony product - nothing more.
                 </AccordionContent>
               </AccordionItem>
               
@@ -79,7 +79,7 @@ export function FAQSection() {
                   How much does Harmony cost?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Harmony is available via subscription, but you can try it for free with a 14-day free trial. Download it today from the App Store and start managing your email hands-free while driving, walking, or multitasking.
+                  Harmony is available via subscription at $9.99/month, but you can try it for free with a 14-day free trial. Download it today from the App Store and start managing your email hands-free while driving, walking, or multitasking.
                 </AccordionContent>
               </AccordionItem>
               
@@ -89,6 +89,15 @@ export function FAQSection() {
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
                   Never. Harmony always asks for confirmation before sending any email. This ensures you maintain complete control over your email communications and prevents any accidental sends.
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-9">
+                <AccordionTrigger className="text-base font-medium cursor-pointer">
+                  Is it safe to use Harmony while driving?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Harmony is designed to be completely hands-free and eyes-free, similar to talking to a passenger or taking a phone call. You keep your hands on the wheel and eyes on the road at all times. However, like any conversation while driving, it does require some mental attention. We recommend using Harmony only when traffic conditions allow for safe conversation, just as you would with hands-free phone calls. Always prioritize safe driving and pull over if you need to handle complex email tasks.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
