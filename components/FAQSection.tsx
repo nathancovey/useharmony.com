@@ -79,7 +79,7 @@ export function FAQSection() {
                   How much does Harmony cost?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Harmony is available via subscription at $9.99/month, but you can try it for free with a 14-day free trial. Download it today from the App Store and start managing your email hands-free while driving, walking, or multitasking.
+                  Harmony offers a 14-day free trial, then the subscription renews at USD $9.99 per month, converted to your local currency by Apple at the prevailing exchange rate. Download it today from the App Store and start managing your email hands-free while driving, walking, or multitasking.
                 </AccordionContent>
               </AccordionItem>
               
@@ -97,7 +97,7 @@ export function FAQSection() {
                   Is it safe to use Harmony while driving?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Harmony is designed to be completely hands-free and eyes-free, similar to talking to a passenger or taking a phone call. You keep your hands on the wheel and eyes on the road at all times. However, like any conversation while driving, it does require some mental attention. We recommend using Harmony only when traffic conditions allow for safe conversation, just as you would with hands-free phone calls. Always prioritize safe driving and pull over if you need to handle complex email tasks.
+                  Harmony follows NHTSA guidelines by keeping interactions completely hands-free and eyes-free, similar to talking to a passenger or taking a phone call. Most US states now require hands-free operation for device use while driving, which Harmony fully supports. You keep your hands on the wheel and eyes on the road at all times. However, like any conversation while driving, it does require some mental attention. We recommend using Harmony only when traffic conditions allow for safe conversation, just as you would with hands-free phone calls. Always prioritize safe driving and pull over if you need to handle complex email tasks.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
