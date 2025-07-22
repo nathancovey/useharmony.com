@@ -121,7 +121,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">6. Limited Use Disclosure</h2>
           <p className="mb-4">
-            Our use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Google API Services User Data Policy</a>, including the Limited Use requirements.
+            We affirm our use of information received from Google APIs adheres to the <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy#limited-use" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Limited use of user data</a> requirement of the Google Workspace API User Data and Developer Policy.
           </p>
         </section>
 
