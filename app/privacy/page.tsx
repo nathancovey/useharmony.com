@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "Privacy Policy for Harmony AI Email Assistant. Learn how we protect your data: emails are not stored and only voice commands are processed securely.",
   keywords: ["privacy policy", "data protection", "email privacy", "Gmail security", "AI assistant privacy", "voice command privacy"],
   alternates: {
-    canonical: "https://harmonyassistant.com/privacy"
+    canonical: "https://www.harmonyassistant.com/privacy"
   },
   openGraph: {
     title: "Privacy Policy - Harmony AI Email Assistant",
     description: "Learn how Harmony protects your email data and privacy. Your emails stay secure on your device.",
-    url: "https://harmonyassistant.com/privacy",
+    url: "https://www.harmonyassistant.com/privacy",
     type: "website",
     images: [
       {

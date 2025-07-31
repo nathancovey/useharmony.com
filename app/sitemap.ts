@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { getBlogPosts, type BlogPost } from '@/lib/sanity'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://harmonyassistant.com'
+  const baseUrl = 'https://www.harmonyassistant.com'
   
   // Fetch blog posts so we can include them in the sitemap.
   const posts: BlogPost[] = await getBlogPosts()

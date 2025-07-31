@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     "gmail productivity app"
   ],
   alternates: {
-    canonical: "https://harmonyassistant.com"
+    canonical: "https://www.harmonyassistant.com"
   },
   openGraph: {
     title: "Harmony - AI Email Voice Assistant",
     description: "The best AI Gmail assistant for voice-controlled email management. Manage your inbox hands-free with voice commands.",
-    url: "https://harmonyassistant.com",
+    url: "https://www.harmonyassistant.com",
     type: "website"
   },
   twitter: {
@@ -48,12 +48,12 @@ export default function HomePage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://harmonyassistant.com/#organization",
+        "@id": "https://www.harmonyassistant.com/#organization",
         "name": "Harmony Life LLC",
-        "url": "https://harmonyassistant.com",
+        "url": "https://www.harmonyassistant.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://harmonyassistant.com/opengraph-image.png"
+          "url": "https://www.harmonyassistant.com/opengraph-image.png"
         },
         "sameAs": [
           "https://x.com/nathan_covey"
@@ -67,19 +67,19 @@ export default function HomePage() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://harmonyassistant.com/#website",
-        "url": "https://harmonyassistant.com",
+        "@id": "https://www.harmonyassistant.com/#website",
+        "url": "https://www.harmonyassistant.com",
         "name": "Harmony - AI Email Voice Assistant",
         "description": "The best AI Gmail assistant for voice-controlled email management",
         "publisher": {
-          "@id": "https://harmonyassistant.com/#organization"
+          "@id": "https://www.harmonyassistant.com/#organization"
         },
         "potentialAction": [
           {
             "@type": "SearchAction",
             "target": {
               "@type": "EntryPoint",
-              "urlTemplate": "https://harmonyassistant.com/?q={search_term_string}"
+              "urlTemplate": "https://www.harmonyassistant.com/?q={search_term_string}"
             },
             "query-input": "required name=search_term_string"
           }
@@ -87,10 +87,10 @@ export default function HomePage() {
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://harmonyassistant.com/#app",
+        "@id": "https://www.harmonyassistant.com/#app",
         "name": "Harmony AI Email Assistant",
         "description": "AI-powered voice assistant that reads and manages your Gmail emails hands-free",
-        "url": "https://harmonyassistant.com",
+        "url": "https://www.harmonyassistant.com",
         "applicationCategory": "ProductivityApplication",
         "operatingSystem": "iOS, Android",
         "offers": {

@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://harmonyassistant.com'),
+  metadataBase: new URL('https://www.harmonyassistant.com'),
   icons: {
     icon: [
       {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://harmonyassistant.com",
+    url: "https://www.harmonyassistant.com",
     title: "Harmony - AI Email Voice Assistant",
     description: "Let Harmony read your emails and manage them with simple voice commands while you walk or drive. Your emails stay private on your device.",
     siteName: "Harmony",
