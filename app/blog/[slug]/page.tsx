@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     ? urlFor(post.featuredImage).width(1200).height(630).url()
     : undefined
 
-  const postUrl = `https://harmony.com.ai/blog/${slug}`
+  const postUrl = `https://harmonyassistant.com/blog/${slug}`
 
   return {
     title: post.title,

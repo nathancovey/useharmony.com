@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "Learn about Harmony’s mission to build the greatest AI executive assistant in the world. Join us on our journey to help you fulfill your life’s mission.",
   keywords: ["company", "mission", "vision", "AI assistant", "careers", "team"],
   alternates: {
-    canonical: "https://harmony.com.ai/company"
+    canonical: "https://harmonyassistant.com/company"
   },
   openGraph: {
     title: "Company - Harmony AI Email Assistant",
     description: "Learn about Harmony’s mission to build the greatest AI executive assistant in the world.",
-    url: "https://harmony.com.ai/company",
+    url: "https://harmonyassistant.com/company",
     type: "website",
     images: [
       {
@@ -81,7 +81,7 @@ export default function CompanyPage() {
                   Want to join us on our mission? We’re always looking for passionate individuals who share our vision of building the world’s greatest AI executive assistant.
                 </p>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Email us at <a href="mailto:nathan@harmony.com.ai" className="text-primary hover:underline">nathan@harmony.com.ai</a> to learn more about opportunities to be part of our team.
+                  Email us at <a href="mailto:nathan@harmonyassistant.com" className="text-primary hover:underline">nathan@harmonyassistant.com</a> to learn more about opportunities to be part of our team.
                 </p>
               </div>
             </CardContent>

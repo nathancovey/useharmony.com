@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Contact Harmony AI Email Assistant support team via email or join our Slack community for real-time help and discussions.",
   keywords: ["contact", "support", "email assistance", "Harmony AI", "customer service", "slack community"],
   alternates: {
-    canonical: "https://harmony.com.ai/contact"
+    canonical: "https://harmonyassistant.com/contact"
   }
 }
 
@@ -20,11 +20,11 @@ export default function ContactPage() {
     "mainEntity": {
       "@type": "Organization",
       "name": "Harmony Life LLC",
-      "url": "https://harmony.com.ai",
+      "url": "https://harmonyassistant.com",
       "contactPoint": [
         {
           "@type": "ContactPoint",
-          "email": "nathan@harmony.com.ai",
+          "email": "nathan@harmonyassistant.com",
           "contactType": "customer service",
           "availableLanguage": "English"
         }
@@ -62,8 +62,8 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <Button asChild className="w-full">
-                <a href="mailto:nathan@harmony.com.ai" target="_blank" rel="noopener noreferrer">
-                  nathan@harmony.com.ai
+                <a href="mailto:nathan@harmonyassistant.com" target="_blank" rel="noopener noreferrer">
+                  nathan@harmonyassistant.com
                 </a>
               </Button>
             </CardContent>

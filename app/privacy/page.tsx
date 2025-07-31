@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "Privacy Policy for Harmony AI Email Assistant. Learn how we protect your data: emails are not stored and only voice commands are processed securely.",
   keywords: ["privacy policy", "data protection", "email privacy", "Gmail security", "AI assistant privacy", "voice command privacy"],
   alternates: {
-    canonical: "https://harmony.com.ai/privacy"
+    canonical: "https://harmonyassistant.com/privacy"
   },
   openGraph: {
     title: "Privacy Policy - Harmony AI Email Assistant",
     description: "Learn how Harmony protects your email data and privacy. Your emails stay secure on your device.",
-    url: "https://harmony.com.ai/privacy",
+    url: "https://harmonyassistant.com/privacy",
     type: "website",
     images: [
       {
@@ -153,8 +153,8 @@ export default function PrivacyPage() {
           <h2 className="text-2xl font-semibold mb-4">10. Contact Us</h2>
           <p className="mb-4">
             If you have any questions about this Privacy Policy or our data practices, please contact us at{' '}
-            <a href="mailto:nathan@harmony.com.ai" className="text-blue-600 hover:underline">
-              nathan@harmony.com.ai
+            <a href="mailto:nathan@harmonyassistant.com" className="text-blue-600 hover:underline">
+              nathan@harmonyassistant.com
             </a>
           </p>
         </section>

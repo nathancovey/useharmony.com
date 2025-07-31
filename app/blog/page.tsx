@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blog - Harmony AI',
     description: 'Stay updated with the latest insights on AI email management, productivity tips, and Harmony app updates.',
-    url: 'https://harmony.com.ai/blog',
+    url: 'https://harmonyassistant.com/blog',
     type: 'website',
     siteName: 'Harmony',
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     ]
   },
   alternates: {
-    canonical: 'https://harmony.com.ai/blog'
+    canonical: 'https://harmonyassistant.com/blog'
   }
 }
 

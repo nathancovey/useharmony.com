@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "Terms of Service for Harmony AI Email Assistant, the voice-controlled Gmail management app. Read terms and conditions for using our AI email assistant.",
   keywords: ["terms of service", "legal terms", "terms and conditions", "AI email assistant terms", "Gmail assistant legal", "voice command terms"],
   alternates: {
-    canonical: "https://harmony.com.ai/terms"
+    canonical: "https://harmonyassistant.com/terms"
   },
   openGraph: {
     title: "Terms of Service - Harmony AI Email Assistant",
     description: "Legal terms and conditions for using Harmony, the AI-powered voice email assistant.",
-    url: "https://harmony.com.ai/terms",
+    url: "https://harmonyassistant.com/terms",
     type: "website",
     images: [
       {
@@ -118,8 +118,8 @@ export default function TermsPage() {
           <h2 className="text-2xl font-semibold mb-4">10. Contact Information</h2>
           <p className="mb-4">
             If you have any questions about these Terms of Service, please contact us at{' '}
-            <a href="mailto:legal@harmony.com.ai" className="text-blue-600 hover:underline">
-              legal@harmony.com.ai
+            <a href="mailto:legal@harmonyassistant.com" className="text-blue-600 hover:underline">
+              legal@harmonyassistant.com
             </a>
           </p>
         </section>

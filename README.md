@@ -4,7 +4,7 @@ A production-ready Next.js 15 template for building marketing websites for your 
 
 # Note on Harmony AI
 
-This template is what is actively used by [Harmony AI](https://harmony.com.ai) for our marketing website. We made this open source for fun because why the heck not.
+This template is what is actively used by [Harmony AI](https://harmonyassistant.com) for our marketing website. We made this open source for fun because why the heck not.
 
 ## What's Included
 
