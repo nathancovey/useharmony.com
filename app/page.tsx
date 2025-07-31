@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "AI email assistant", 
     "AI gmail assistant", 
     "harmony ai", 
+    "harmony assistant",
     "harmony app",
     "voice email assistant",
     "hands-free email",
