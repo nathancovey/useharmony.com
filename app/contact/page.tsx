@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Contact Harmony AI Email Assistant support team via email or join our Slack community for real-time help and discussions.",
   keywords: ["contact", "support", "email assistance", "Harmony AI", "customer service", "slack community"],
   alternates: {
-    canonical: "https://www.harmonyassistant.com/contact"
+    canonical: "https://www.useharmony.com/contact"
   }
 }
 
@@ -20,7 +20,7 @@ export default function ContactPage() {
     "mainEntity": {
       "@type": "Organization",
       "name": "Harmony Life LLC",
-      "url": "https://www.harmonyassistant.com",
+      "url": "https://www.useharmony.com",
       "contactPoint": [
         {
           "@type": "ContactPoint",

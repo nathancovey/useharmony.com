@@ -79,10 +79,10 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                 <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="/blog">
                   Blog
                 </Link>
-                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="https://new.harmonyassistant.com/changelog" target="_blank" rel="noopener noreferrer">
+                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="https://new.useharmony.com/changelog" target="_blank" rel="noopener noreferrer">
                   Changelog
                 </Link>
-                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="https://new.harmonyassistant.com/feature-request" target="_blank" rel="noopener noreferrer">
+                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="https://new.useharmony.com/feature-request" target="_blank" rel="noopener noreferrer">
                   Give Feedback
                 </Link>
               </div>
@@ -101,7 +101,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
               <div className="flex flex-col gap-2">
                 <h4 className="text-base font-medium text-foreground mb-1">Connect</h4>
                 <div className="flex gap-4">
-                  <Link href="https://www.linkedin.com/company/findharmony/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
+                  <Link href="https://www.linkedin.com/company/useharmony/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
                     <span className="sr-only">LinkedIn</span>
                     <LinkedInIcon size={24} className="text-muted-foreground hover:text-primary transition-colors" />
                   </Link>

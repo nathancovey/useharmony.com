@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description: "Learn about Harmony’s mission to build the greatest AI executive assistant in the world. Join us on our journey to help you fulfill your life’s mission.",
   keywords: ["company", "mission", "vision", "AI assistant", "careers", "team"],
   alternates: {
-    canonical: "https://www.harmonyassistant.com/company"
+    canonical: "https://www.useharmony.com/company"
   },
   openGraph: {
     title: "Company - Harmony AI Email Assistant",
     description: "Learn about Harmony’s mission to build the greatest AI executive assistant in the world.",
-    url: "https://www.harmonyassistant.com/company",
+    url: "https://www.useharmony.com/company",
     type: "website",
     images: [
       {
