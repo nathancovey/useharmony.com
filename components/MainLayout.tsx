@@ -105,7 +105,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                     <span className="sr-only">LinkedIn</span>
                     <LinkedInIcon size={24} className="text-muted-foreground hover:text-primary transition-colors" />
                   </Link>
-                  <Link href="https://x.com/harmonyAIapp" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="X (formerly Twitter)">
+                  <Link href="https://x.com/useharmony" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="X (formerly Twitter)">
                     <span className="sr-only">X (formerly Twitter)</span>
                     <XIcon size={24} className="text-muted-foreground hover:text-primary transition-colors" />
                   </Link>
