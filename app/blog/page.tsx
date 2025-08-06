@@ -5,11 +5,11 @@ import type { Metadata } from 'next'
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: 'Blog - Harmony AI',
-  description: 'Stay updated with the latest insights on AI email management, productivity tips, and Harmony app updates.',
+  title: 'Blog - Harmony AI Executive Assistant',
+  description: 'Latest insights on AI executive assistants, Gmail & calendar management, voice agents, and productivity tips from the Harmony team.',
   openGraph: {
-    title: 'Blog - Harmony AI',
-    description: 'Stay updated with the latest insights on AI email management, productivity tips, and Harmony app updates.',
+    title: 'Blog - Harmony AI Executive Assistant',
+    description: 'Latest insights on AI executive assistants, Gmail & calendar management, voice agents, and productivity tips from the Harmony team.',
     url: 'https://www.useharmony.com/blog',
     type: 'website',
     siteName: 'Harmony',

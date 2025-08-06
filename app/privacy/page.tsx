@@ -2,15 +2,15 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Privacy - Harmony AI",
-  description: "Privacy Policy for Harmony AI Email Assistant. Learn how we protect your data: emails are not stored and only voice commands are processed securely.",
-  keywords: ["privacy policy", "data protection", "email privacy", "Gmail security", "AI assistant privacy", "voice command privacy"],
+  title: "Privacy - Harmony AI Executive Assistant",
+  description: "Privacy Policy for Harmony AI executive assistant. Learn how we protect your Gmail & calendar data with secure AI agent technology.",
+  keywords: ["privacy policy", "data protection", "Gmail privacy", "calendar privacy", "AI executive assistant", "AI voice assistant", "AI agent privacy", "voice command privacy"],
   alternates: {
     canonical: "https://www.useharmony.com/privacy"
   },
   openGraph: {
-    title: "Privacy Policy - Harmony AI Email Assistant",
-    description: "Learn how Harmony protects your email data and privacy. Your emails stay secure on your device.",
+    title: "Privacy Policy - Harmony AI Executive Assistant",
+    description: "Learn how Harmony protects your Gmail & calendar data. Your emails and calendar stay secure with our AI agent technology.",
     url: "https://www.useharmony.com/privacy",
     type: "website",
     images: [

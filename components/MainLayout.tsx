@@ -397,6 +397,19 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </div>
+        
+        {/* Large Harmony Logo at bottom with fade effect */}
+        <div className="w-full max-w-[1000px] mx-auto pb-8">
+          <div className="w-full">
+            <HarmonyWordmark 
+              className="w-full h-auto opacity-40 hover:opacity-60 transition-opacity duration-500" 
+              style={{
+                maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.3) 60%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.3) 60%, transparent 100%)'
+              }}
+            />
+          </div>
+        </div>
       </footer>
     </div>
   )

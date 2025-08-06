@@ -10,9 +10,12 @@ import { FAQSection } from "@/components/FAQSection"
 import { CTASection } from "@/components/CTASection"
 
 export const metadata: Metadata = {
-  title: "Harmony AI Email & Calendar Voice Assistant",
-  description: "Harmony AI is the best Gmail and Google Calendar assistant for voice-controlled email and scheduling. Hear emails aloud, manage your calendar, and control both hands-free while walking or driving.",
+  title: "Harmony - AI Executive Assistant for Email & Calendar",
+  description: "AI executive assistant for Gmail & Google Calendar. Voice control emails, schedule meetings & manage tasks hands-free with our AI voice assistant.",
   keywords: [
+    "AI executive assistant", 
+    "AI voice assistant", 
+    "AI agent",
     "AI email assistant", 
     "AI gmail assistant", 
     "AI calendar assistant",
@@ -41,14 +44,14 @@ export const metadata: Metadata = {
     canonical: "https://www.useharmony.com"
   },
   openGraph: {
-    title: "Harmony - AI Email & Calendar Voice Assistant",
-    description: "The best AI Gmail and Google Calendar assistant for voice-controlled email and calendar management. Manage your inbox and schedule hands-free with voice commands.",
+    title: "Harmony - AI Executive Assistant for Email & Calendar",
+    description: "AI executive assistant for Gmail & Google Calendar. Voice control emails, schedule meetings & manage tasks hands-free with our AI voice assistant.",
     url: "https://www.useharmony.com",
     type: "website"
   },
   twitter: {
-    title: "Harmony - AI Email & Calendar Voice Assistant",
-    description: "The best AI Gmail and Google Calendar assistant for voice-controlled email and calendar management. Manage your inbox and schedule hands-free with voice commands."
+    title: "Harmony - AI Executive Assistant for Email & Calendar",
+    description: "AI executive assistant for Gmail & Google Calendar. Voice control emails, schedule meetings & manage tasks hands-free with our AI voice assistant."
   }
 }
 
@@ -79,8 +82,8 @@ export default function HomePage() {
         "@type": "WebSite",
         "@id": "https://www.useharmony.com/#website",
         "url": "https://www.useharmony.com",
-        "name": "Harmony - AI Email Voice Assistant",
-        "description": "The best AI Gmail assistant for voice-controlled email management",
+        "name": "Harmony - AI Executive Assistant",
+        "description": "AI executive assistant for Gmail & Google Calendar voice-controlled management",
         "publisher": {
           "@id": "https://www.useharmony.com/#organization"
         },
@@ -98,8 +101,8 @@ export default function HomePage() {
       {
         "@type": "SoftwareApplication",
         "@id": "https://www.useharmony.com/#app",
-        "name": "Harmony AI Email & Calendar Assistant",
-        "description": "AI-powered voice assistant that reads and manages your Gmail emails and Google Calendar hands-free",
+        "name": "Harmony AI Executive Assistant",
+        "description": "AI executive assistant and voice agent that manages Gmail emails and Google Calendar hands-free",
         "url": "https://www.useharmony.com",
         "applicationCategory": "ProductivityApplication",
         "operatingSystem": "iOS, Android",
