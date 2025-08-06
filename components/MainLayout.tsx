@@ -5,6 +5,7 @@ import { LinkedInIcon } from "@/components/icons/LinkedInIcon"
 import { XIcon } from "@/components/icons/XIcon"
 import { SlackIcon } from "@/components/icons/SlackIcon"
 import Link from "next/link"
+import { useRouter, usePathname } from "next/navigation"
 import AnnouncementBar from "@/components/AnnouncementBar"
 import { useEffect, useRef, useState } from "react"
 import { IOS_APP_STORE_URL } from "@/lib/constants"
@@ -12,6 +13,8 @@ import { Menu, X, ChevronDown, Target, Mail, HelpCircle, BookOpen, ExternalLink 
 import { motion, AnimatePresence } from "motion/react"
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
+  const router = useRouter()
+  const pathname = usePathname()
   const headerWrapperRef = useRef<HTMLDivElement>(null)
   const [headerHeight, setHeaderHeight] = useState(80) // reasonable default in px
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -34,13 +37,43 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     return () => observer.disconnect()
   }, [])
 
+  // Handle hash navigation when page loads or hash changes
+  useEffect(() => {
+    const handleHashNavigation = () => {
+      const hash = window.location.hash.substring(1) // Remove the #
+      if (hash && pathname === '/') {
+        // Small delay to ensure the page has rendered
+        setTimeout(() => {
+          const element = document.getElementById(hash)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+          }
+        }, 100)
+      }
+    }
+
+    // Handle initial load
+    handleHashNavigation()
+
+    // Handle hash changes
+    window.addEventListener('hashchange', handleHashNavigation)
+    return () => window.removeEventListener('hashchange', handleHashNavigation)
+  }, [pathname])
+
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+    // If we're on the homepage, scroll to the section
+    if (pathname === '/') {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    } else {
+      // If we're on another page, navigate to homepage with hash
+      router.push(`/#${sectionId}`)
     }
     setIsMobileMenuOpen(false)
+    setIsAboutDropdownOpen(false)
   }
 
   const handleDropdownMouseEnter = () => {

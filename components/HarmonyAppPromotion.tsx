@@ -15,7 +15,7 @@ export function HarmonyAppPromotion() {
               <HarmonyAppIcon size={64} className="text-primary flex-shrink-0" />
               <div>
                 <h3 className="text-2xl font-bold text-foreground">
-                  Harmony AI Email Assistant
+                  Harmony AI Executive Assistant
                 </h3>
                 <div className="flex items-center gap-2 mt-1">
                   <span className="text-yellow-500 text-sm">★★★★★</span>
@@ -25,8 +25,8 @@ export function HarmonyAppPromotion() {
             </div>
             
             <p className="text-muted-foreground leading-relaxed">
-              Transform how you manage your inbox with Harmony AI. Listen to your emails, 
-              reply with voice commands, and stay productive while on the go.
+              Your AI executive assistant for Gmail & Google Calendar. Voice control emails, 
+              schedule meetings & manage tasks hands-free while walking or driving.
             </p>
 
             <div className="flex justify-start">
@@ -43,22 +43,31 @@ export function HarmonyAppPromotion() {
 
           {/* Right side - Features */}
           <div className="lg:w-80 lg:flex-shrink-0">
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 gap-4">
               <div className="flex items-start gap-3">
-                <div className="text-2xl flex-shrink-0">🎧</div>
+                <div className="text-2xl flex-shrink-0">📧</div>
                 <div>
-                  <h4 className="font-semibold text-sm text-foreground mb-1">Listen to Emails</h4>
+                  <h4 className="font-semibold text-sm text-foreground mb-1">Voice Email Control</h4>
                   <p className="text-xs text-muted-foreground">
-                    Hear your emails read aloud while walking or driving
+                    Listen to emails & reply with voice commands
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="text-2xl flex-shrink-0">🗣️</div>
+                <div className="text-2xl flex-shrink-0">📅</div>
                 <div>
-                  <h4 className="font-semibold text-sm text-foreground mb-1">Voice Commands</h4>
+                  <h4 className="font-semibold text-sm text-foreground mb-1">Calendar Management</h4>
                   <p className="text-xs text-muted-foreground">
-                    Reply, delete, and manage emails hands-free
+                    Schedule meetings & manage events hands-free
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="text-2xl flex-shrink-0">🤖</div>
+                <div>
+                  <h4 className="font-semibold text-sm text-foreground mb-1">AI Voice Agent</h4>
+                  <p className="text-xs text-muted-foreground">
+                    Your personal AI assistant for productivity
                   </p>
                 </div>
               </div>
@@ -67,7 +76,7 @@ export function HarmonyAppPromotion() {
                 <div>
                   <h4 className="font-semibold text-sm text-foreground mb-1">Privacy First</h4>
                   <p className="text-xs text-muted-foreground">
-                    Your emails stay private on your device
+                    Your data stays private & secure
                   </p>
                 </div>
               </div>
