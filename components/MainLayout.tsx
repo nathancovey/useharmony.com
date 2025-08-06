@@ -8,10 +8,15 @@ import Link from "next/link"
 import AnnouncementBar from "@/components/AnnouncementBar"
 import { useEffect, useRef, useState } from "react"
 import { IOS_APP_STORE_URL } from "@/lib/constants"
+import { Menu, X, ChevronDown, Target, Mail, HelpCircle, BookOpen, ExternalLink } from "lucide-react"
+import { motion, AnimatePresence } from "motion/react"
 
 export function MainLayout({ children }: { children: React.ReactNode }) {
   const headerWrapperRef = useRef<HTMLDivElement>(null)
   const [headerHeight, setHeaderHeight] = useState(80) // reasonable default in px
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false)
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     if (!headerWrapperRef.current) return
@@ -29,6 +34,29 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     return () => observer.disconnect()
   }, [])
 
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+    setIsMobileMenuOpen(false)
+  }
+
+  const handleDropdownMouseEnter = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current)
+      dropdownTimeoutRef.current = null
+    }
+    setIsAboutDropdownOpen(true)
+  }
+
+  const handleDropdownMouseLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setIsAboutDropdownOpen(false)
+    }, 300) // 300ms delay before closing
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <div ref={headerWrapperRef} className="fixed top-0 left-0 right-0 z-50">
@@ -42,12 +70,263 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
             <span className="sr-only">Harmony Home</span>
             <HarmonyWordmark className="h-8 text-primary" />
           </Link>
-          <nav className="flex gap-4 sm:gap-6">
-            <Link className="text-sm font-medium hover:underline underline-offset-4" href={IOS_APP_STORE_URL} target="_blank" rel="noopener noreferrer">
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex gap-6 items-center">
+            <button 
+              className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              onClick={() => scrollToSection('use-cases')}
+            >
+              Use Cases
+            </button>
+            <button 
+              className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              onClick={() => scrollToSection('features')}
+            >
+              Tools
+            </button>
+            <button 
+              className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              onClick={() => scrollToSection('reviews')}
+            >
+              Reviews
+            </button>
+            <button 
+              className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              onClick={() => scrollToSection('pricing')}
+            >
+              Pricing
+            </button>
+            <button 
+              className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              onClick={() => scrollToSection('privacy')}
+            >
+              Privacy
+            </button>
+            
+            {/* About Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={handleDropdownMouseEnter}
+              onMouseLeave={handleDropdownMouseLeave}
+            >
+              <button
+                className="text-sm font-medium hover:text-primary transition-colors flex items-center gap-1 cursor-pointer"
+              >
+                About
+                <ChevronDown className={`h-3 w-3 transition-transform ${isAboutDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isAboutDropdownOpen && (
+                <div className="absolute right-0 mt-1 w-80 bg-background border rounded-lg shadow-lg z-50 p-4 animate-in fade-in-0 zoom-in-95 slide-in-from-top-2 duration-200">
+                  {/* Main Cards */}
+                  <div className="grid grid-cols-2 gap-3 mb-4">
+                    <Link
+                      href="/company"
+                      className="p-3 rounded-md border hover:bg-muted transition-colors group"
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <Target className="h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium">Mission</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">Our vision for the future</p>
+                    </Link>
+                    
+                    <Link
+                      href="/contact"
+                      className="p-3 rounded-md border hover:bg-muted transition-colors group"
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <Mail className="h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium">Contact</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">Get in touch with us</p>
+                    </Link>
+                    
+                    <button
+                      className="p-3 rounded-md border hover:bg-muted transition-colors group text-left cursor-pointer"
+                      onClick={() => {
+                        scrollToSection('faq')
+                        setIsAboutDropdownOpen(false)
+                      }}
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <HelpCircle className="h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium">FAQ</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">Most common questions</p>
+                    </button>
+                    
+                    <Link
+                      href="/blog"
+                      className="p-3 rounded-md border hover:bg-muted transition-colors group"
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <BookOpen className="h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium">Blog</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">Latest updates & news</p>
+                    </Link>
+                  </div>
+                  
+                  {/* Divider */}
+                  <div className="border-t mb-3"></div>
+                  
+                  {/* Additional Links */}
+                  <div className="space-y-1">
+                    <div className="grid grid-cols-2 gap-1 text-xs">
+                      <Link
+                        href="/terms"
+                        className="px-2 py-1 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        Terms of Service
+                      </Link>
+                      <Link
+                        href="/privacy"
+                        className="px-2 py-1 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        Privacy Policy
+                      </Link>
+                      <Link
+                        href="https://new.useharmony.com/changelog"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-2 py-1 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                      >
+                        Changelog
+                        <ExternalLink className="h-3 w-3" />
+                      </Link>
+                      <Link
+                        href="https://new.useharmony.com/feature-request"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-2 py-1 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                      >
+                        Feedback
+                        <ExternalLink className="h-3 w-3" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            <Link 
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors" 
+              href={IOS_APP_STORE_URL} 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               Download
             </Link>
           </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+        
+        {/* Mobile Navigation */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              className="lg:hidden absolute top-full left-0 right-0 bg-background border-b shadow-lg overflow-hidden"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <motion.nav
+                className="flex flex-col p-4 space-y-4"
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -20, opacity: 0 }}
+                transition={{ duration: 0.3, delay: 0.1, ease: "easeInOut" }}
+              >
+                <button 
+                  className="text-left text-base font-medium hover:text-primary transition-colors"
+                  onClick={() => scrollToSection('use-cases')}
+                >
+                  Use Cases
+                </button>
+                <button 
+                  className="text-left text-base font-medium hover:text-primary transition-colors"
+                  onClick={() => scrollToSection('features')}
+                >
+                  Tools
+                </button>
+                <button 
+                  className="text-left text-base font-medium hover:text-primary transition-colors"
+                  onClick={() => scrollToSection('reviews')}
+                >
+                  Reviews
+                </button>
+                <button 
+                  className="text-left text-base font-medium hover:text-primary transition-colors"
+                  onClick={() => scrollToSection('pricing')}
+                >
+                  Pricing
+                </button>
+                <button 
+                  className="text-left text-base font-medium hover:text-primary transition-colors"
+                  onClick={() => scrollToSection('privacy')}
+                >
+                  Privacy
+                </button>
+                
+                {/* Mobile About Section */}
+                <div className="border-t pt-4">
+                  <p className="text-sm font-medium text-muted-foreground mb-3">About</p>
+                  <div className="pl-4 space-y-3">
+                    <Link
+                      href="/company"
+                      className="block text-base hover:text-primary transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Mission
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="block text-base hover:text-primary transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Contact
+                    </Link>
+                    <button
+                      className="block text-left text-base hover:text-primary transition-colors"
+                      onClick={() => scrollToSection('faq')}
+                    >
+                      FAQ
+                    </button>
+                    <Link
+                      href="/blog"
+                      className="block text-base hover:text-primary transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Blog
+                    </Link>
+                  </div>
+                  
+                </div>
+                
+                <Link 
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-3 rounded-md text-base font-medium transition-colors text-center mt-4" 
+                  href={IOS_APP_STORE_URL} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Download
+                </Link>
+              </motion.nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
         </header>
       </div>
 

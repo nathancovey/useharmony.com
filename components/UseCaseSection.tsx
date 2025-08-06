@@ -1,72 +1,79 @@
 import { Mail, Car, Dumbbell, Home, Footprints } from "lucide-react"
-import GmailIcon from "@/components/icons/GmailLogo"
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import Image from "next/image"
 
 export function HowItWorksSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
+    <section id="use-cases" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
       <div className="container px-4 md:px-6 max-w-[1000px] mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary font-semibold">Introducing Passive Email</div>
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Email but Hands-Free and Eyes-Free</h2>
+          <h2 className="text-4xl font-bold tracking-tighter sm:text-6xl bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text">Voice is faster. <br /> And convenient-er.</h2>
           <p className="max-w-[600px] text-muted-foreground md:text-xl/snug lg:text-base/snug xl:text-xl/snug">
-            One reason you love podcasts and audiobooks is because you can do it passively, without your eyes or hands. Harmony makes this possible for email.
+            Voice lets you manage email and calendar faster than typing, and you can do it anywhere - even when your hands and eyes are busy.
           </p>
         </div>
         <div className="mx-auto grid max-w-4xl items-start gap-6 sm:grid-cols-2">
           <Card className="backdrop-blur-md bg-white/10 dark:bg-white/5 border-white/20 hover:shadow-md transition-shadow">
             <CardHeader>
-              <div className="flex items-center justify-start mb-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm">
+              <div className="flex items-start gap-4">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm flex-shrink-0">
                   <Car className="h-6 w-6 text-primary" />
                 </div>
+                <div className="flex flex-col">
+                  <CardTitle className="text-xl text-left mb-2">While Driving</CardTitle>
+                  <CardDescription className="text-left">
+                    Manage emails and calendar hands-free during your commute.
+                  </CardDescription>
+                </div>
               </div>
-              <CardTitle className="text-xl text-left">While Driving</CardTitle>
-              <CardDescription className="text-left">
-                Stuck in traffic for an hour? Might as well use that time to get your email to 0.
-              </CardDescription>
             </CardHeader>
           </Card>
           
           <Card className="backdrop-blur-md bg-white/10 dark:bg-white/5 border-white/20 hover:shadow-md transition-shadow">
             <CardHeader>
-              <div className="flex items-center justify-start mb-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm">
+              <div className="flex items-start gap-4">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm flex-shrink-0">
                   <Dumbbell className="h-6 w-6 text-primary" />
                 </div>
+                <div className="flex flex-col">
+                  <CardTitle className="text-xl text-left mb-2">During Exercise</CardTitle>
+                  <CardDescription className="text-left">
+                    Stay on top of work without breaking your workout flow.
+                  </CardDescription>
+                </div>
               </div>
-              <CardTitle className="text-xl text-left">During Exercise</CardTitle>
-              <CardDescription className="text-left">
-                Turn your workout time into productive email time. Listen and respond to emails without breaking your rhythm.
-              </CardDescription>
             </CardHeader>
           </Card>
           
           <Card className="backdrop-blur-md bg-white/10 dark:bg-white/5 border-white/20 hover:shadow-md transition-shadow">
             <CardHeader>
-              <div className="flex items-center justify-start mb-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm">
+              <div className="flex items-start gap-4">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm flex-shrink-0">
                   <Home className="h-6 w-6 text-primary" />
                 </div>
+                <div className="flex flex-col">
+                  <CardTitle className="text-xl text-left mb-2">While Doing Chores</CardTitle>
+                  <CardDescription className="text-left">
+                    Catch up on emails while cooking or doing household tasks.
+                  </CardDescription>
+                </div>
               </div>
-              <CardTitle className="text-xl text-left">While Doing Chores</CardTitle>
-              <CardDescription className="text-left">
-                Make household tasks more productive by catching up on emails while cooking, cleaning, or organizing.
-              </CardDescription>
             </CardHeader>
           </Card>
           
           <Card className="backdrop-blur-md bg-white/10 dark:bg-white/5 border-white/20 hover:shadow-md transition-shadow">
             <CardHeader>
-              <div className="flex items-center justify-start mb-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm">
+              <div className="flex items-start gap-4">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm flex-shrink-0">
                   <Footprints className="h-6 w-6 text-primary" />
                 </div>
+                <div className="flex flex-col">
+                  <CardTitle className="text-xl text-left mb-2">On a Walk</CardTitle>
+                  <CardDescription className="text-left">
+                    Clear your inbox while getting fresh air and exercise.
+                  </CardDescription>
+                </div>
               </div>
-              <CardTitle className="text-xl text-left">On a Walk</CardTitle>
-              <CardDescription className="text-left">
-                Transform your daily walks into productive email sessions while enjoying fresh air and staying active.
-              </CardDescription>
             </CardHeader>
           </Card>
         </div>
@@ -74,23 +81,19 @@ export function HowItWorksSection() {
         {/* Email Provider Availability */}
         <div className="flex flex-col items-center mt-16 space-y-6">
           <div className="w-full max-w-xs h-px bg-border"></div>
-          <h3 className="text-lg font-semibold text-center">Supported Email Providers</h3>
-          <div className="flex flex-col sm:flex-row items-center gap-8">
+          <h3 className="text-xl font-semibold text-center">Integrations</h3>
+          <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="flex items-center gap-3">
-              <GmailIcon width={24} height={24} />
-              <div className="text-center sm:text-left">
-                <p className="font-medium">Gmail</p>
-                <p className="text-sm text-green-700 dark:text-green-300 font-medium">Available Now</p>
-              </div>
+              <Image src="/images/gmailIcon.png" alt="Gmail" width={32} height={32} />
+              <span className="text-lg font-medium">Gmail</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Image src="/images/googleCalendarIcon.png" alt="Google Calendar" width={32} height={32} />
+              <span className="text-lg font-medium">Google Calendar</span>
             </div>
             <div className="flex items-center gap-3 opacity-60">
-              <div className="w-6 h-6 bg-blue-500 rounded flex items-center justify-center">
-                <Mail className="h-4 w-4 text-white" />
-              </div>
-              <div className="text-center sm:text-left">
-                <p className="font-medium">Outlook & Others</p>
-                <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">Coming Later</p>
-              </div>
+              <Mail className="h-8 w-8" />
+              <span className="text-lg font-medium">Others coming soon</span>
             </div>
           </div>
         </div>

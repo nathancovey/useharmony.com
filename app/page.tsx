@@ -3,42 +3,52 @@ import { HeroSection } from "@/components/HeroSection"
 import { VideoSection } from "@/components/VideoSection"
 import { HowItWorksSection } from "@/components/UseCaseSection"
 import { VoiceActionsSection } from "@/components/VoiceActionsSection"
+import { ReviewsSection } from "@/components/ReviewsSection"
+import { PricingSection } from "@/components/PricingSection"
 import { PrivacySection } from "@/components/PrivacySection"
 import { FAQSection } from "@/components/FAQSection"
 import { CTASection } from "@/components/CTASection"
 
 export const metadata: Metadata = {
-  title: "Harmony AI Email Voice Assistant",
-  description: "Harmony AI is the best Gmail assistant for voice-controlled email. Hear emails aloud and manage your inbox hands-free while walking or driving.",
+  title: "Harmony AI Email & Calendar Voice Assistant",
+  description: "Harmony AI is the best Gmail and Google Calendar assistant for voice-controlled email and scheduling. Hear emails aloud, manage your calendar, and control both hands-free while walking or driving.",
   keywords: [
     "AI email assistant", 
     "AI gmail assistant", 
+    "AI calendar assistant",
+    "Google Calendar voice control",
     "harmony ai", 
     "harmony assistant",
     "harmony app",
     "voice email assistant",
+    "voice calendar assistant",
     "hands-free email",
+    "hands-free calendar",
     "gmail voice control",
     "AI email management",
+    "AI calendar management",
     "voice controlled gmail",
     "email AI assistant",
+    "calendar AI assistant",
     "harmony email app",
     "AI inbox management",
     "voice email commands",
-    "gmail productivity app"
+    "voice calendar commands",
+    "gmail productivity app",
+    "google calendar productivity"
   ],
   alternates: {
     canonical: "https://www.useharmony.com"
   },
   openGraph: {
-    title: "Harmony - AI Email Voice Assistant",
-    description: "The best AI Gmail assistant for voice-controlled email management. Manage your inbox hands-free with voice commands.",
+    title: "Harmony - AI Email & Calendar Voice Assistant",
+    description: "The best AI Gmail and Google Calendar assistant for voice-controlled email and calendar management. Manage your inbox and schedule hands-free with voice commands.",
     url: "https://www.useharmony.com",
     type: "website"
   },
   twitter: {
-    title: "Harmony - AI Email Voice Assistant",
-    description: "The best AI Gmail assistant for voice-controlled email management. Manage your inbox hands-free with voice commands."
+    title: "Harmony - AI Email & Calendar Voice Assistant",
+    description: "The best AI Gmail and Google Calendar assistant for voice-controlled email and calendar management. Manage your inbox and schedule hands-free with voice commands."
   }
 }
 
@@ -88,8 +98,8 @@ export default function HomePage() {
       {
         "@type": "SoftwareApplication",
         "@id": "https://www.useharmony.com/#app",
-        "name": "Harmony AI Email Assistant",
-        "description": "AI-powered voice assistant that reads and manages your Gmail emails hands-free",
+        "name": "Harmony AI Email & Calendar Assistant",
+        "description": "AI-powered voice assistant that reads and manages your Gmail emails and Google Calendar hands-free",
         "url": "https://www.useharmony.com",
         "applicationCategory": "ProductivityApplication",
         "operatingSystem": "iOS, Android",
@@ -106,9 +116,12 @@ export default function HomePage() {
         "featureList": [
           "Voice-controlled email reading",
           "Hands-free Gmail management", 
+          "Voice-controlled calendar management",
+          "Hands-free Google Calendar scheduling",
           "AI-powered email replies",
           "Smart unsubscribe functionality",
-          "Voice commands for email actions"
+          "Voice commands for email actions",
+          "Voice commands for calendar events"
         ]
       },
       {
@@ -178,6 +191,8 @@ export default function HomePage() {
       <VideoSection />
       <HowItWorksSection />
       <VoiceActionsSection />
+      <ReviewsSection />
+      <PricingSection />
       <PrivacySection />
       <FAQSection />
       <CTASection />

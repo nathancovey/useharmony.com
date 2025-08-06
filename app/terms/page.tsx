@@ -118,8 +118,8 @@ export default function TermsPage() {
           <h2 className="text-2xl font-semibold mb-4">10. Contact Information</h2>
           <p className="mb-4">
             If you have any questions about these Terms of Service, please contact us at{' '}
-            <a href="mailto:legal@harmonyassistant.com" className="text-blue-600 hover:underline">
-              legal@harmonyassistant.com
+            <a href="mailto:legal@useharmony.com" className="text-blue-600 hover:underline">
+              legal@useharmony.com
             </a>
           </p>
         </section>

@@ -2,15 +2,15 @@ import type { Metadata } from 'next'
 import { Card, CardContent } from '../../components/ui/card'
 
 export const metadata: Metadata = {
-  title: "Company - Harmony AI",
-  description: "Learn about Harmony’s mission to build the greatest AI executive assistant in the world. Join us on our journey to help you fulfill your life’s mission.",
-  keywords: ["company", "mission", "vision", "AI assistant", "careers", "team"],
+  title: "Company - Harmony AI Executive Assistant",
+  description: "Learn about Harmony's mission to build the greatest AI executive assistant for email & calendar management. Join us on our journey.",
+  keywords: ["company", "mission", "vision", "AI executive assistant", "AI voice assistant", "careers", "team"],
   alternates: {
     canonical: "https://www.useharmony.com/company"
   },
   openGraph: {
-    title: "Company - Harmony AI Email Assistant",
-    description: "Learn about Harmony’s mission to build the greatest AI executive assistant in the world.",
+    title: "Company - Harmony AI Executive Assistant",
+    description: "Learn about Harmony's mission to build the greatest AI executive assistant for email & calendar management.",
     url: "https://www.useharmony.com/company",
     type: "website",
     images: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Harmony - AI Email Voice Assistant",
+        alt: "Harmony - AI Executive Assistant",
         type: "image/png",
       },
     ],
@@ -81,7 +81,7 @@ export default function CompanyPage() {
                   Want to join us on our mission? We’re always looking for passionate individuals who share our vision of building the world’s greatest AI executive assistant.
                 </p>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Email us at <a href="mailto:nathan@harmonyassistant.com" className="text-primary hover:underline">nathan@harmonyassistant.com</a> to learn more about opportunities to be part of our team.
+                  Email us at <a href="mailto:careers@useharmony.com" className="text-primary hover:underline">careers@useharmony.com</a> to learn more about opportunities to be part of our team.
                 </p>
               </div>
             </CardContent>

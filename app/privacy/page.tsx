@@ -153,8 +153,8 @@ export default function PrivacyPage() {
           <h2 className="text-2xl font-semibold mb-4">10. Contact Us</h2>
           <p className="mb-4">
             If you have any questions about this Privacy Policy or our data practices, please contact us at{' '}
-            <a href="mailto:nathan@harmonyassistant.com" className="text-blue-600 hover:underline">
-              nathan@harmonyassistant.com
+            <a href="mailto:legal@useharmony.com" className="text-blue-600 hover:underline">
+              legal@useharmony.com
             </a>
           </p>
         </section>

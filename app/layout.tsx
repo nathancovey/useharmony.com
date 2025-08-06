@@ -39,17 +39,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-  title: "Harmony AI",
-  description: "Let Harmony read your emails and manage them with simple voice commands while you walk or drive. Your emails stay private on your device.",
-  keywords: ["email assistant", "voice commands", "email management", "AI assistant", "productivity", "email voice control"],
+  title: "Harmony - AI Executive Assistant",
+  description: "AI executive assistant for Gmail & Google Calendar. Voice control your emails, schedule meetings & manage tasks hands-free while walking or driving.",
+  keywords: ["AI executive assistant", "AI voice assistant", "AI agent", "Gmail assistant", "Google Calendar assistant", "voice email", "voice calendar", "productivity"],
   authors: [{ name: "Nathan Covey", url: "https://x.com/nathan_covey" }],
   creator: "Nathan Covey",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.useharmony.com",
-    title: "Harmony - AI Email Voice Assistant",
-    description: "Let Harmony read your emails and manage them with simple voice commands while you walk or drive. Your emails stay private on your device.",
+    title: "Harmony - AI Executive Assistant for Email & Calendar",
+    description: "AI executive assistant for Gmail & Google Calendar. Voice control your emails, schedule meetings & manage tasks hands-free while walking or driving.",
     siteName: "Harmony",
     images: [
       {
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harmony - AI Email Voice Assistant",
-    description: "Let Harmony read your emails and manage them with simple voice commands while you walk or drive. Your emails stay private on your device.",
+    title: "Harmony - AI Executive Assistant for Email & Calendar",
+    description: "AI executive assistant for Gmail & Google Calendar. Voice control your emails, schedule meetings & manage tasks hands-free while walking or driving.",
     creator: "@nathan_covey"
   },
   robots: {
@@ -85,9 +85,9 @@ export const metadata: Metadata = {
     google: 'your-google-site-verification-code-here',
   },
   category: 'technology',
-  applicationName: 'Harmony AI Email Assistant',
+  applicationName: 'Harmony AI Executive Assistant',
   appleWebApp: {
-    title: 'Harmony AI Email Assistant',
+    title: 'Harmony AI Executive Assistant',
     statusBarStyle: 'default',
     capable: true,
   },

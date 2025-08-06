@@ -28,7 +28,7 @@ This is a Next.js 15 marketing website for Harmony AI, an AI-powered email voice
 - `components/` - Reusable UI components and page sections
 - `components/ui/` - Base UI components using Radix UI + Tailwind
 - `components/icons/` - Custom SVG icon components
-- `components/emails/` - Email templates for Resend
+- `components/emails/` - Email templates for OTP system
 
 **Key Sections:**
 - `HeroSection` - Landing hero with app download CTA
@@ -38,10 +38,7 @@ This is a Next.js 15 marketing website for Harmony AI, an AI-powered email voice
 - `CTASection` - Final conversion section
 
 **API Routes:**
-- `send-otp/` - Generates and emails OTP codes using Resend + Vercel KV
-- `verify-otp/` - Validates OTP codes for email verification
-- `get-waitlist-count/` - Returns waitlist subscriber count
-- `resend-webhook/` - Handles Resend webhook events
+- `subscribe/` - Handles OTP generation/verification and mailing list subscription using Loops + Vercel KV
 
 **State Management:**
 - No global state management - uses React hooks for local state
@@ -51,7 +48,7 @@ This is a Next.js 15 marketing website for Harmony AI, an AI-powered email voice
 ## Key Technical Details
 
 **Email System:**
-- Uses Resend for transactional emails with custom React email templates
+- Uses Loops for transactional emails and mailing list management
 - OTP system with 5-minute expiry and 1-minute rate limiting
 - All email operations stored in Vercel KV for persistence
 
@@ -62,7 +59,7 @@ This is a Next.js 15 marketing website for Harmony AI, an AI-powered email voice
 - Security headers configured in `next.config.ts`
 
 **Styling:**
-- Tailwind CSS with custom configuration
+- Tailwind CSS v4 with custom configuration
 - `@` alias points to project root for imports
 - Inter font loaded via Google Fonts
 - Responsive design with mobile-first approach
@@ -70,18 +67,23 @@ This is a Next.js 15 marketing website for Harmony AI, an AI-powered email voice
 **External Integrations:**
 - Vercel Analytics and Speed Insights
 - Vercel KV for data persistence
-- Resend for email delivery
+- Loops for email delivery and mailing lists
+- Sanity CMS for blog content
 - Apple App Store and social platform links
 
 ## Environment Requirements
 
 **Required Environment Variables:**
-- `RESEND_API_KEY` - For sending OTP emails
+- `LOOPS_API_KEY` - For sending OTP emails and managing mailing lists
 - `KV_*` variables - Vercel KV connection (auto-provided on Vercel)
+- `NEXT_PUBLIC_SANITY_PROJECT_ID` - Sanity CMS project ID (optional)
+- `NEXT_PUBLIC_SANITY_DATASET` - Sanity dataset name (optional)
+- `SANITY_API_TOKEN` - Sanity API token (optional)
 
 **Key Dependencies:**
 - Next.js 15 with React 19
 - Radix UI for accessible components
-- Tailwind CSS for styling
+- Tailwind CSS v4 for styling
 - Vercel KV for data storage
-- Resend for email delivery
+- Loops for email delivery
+- Sanity for CMS (optional)
