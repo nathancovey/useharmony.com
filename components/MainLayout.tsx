@@ -94,8 +94,8 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col min-h-screen">
       <div ref={headerWrapperRef} className="fixed top-0 left-0 right-0 z-50">
         <AnnouncementBar 
-          message="Tiny Startups Product of the Week 🎉"
-          href="/blog/tiny-startups"
+          message="Google Calendar integration is here →"
+          href="/blog/harmony-google-calendar-contacts-launch"
         />
         <header className="px-4 lg:px-6 h-16 flex items-center bg-background shadow-sm border-b">
         <div className="flex items-center justify-between w-full max-w-[1000px] mx-auto">
