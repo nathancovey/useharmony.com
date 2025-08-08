@@ -25,6 +25,44 @@ const portableTextComponents = {
         )}
       </div>
     ),
+    youtubeVideo: ({ value }: any) => {
+      const id = value?.id
+      if (!id) return null
+      return (
+        <div className="my-8 aspect-video">
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${id}`}
+            title={value?.title || 'YouTube video'}
+            width="100%"
+            height="100%"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="w-full h-full border-0 rounded-lg shadow"
+          />
+        </div>
+      )
+    },
+    youtubeEmbed: ({ value }: any) => {
+      const url = value?.url || ''
+      let id = ''
+      try {
+        const u = new URL(url)
+        id = u.searchParams.get('v') || (u.pathname.match(/\/(embed|shorts)\/([^/?#]+)/)?.[2]) || u.pathname.split('/').filter(Boolean).pop() || ''
+      } catch {}
+      if (!id) return null
+      return (
+        <div className="my-8 aspect-video">
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${id}`}
+            width="100%"
+            height="100%"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="w-full h-full border-0 rounded-lg shadow"
+          />
+        </div>
+      )
+    },
   },
   block: {
     h1: ({ children }: any) => (
