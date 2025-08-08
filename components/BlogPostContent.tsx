@@ -7,24 +7,41 @@ interface BlogPostContentProps {
   post: BlogPost
 }
 
+function getSanityImageDimensions(ref?: string) {
+  if (!ref) return null
+  const match = ref.match(/-(\d+)x(\d+)-/)
+  if (!match) return null
+  const width = parseInt(match[1], 10)
+  const height = parseInt(match[2], 10)
+  if (!width || !height) return null
+  return { width, height }
+}
+
 const portableTextComponents = {
   types: {
-    image: ({ value }: any) => (
-      <div className="my-8">
-        <Image
-          src={urlFor(value).width(800).height(400).url()}
-          alt={value.alt || 'Blog post image'}
-          width={800}
-          height={400}
-          className="rounded-lg shadow-lg w-full h-auto"
-        />
-        {(value.caption || value.alt) && (
-          <p className="text-sm text-muted-foreground text-center mt-2 italic">
-            {value.caption || value.alt}
-          </p>
-        )}
-      </div>
-    ),
+    image: ({ value }: any) => {
+      const dims = getSanityImageDimensions(value?.asset?._ref)
+      if (!dims) return null
+      const alt = value?.caption || value?.alt || 'Blog post image'
+      const src = urlFor(value).url()
+      return (
+        <div className="my-8">
+          <Image
+            src={src}
+            alt={alt}
+            width={dims.width}
+            height={dims.height}
+            sizes="(min-width: 1024px) 800px, 100vw"
+            className="rounded-lg shadow-lg w-full h-auto"
+          />
+          {(value.caption || value.alt) && (
+            <p className="text-sm text-muted-foreground text-center mt-2 italic">
+              {value.caption || value.alt}
+            </p>
+          )}
+        </div>
+      )
+    },
     youtubeVideo: ({ value }: any) => {
       const id = value?.id
       if (!id) return null
