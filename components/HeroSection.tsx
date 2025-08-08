@@ -64,7 +64,17 @@ export function HeroSection() {
             Harmony AI is a smart executive assistant that helps you efficiently manage your email and calendar through voice.
           </p>
           <div className="flex flex-col md:flex-row items-center gap-4 mt-8">
-            <Link href={IOS_APP_STORE_URL} target="_blank" rel="noopener noreferrer">
+            <Link 
+              href={IOS_APP_STORE_URL} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={() => {
+                // Track X (Twitter) conversion event
+                if (typeof window !== 'undefined' && (window as any).twq) {
+                  (window as any).twq('event', 'tw-qawgf-qawgi', {});
+                }
+              }}
+            >
               <AppStoreBadge className="h-18 md:h-14 shadow-lg" />
             </Link>
             <a href="https://www.tinystartups.com/launch/harmony-ai" target="_blank" rel="noopener noreferrer">
