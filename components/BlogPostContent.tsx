@@ -18,9 +18,9 @@ const portableTextComponents = {
           height={400}
           className="rounded-lg shadow-lg w-full h-auto"
         />
-        {value.alt && (
+        {(value.caption || value.alt) && (
           <p className="text-sm text-muted-foreground text-center mt-2 italic">
-            {value.alt}
+            {value.caption || value.alt}
           </p>
         )}
       </div>
@@ -63,6 +63,56 @@ const portableTextComponents = {
         </div>
       )
     },
+    quoteBlock: ({ value }: any) => {
+      const content = value?.quote ?? value?.text ?? value?.content ?? ''
+      const author = value?.author || value?.source || ''
+      if (!content || (Array.isArray(content) && content.length === 0)) return null
+      return (
+        <figure className="my-8">
+          <blockquote className="border-l-4 border-primary pl-6 py-2 my-6 bg-muted/50 rounded-r-lg">
+            <div className="text-foreground italic">
+              {Array.isArray(content) ? (
+                <PortableText value={content} components={portableTextComponents} />
+              ) : (
+                content
+              )}
+            </div>
+          </blockquote>
+          {author && (
+            <figcaption className="text-sm text-muted-foreground text-right">— {author}</figcaption>
+          )}
+        </figure>
+      )
+    },
+    table: ({ value }: any) => {
+      const rows = value?.rows || []
+      if (!Array.isArray(rows) || rows.length === 0) return null
+      return (
+        <div className="my-8 overflow-x-auto">
+          <table className="w-full border-collapse">
+            <tbody>
+              {rows.map((row: any, rowIndex: number) => {
+                const cells = row?.cells || row
+                if (!Array.isArray(cells)) return null
+                return (
+                  <tr key={rowIndex} className="border-b border-border">
+                    {cells.map((cell: any, cellIndex: number) => (
+                      <td key={cellIndex} className="border border-border p-3 align-top">
+                        {Array.isArray(cell) ? (
+                          <PortableText value={cell} components={portableTextComponents} />
+                        ) : (
+                          <span>{String(cell ?? '')}</span>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+      )
+    },
   },
   block: {
     h1: ({ children }: any) => (
@@ -101,16 +151,29 @@ const portableTextComponents = {
   marks: {
     strong: ({ children }: any) => <strong className="font-semibold">{children}</strong>,
     em: ({ children }: any) => <em className="italic">{children}</em>,
-    link: ({ value, children }: any) => (
-      <Link
-        href={value.href}
-        className="text-primary underline underline-offset-2 hover:no-underline transition-all"
-        target={value.href.startsWith('http://') || value.href.startsWith('https://') ? '_blank' : undefined}
-        rel={value.href.startsWith('http://') || value.href.startsWith('https://') ? 'noopener noreferrer' : undefined}
-      >
-        {children}
-      </Link>
-    ),
+    link: ({ value, children }: any) => {
+      const href = value?.href || '#'
+      const openInNewTab = !!value?.openInNewTab
+      const nofollow = !!value?.nofollow
+      const relParts = [] as string[]
+      if (openInNewTab) {
+        relParts.push('noopener', 'noreferrer')
+      }
+      if (nofollow) {
+        relParts.push('nofollow')
+      }
+      const rel = relParts.length ? relParts.join(' ') : undefined
+      return (
+        <Link
+          href={href}
+          className="text-primary underline underline-offset-2 hover:no-underline transition-all"
+          target={openInNewTab ? '_blank' : undefined}
+          rel={rel}
+        >
+          {children}
+        </Link>
+      )
+    },
   },
 }
 
