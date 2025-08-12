@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import { getBlogPosts, type BlogPost } from '@/lib/sanity'
 
+export const revalidate = 3600
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.useharmony.com'
   
