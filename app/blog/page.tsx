@@ -35,10 +35,10 @@ export default async function BlogPage() {
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Harmony Blog
+            Harmony AI Blog
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Insights on AI email management, productivity tips, and the future of Harmony.
+            Insights on AI email and calendar management, productivity tips, and the future of Harmony.
           </p>
         </div>
 
