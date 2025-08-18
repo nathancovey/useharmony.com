@@ -10,7 +10,7 @@ import { FAQSection } from "@/components/FAQSection"
 import { CTASection } from "@/components/CTASection"
 
 export const metadata: Metadata = {
-  title: "Harmony - AI Executive Assistant for Email & Calendar",
+  title: "Harmony AI - Voice Assistant for Email & Calendar",
   description: "AI executive assistant for Gmail & Google Calendar. Voice control emails, schedule meetings & manage tasks hands-free with our AI voice assistant.",
   keywords: [
     "AI executive assistant", 
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     canonical: "https://www.useharmony.com"
   },
   openGraph: {
-    title: "Harmony - AI Executive Assistant for Email & Calendar",
+    title: "Harmony AI - Voice Assistant for Email & Calendar",
     description: "AI executive assistant for Gmail & Google Calendar. Voice control emails, schedule meetings & manage tasks hands-free with our AI voice assistant.",
     url: "https://www.useharmony.com",
     type: "website"
   },
   twitter: {
-    title: "Harmony - AI Executive Assistant for Email & Calendar",
+    title: "Harmony AI - Voice Assistant for Email & Calendar",
     description: "AI executive assistant for Gmail & Google Calendar. Voice control emails, schedule meetings & manage tasks hands-free with our AI voice assistant."
   }
 }
@@ -82,7 +82,7 @@ export default function HomePage() {
         "@type": "WebSite",
         "@id": "https://www.useharmony.com/#website",
         "url": "https://www.useharmony.com",
-        "name": "Harmony - AI Executive Assistant",
+        "name": "Harmony AI - Voice Assistant for Email & Calendar",
         "description": "AI executive assistant for Gmail & Google Calendar voice-controlled management",
         "publisher": {
           "@id": "https://www.useharmony.com/#organization"

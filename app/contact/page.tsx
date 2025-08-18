@@ -5,7 +5,7 @@ import { Mail, MessageCircle } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact - Harmony AI Executive Assistant",
+  title: "Contact - Harmony AI",
   description: "Contact Harmony AI executive assistant support team. Get help with Gmail & calendar management, voice commands, and AI agent features.",
   keywords: ["contact", "support", "AI executive assistant", "AI voice assistant", "AI agent", "Gmail assistance", "calendar assistance", "customer service", "slack community"],
   alternates: {

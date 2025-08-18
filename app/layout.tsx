@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  title: "Harmony - AI Executive Assistant",
+  title: "Harmony AI - Voice Assistant for Email & Calendar",
   description: "AI executive assistant for Gmail & Google Calendar. Voice control your emails, schedule meetings & manage tasks hands-free while walking or driving.",
   keywords: ["AI executive assistant", "AI voice assistant", "AI agent", "Gmail assistant", "Google Calendar assistant", "voice email", "voice calendar", "productivity"],
   authors: [{ name: "Nathan Covey", url: "https://x.com/nathan_covey" }],
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.useharmony.com",
-    title: "Harmony - AI Executive Assistant for Email & Calendar",
+    title: "Harmony AI - Voice Assistant for Email & Calendar",
     description: "AI executive assistant for Gmail & Google Calendar. Voice control your emails, schedule meetings & manage tasks hands-free while walking or driving.",
     siteName: "Harmony",
     images: [
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harmony - AI Executive Assistant for Email & Calendar",
+    title: "Harmony AI - Voice Assistant for Email & Calendar",
     description: "AI executive assistant for Gmail & Google Calendar. Voice control your emails, schedule meetings & manage tasks hands-free while walking or driving.",
     creator: "@nathan_covey"
   },
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
   category: 'technology',
   applicationName: 'Harmony AI Executive Assistant',
   appleWebApp: {
-    title: 'Harmony AI Executive Assistant',
+    title: 'Harmony AI',
     statusBarStyle: 'default',
     capable: true,
   },

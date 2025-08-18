@@ -2,14 +2,14 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Terms - Harmony AI Executive Assistant",
+  title: "Terms - Harmony AI",
   description: "Terms of Service for Harmony AI executive assistant. Legal terms for using our AI agent for Gmail & calendar management with voice control.",
   keywords: ["terms of service", "legal terms", "terms and conditions", "AI executive assistant", "AI voice assistant", "AI agent", "Gmail assistant legal", "calendar assistant legal", "voice command terms"],
   alternates: {
     canonical: "https://www.useharmony.com/terms"
   },
   openGraph: {
-    title: "Terms of Service - Harmony AI Executive Assistant",
+    title: "Terms of Service - Harmony AI",
     description: "Legal terms and conditions for using Harmony, the AI executive assistant for Gmail & calendar management.",
     url: "https://www.useharmony.com/terms",
     type: "website",
