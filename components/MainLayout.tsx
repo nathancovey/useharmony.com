@@ -94,7 +94,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col min-h-screen">
       <div ref={headerWrapperRef} className="fixed top-0 left-0 right-0 z-50">
         <AnnouncementBar 
-          message="Support our Product Hunt launch →"
+          message="We finished #3 on Product Hunt 🎉"
           href="https://www.producthunt.com/products/harmony-ai-voice-assistant"
           target="_blank"
           rel="noopener noreferrer"

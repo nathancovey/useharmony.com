@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { MainLayout } from "../components/MainLayout";
-import { ProductHuntBadge } from "../components/ProductHuntBadge";
 import { Toaster } from "@/components/ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
@@ -117,7 +116,6 @@ export default function RootLayout({
         className={`${inter.variable} antialiased`}
       >
         <MainLayout>{children}</MainLayout>
-        <ProductHuntBadge />
         <SpeedInsights />
         <Toaster />
         <Analytics />
