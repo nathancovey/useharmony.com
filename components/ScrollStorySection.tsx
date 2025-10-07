@@ -234,12 +234,13 @@ export function ScrollStorySection() {
                   <div
                     ref={index === 0 ? badgeRef : undefined}
                     style={{ opacity: 1 }}
-                    className="flex flex-col md:flex-row items-center gap-4 mt-8"
+                    className="flex flex-col md:flex-row items-center gap-4 mt-8 relative z-10 pointer-events-auto"
                   >
                     <Link
                       href={IOS_APP_STORE_URL}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="pointer-events-auto"
                       onClick={() => {
                         if (typeof window !== "undefined" && (window as any).twq) {
                           (window as any).twq("event", "tw-qawgf-qawgi", {})
