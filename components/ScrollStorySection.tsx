@@ -21,7 +21,7 @@ const stories: Story[] = [
   {
     image: "/images/mockup.png",
     title: (
-      <span className="font-[family-name:var(--font-playfair)] font-normal text-3xl sm:text-4xl md:text-6xl lg:text-6xl leading-1.5">
+      <span className="font-[family-name:var(--font-playfair)] font-normal text-4xl md:text-6xl lg:text-6xl leading-[1.25] lg:leading-none">
         Plan your weeks, <br />plan your life.
       </span>
     ),
@@ -160,7 +160,7 @@ export function ScrollStorySection() {
   if (isMobileLayout) {
     return (
       <div className="bg-gradient-to-br from-primary/10 via-background to-secondary/10">
-        <div className="px-4 py-16 flex flex-col gap-16">
+        <div className="px-4 pt-24 pb-16 flex flex-col gap-16">
           {stories.map((story, index) => (
             <section key={index} className="flex flex-col items-center gap-6">
               <div className="w-full max-w-[320px]">
@@ -174,7 +174,7 @@ export function ScrollStorySection() {
                   />
                 </div>
               </div>
-              <h2 className="text-4xl text-center bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text">
+              <h2 className="text-4xl text-center bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text py-2">
                 {story.title}
               </h2>
               <p className="text-lg text-muted-foreground text-center max-w-[500px]">
@@ -202,7 +202,6 @@ export function ScrollStorySection() {
             </section>
           ))}
         </div>
-        <CallToAction />
       </div>
     )
   }
@@ -213,7 +212,7 @@ export function ScrollStorySection() {
       className="relative bg-gradient-to-br from-primary/10 via-background to-secondary/10"
       style={{ height: `${stories.length * SCROLL_SEGMENT_MULTIPLIER * 100}vh` }}
     >
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden px-4 lg:px-6">
+      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden px-4 lg:px-6 pt-20">
         <div className="w-full max-w-[1000px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-start relative h-full lg:h-auto">
             {stories.map((story, index) => (

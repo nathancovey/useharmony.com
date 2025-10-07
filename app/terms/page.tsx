@@ -33,7 +33,7 @@ export default function TermsPage() {
   return (
     <div className="container max-w-4xl mx-auto px-4 py-8">
       <h1 className="font-[family-name:var(--font-playfair)] text-3xl mb-4">Terms of Service</h1>
-      <p className="text-gray-500 mb-8">Last updated: July 20, 2025</p>
+      <p className="text-gray-500 mb-8">Last updated: October 6, 2025</p>
       
       <div className="space-y-6">
         <section>
@@ -64,21 +64,21 @@ export default function TermsPage() {
         <section>
           <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">3. Service Description</h2>
           <p className="mb-4">
-            Our application provides voice-controlled management of your Gmail, Google Calendar, and Contacts. Harmony lets you read, draft, send, and organize emails, create or modify calendar events, and access contact information using natural-language commands while keeping your data secure.
+            Our application is an AI-powered planner that helps you achieve work-life harmony through mission-driven planning. Harmony integrates with Google Calendar to help you create a Personal Mission Statement, plan your weeks around life roles, set meaningful goals, and follow through daily with AI-powered guidance and reminders.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">4. Google Account Integration</h2>
           <p className="mb-4">
-            Our service requires Google authentication to access your Gmail, Google Calendar, and Contacts data. We access emails, calendar events, contacts, and labels solely to provide core functionality. OAuth tokens are stored encrypted on our servers, and you can revoke access at any time.
+            Our service requires Google authentication to access your Google Calendar data. We access calendar events solely to provide time-blocking and scheduling functionality. OAuth tokens are stored encrypted on our servers, and you can revoke access at any time.
           </p>
         </section>
 
         <section>
           <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">5. Data Usage and Privacy</h2>
           <p className="mb-4">
-            We do <strong>not</strong> store any email, calendar, or contacts content, either locally on your device or on our servers. All Google data is processed in real time only. OAuth tokens are encrypted at rest on our servers. We collect anonymized usage analytics and crash reports to improve our services, and voice commands are processed through OpenAI&apos;s services; snippets of relevant text may be transmitted but nothing is stored. Please review our <Link href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link> for full details.
+            We store your mission statement, roles, weekly goals, and planning data securely and encrypted on our servers to provide the core Harmony experience. Calendar data from Google is processed in real time only and not stored. OAuth tokens are encrypted at rest on our servers. We collect anonymized usage analytics and crash reports to improve our services. AI features are powered by OpenAI&apos;s services; relevant planning data may be transmitted for processing but nothing is stored. Please review our <Link href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</Link> for full details.
           </p>
         </section>
 

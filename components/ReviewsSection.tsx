@@ -33,9 +33,9 @@ export function ReviewsSection() {
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <h4 className="text-sm font-semibold mb-2">Simply The Best AI Email Assistant!</h4>
+              <h4 className="text-sm font-[family-name:var(--font-playfair)] font-normal mb-2">Finally living with intention</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                &ldquo;I rarely write reviews, but I felt I had to share my experience with Harmony AI Email Assistant because it&rsquo;s genuinely transformed how I handle my Gmail. I&rsquo;ve tried all kinds of &lsquo;AI productivity tools&rsquo; that promise to help with email, but they usually fall short. Harmony is different, it actually delivers on what it claims, and it&rsquo;s now my go-to assistant for managing Gmail completely with my voice. What makes Harmony so impressive is how natural and easy it feels to use.&rdquo;
+                &ldquo;I&rsquo;ve tried so many planners and productivity apps, but Harmony is different. Starting with my mission statement helped me get crystal clear on what actually matters. Now my weekly planning sessions feel purposeful instead of just another to-do list. I&rsquo;m finally balancing work, family, and personal growth.&rdquo;
               </p>
               <div className="text-sm font-medium">sbols</div>
             </div>
@@ -46,9 +46,9 @@ export function ReviewsSection() {
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <h4 className="text-sm font-semibold mb-2">The Email App everyone needs</h4>
+              <h4 className="text-sm font-[family-name:var(--font-playfair)] font-normal mb-2">Weekly planning changed everything</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                &ldquo;Finally going to get caught up on all my emails! This is a tool that anyone who is looking to free up many hours of reading emails, or get organized in less time, or finally send that email you&rsquo;ve been wanting to send! Love it!&rdquo;
+                &ldquo;Planning at the week level instead of daily has been a game changer. I can see the bigger picture and make sure all my roles - parent, professional, friend - get attention. The AI suggestions help me set goals that actually align with my mission.&rdquo;
               </p>
               <div className="text-sm font-medium">SterlingJones</div>
             </div>
@@ -62,9 +62,9 @@ export function ReviewsSection() {
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <h4 className="text-sm font-semibold mb-2">Remote Worker Approved</h4>
+              <h4 className="text-sm font-[family-name:var(--font-playfair)] font-normal mb-2">Perfect for busy parents</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                &ldquo;I spend a lot of time driving since I do contract work and I get emails from clients throughout the day. This has made it a million times easier to stay up to date so I never miss an email ever again&rdquo;
+                &ldquo;As a working mom, I was constantly feeling guilty about neglecting different areas of my life. Harmony helps me plan my weeks around all my roles - mom, professional, wife, friend. The daily reminders keep me on track without feeling overwhelming.&rdquo;
               </p>
               <div className="text-sm font-medium">Lauren Nusbaum</div>
             </div>
@@ -75,9 +75,9 @@ export function ReviewsSection() {
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <h4 className="text-sm font-semibold mb-2">Siri Could Never</h4>
+              <h4 className="text-sm font-[family-name:var(--font-playfair)] font-normal mb-2">More than just another app</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                &ldquo;I love this app because I can get through all my emails quickly and it can even UNSUBSCRIBE FOR ME! I also asked the ai basic questions, bc siri couldn&rsquo;t figure out an answer, and it gave me the info I wanted so 10/10 recommend.&rdquo;
+                &ldquo;The confetti when I check off goals makes me smile every time! But seriously, the AI time-blocking suggestions are incredibly helpful. It knows when to schedule things based on my energy and commitments. This isn&rsquo;t just a planner, it&rsquo;s a life coach.&rdquo;
               </p>
               <div className="text-sm font-medium">SamanthaCov</div>
             </div>
@@ -88,9 +88,9 @@ export function ReviewsSection() {
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <h4 className="text-sm font-semibold mb-2">Useful</h4>
+              <h4 className="text-sm font-[family-name:var(--font-playfair)] font-normal mb-2">My mission keeps me grounded</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                &ldquo;As a busy mom I get so many emails of random subscriptions that I don&rsquo;t want or need. I used Harmony and it helped me get all my emails organized in practically no time.&rdquo;
+                &ldquo;Creating my Personal Mission Statement was eye-opening. It forced me to think about what I really want from life. Now when I&rsquo;m planning my week, I can see how each goal connects to my bigger purpose. It&rsquo;s incredibly motivating.&rdquo;
               </p>
               <div className="text-sm font-medium">Stallion20</div>
             </div>
@@ -104,9 +104,9 @@ export function ReviewsSection() {
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <h4 className="text-sm font-semibold mb-2">Great tool!</h4>
+              <h4 className="text-sm font-[family-name:var(--font-playfair)] font-normal mb-2">The accountability I needed</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                &ldquo;LOVE this app! I spend so much time in the car I have been way more productive at getting through my emails! It&rsquo;s sorts and reads to you like a real live assistant! I will definitely be keeping and using Harmony AI from now on!&rdquo;
+                &ldquo;The weekly planning countdown creates such a good sense of urgency. I actually look forward to Sunday planning now. And the daily nudges help me stay on track without being annoying. Finally found something that actually helps me follow through on my goals!&rdquo;
               </p>
               <div className="text-sm font-medium">MammaHutch</div>
             </div>
@@ -117,9 +117,9 @@ export function ReviewsSection() {
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <h4 className="text-sm font-semibold mb-2">Little Jarvis</h4>
+              <h4 className="text-sm font-[family-name:var(--font-playfair)] font-normal mb-2">Work-life harmony is real</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                &ldquo;It&rsquo;s so nice to be able to manage all my emails while on the road, it&rsquo;s a quality of life improvement I&rsquo;ve dreamt of. Fantastic app and I&rsquo;m excited to see further additions.&rdquo;
+                &ldquo;I used to feel like I was always choosing between work and family. The role-based planning helps me give proper attention to everything that matters. I can actually see my progress across all areas of life. This is the quality of life improvement I&rsquo;ve been looking for.&rdquo;
               </p>
               <div className="text-sm font-medium">Austin_Bull</div>
             </div>
@@ -130,9 +130,9 @@ export function ReviewsSection() {
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <h4 className="text-sm font-semibold mb-2">Time Saver!</h4>
+              <h4 className="text-sm font-[family-name:var(--font-playfair)] font-normal mb-2">Simple but powerful</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                &ldquo;This app saves me tons of time by helping me go through all my emails while I run. For sure recommend!&rdquo;
+                &ldquo;The interface is clean and intuitive. I love how it guides me through weekly planning without being complicated. The AI helps me think of goals I wouldn&rsquo;t have considered on my own. Highly recommend to anyone trying to be more intentional with their time!&rdquo;
               </p>
               <div className="text-sm font-medium">asdfNATALIEghjkl</div>
             </div>

@@ -74,27 +74,27 @@ export function PricingSection() {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3">
                   <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="text-sm">Unlimited voice time</span>
+                  <span className="text-sm">Personal mission statement builder</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="text-sm">44+ tools and counting</span>
+                  <span className="text-sm">Role-based weekly planning</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="text-sm">One Gmail account connection</span>
+                  <span className="text-sm">AI-powered goal suggestions</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="text-sm">One Google Calendar connection</span>
+                  <span className="text-sm">Smart time-blocking assistance</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="text-sm">Full Gmail integration</span>
+                  <span className="text-sm">Daily progress tracking & nudges</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="text-sm">Full Google Calendar integration</span>
+                  <span className="text-sm">Motivating celebrations & reminders</span>
                 </li>
               </ul>
 

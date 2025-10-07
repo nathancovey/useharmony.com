@@ -37,14 +37,8 @@ const Highlight = ({ children }: { children: React.ReactNode }) => (
 
 const missionPoints = [
   <>
-    Our mission is to build an AI executive assistant that brings <Highlight>harmony to your life.</Highlight>
-  </>,
-  <>
-    This assistant will not only help you organize your email, calendar, and tasks, but <Highlight>understand your priorities</Highlight>, roles, and goals.
-  </>,
-  <>
-    We are getting closer to this every day.
-  </>,
+    Our mission is to develop technology that helps you focus on what <Highlight>truly matters</Highlight> in life. Family, friends, health, relationships, spirtuality, career growth, etc.
+  </>
 ]
 
 export default function CompanyPage() {
@@ -78,7 +72,7 @@ export default function CompanyPage() {
               </h1>
               <div className="space-y-4">
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Want to join us on our mission? We’re always looking for passionate individuals who share our vision of building the world’s greatest AI executive assistant.
+                  Want to join us on our mission? We’re always looking for passionate individuals who share our vision of building technology for good.
                 </p>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Email us at <a href="mailto:careers@useharmony.com" className="text-primary hover:underline">careers@useharmony.com</a> to learn more about opportunities to be part of our team.

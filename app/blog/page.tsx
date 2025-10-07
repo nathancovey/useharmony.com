@@ -38,7 +38,7 @@ export default async function BlogPage() {
             Harmony AI Blog
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Insights on AI email and calendar management, productivity tips, and the future of Harmony.
+            Insights on planning, mission statements, work-life harmony, and more.
           </p>
         </div>
 

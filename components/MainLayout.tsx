@@ -87,12 +87,12 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen">
       <div ref={headerWrapperRef} className="fixed top-0 left-0 right-0 z-50">
-        <AnnouncementBar 
-          message="We finished #3 on Product Hunt 🎉"
-          href="https://www.producthunt.com/products/harmony-ai-voice-assistant"
+        {/* <AnnouncementBar 
+          message="The next evolution of Harmony is here"
+          href=""
           target="_blank"
           rel="noopener noreferrer"
-        />
+        /> */}
         <header className="px-4 lg:px-6 py-5 flex items-center bg-background shadow-sm border-b">
         <div className="flex items-center justify-between w-full max-w-[1000px] mx-auto">
           <Link className="flex items-center justify-center" href="/" aria-label="Harmony Home">
@@ -323,9 +323,9 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       </div>
 
       <main
-        className={isHome ? "flex-1 pt-[calc(var(--header-height)-48px)]" : "flex-1"}
+        className="flex-1"
         style={{
-          paddingTop: isHome ? undefined : headerHeight,
+          paddingTop: isHome ? 0 : headerHeight,
           "--header-height": `${headerHeight}px`
         } as CSSProperties & { "--header-height"?: string }}
       >
@@ -342,7 +342,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                     <span className="bg-primary/10 text-primary px-2 py-1 rounded-sm">
                       Our mission
                     </span>
-                  </Link> is to build an AI executive assistant that brings harmony to your life.
+                  </Link> is to help you focus on what truly matters in life.
                 </p>
               </div>
               <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} Harmony Life LLC. All rights reserved.</p>

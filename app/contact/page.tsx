@@ -24,7 +24,7 @@ export default function ContactPage() {
       "contactPoint": [
         {
           "@type": "ContactPoint",
-          "email": "support@useharmony.com",
+          "email": "hello@useharmony.com",
           "contactType": "customer service",
           "availableLanguage": "English"
         }
@@ -62,8 +62,8 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <Button asChild className="w-full">
-                <a href="mailto:legal@useharmony.com" target="_blank" rel="noopener noreferrer">
-                  legal@useharmony.com
+                <a href="mailto:hello@useharmony.com" target="_blank" rel="noopener noreferrer">
+                  hello@useharmony.com
                 </a>
               </Button>
             </CardContent>
