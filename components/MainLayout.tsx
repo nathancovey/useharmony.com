@@ -238,89 +238,90 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-        
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              className="lg:hidden absolute top-full left-0 right-0 bg-background border-b shadow-lg overflow-hidden"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
-              <motion.nav
-                className="flex flex-col p-4 space-y-4"
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -20, opacity: 0 }}
-                transition={{ duration: 0.3, delay: 0.1, ease: "easeInOut" }}
-              >
-                <Link
-                  className="text-left text-base font-medium hover:text-primary transition-colors"
-                  href="/reviews"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Reviews
-                </Link>
-                <Link
-                  className="text-left text-base font-medium hover:text-primary transition-colors"
-                  href="/pricing"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Pricing
-                </Link>
-                
-                {/* Mobile About Section */}
-                <div className="border-t pt-4">
-                  <p className="text-sm font-medium text-muted-foreground mb-3">About</p>
-                  <div className="pl-4 space-y-3">
-                    <Link
-                      href="/company"
-                      className="block text-base hover:text-primary transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Mission
-                    </Link>
-                    <Link
-                      href="/contact"
-                      className="block text-base hover:text-primary transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Contact
-                    </Link>
-                    <button
-                      className="block text-left text-base hover:text-primary transition-colors"
-                      onClick={navigateToFaq}
-                    >
-                      FAQ
-                    </button>
-                    <Link
-                      href="/blog"
-                      className="block text-base hover:text-primary transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Blog
-                    </Link>
-                  </div>
-                  
-                </div>
-                
-                <Link 
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-3 rounded-md text-base font-medium transition-colors text-center mt-4" 
-                  href={IOS_APP_STORE_URL} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Download
-                </Link>
-              </motion.nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
         </header>
       </div>
+
+      {/* Mobile Navigation - Outside header wrapper */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className="lg:hidden fixed left-0 right-0 bg-background/80 backdrop-blur-md border-b shadow-lg overflow-hidden z-40"
+            style={{ top: headerHeight }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <motion.nav
+              className="flex flex-col p-4 space-y-4"
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ duration: 0.3, delay: 0.1, ease: "easeInOut" }}
+            >
+              <Link
+                className="text-left text-base font-medium hover:text-primary transition-colors"
+                href="/reviews"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Reviews
+              </Link>
+              <Link
+                className="text-left text-base font-medium hover:text-primary transition-colors"
+                href="/pricing"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Pricing
+              </Link>
+
+              {/* Mobile About Section */}
+              <div className="border-t pt-4">
+                <p className="text-sm font-medium text-muted-foreground mb-3">About</p>
+                <div className="pl-4 space-y-3">
+                  <Link
+                    href="/company"
+                    className="block text-base hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Mission
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="block text-base hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                  <button
+                    className="block text-left text-base hover:text-primary transition-colors"
+                    onClick={navigateToFaq}
+                  >
+                    FAQ
+                  </button>
+                  <Link
+                    href="/blog"
+                    className="block text-base hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Blog
+                  </Link>
+                </div>
+
+              </div>
+
+              <Link
+                className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-3 rounded-md text-base font-medium transition-colors text-center mt-4"
+                href={IOS_APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Download
+              </Link>
+            </motion.nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <main
         className="flex-1"
