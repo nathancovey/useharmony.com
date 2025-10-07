@@ -93,7 +93,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
           target="_self"
           rel="noopener noreferrer"
         />
-        <header className="px-4 lg:px-6 py-5 flex items-center bg-background shadow-sm border-b">
+        <header className="px-4 lg:px-6 py-5 flex items-center bg-background/80 backdrop-blur-md shadow-[0_1px_3px_rgba(0,0,0,0.05)] border-b">
         <div className="flex items-center justify-between w-full max-w-[1000px] mx-auto">
           <Link className="flex items-center justify-center" href="/" aria-label="Harmony Home">
             <span className="sr-only">Harmony Home</span>

@@ -160,7 +160,7 @@ export function ScrollStorySection() {
   if (isMobileLayout) {
     return (
       <div className="bg-gradient-to-br from-primary/10 via-background to-secondary/10">
-        <div className="px-4 pt-24 pb-16 flex flex-col gap-16">
+        <div className="px-4 pt-32 pb-16 flex flex-col gap-16">
           {stories.map((story, index) => (
             <section key={index} className="flex flex-col items-center gap-6">
               <div className="w-full max-w-[320px]">
