@@ -1,5 +1,5 @@
 import { getBlogPosts } from '@/lib/sanity'
-import { BlogCard } from '@/components/BlogCard'
+import { BlogList } from '@/components/BlogList'
 import type { Metadata } from 'next'
 
 export const revalidate = 60
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 }
 
 export default async function BlogPage() {
-  const posts = await getBlogPosts()
+  const posts = await getBlogPosts(12, 0)
 
   return (
     <div className="min-h-screen bg-background">
@@ -49,11 +49,7 @@ export default async function BlogPage() {
             <p className="text-muted-foreground">Check back soon for new content!</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post) => (
-              <BlogCard key={post._id} post={post} />
-            ))}
-          </div>
+          <BlogList initialPosts={posts} />
         )}
       </div>
     </div>

@@ -47,9 +47,10 @@ export interface BlogPost {
   }
 }
 
-export async function getBlogPosts(): Promise<BlogPost[]> {
+export async function getBlogPosts(limit?: number, offset: number = 0): Promise<BlogPost[]> {
+  const limitClause = limit ? `[${offset}...${offset + limit}]` : ''
   const query = `
-    *[_type == "blogPost" && defined(publishedAt)] | order(publishedAt desc) {
+    *[_type == "blogPost" && defined(publishedAt)] | order(publishedAt desc) ${limitClause} {
       _id,
       _createdAt,
       title,
@@ -69,7 +70,12 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       }
     }
   `
-  
+
+  return client.fetch(query)
+}
+
+export async function getBlogPostsCount(): Promise<number> {
+  const query = `count(*[_type == "blogPost" && defined(publishedAt)])`
   return client.fetch(query)
 }
 
