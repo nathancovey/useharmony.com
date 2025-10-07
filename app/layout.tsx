@@ -14,6 +14,7 @@ const inter = Inter({
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
+  weight: ["400", "700"],
 })
 
 export const viewport: Viewport = {

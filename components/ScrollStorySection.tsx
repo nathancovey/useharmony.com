@@ -41,7 +41,7 @@ const stories: Story[] = [
   {
     image: "/images/sync.png",
     title: "Daily follow through",
-    description: "Rather than daily planning, we review our plans daily. Harmony's AI will help you time-block your goals and nudge you to do the right things at the right times, so you can live in accordance with your mission and plans every day."
+    description: "Instead of daily planning, we review our weekly plans daily and make any necessary adjustments. Harmony's AI will help you time-block your goals and nudge you to do the right things at the right times, so you can live in accordance with your mission and plans every day."
   },
   {
     image: "/images/ai.png",

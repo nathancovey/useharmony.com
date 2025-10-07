@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Harmony - AI Email Voice Assistant',
+    name: 'Harmony - Work-Life Harmony Planner',
     short_name: 'Harmony',
-    description: 'AI-powered voice assistant that reads and manages your Gmail emails hands-free',
+    description: 'AI planner that helps you define your mission, plan weeks around your roles, and stay on track daily',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

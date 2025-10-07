@@ -14,8 +14,8 @@ export function HarmonyAppPromotion() {
             <div className="flex items-center gap-4">
               <HarmonyAppIcon size={64} className="text-primary flex-shrink-0" />
               <div>
-                <h3 className="text-2xl font-bold text-foreground">
-                  Harmony AI Executive Assistant
+                <h3 className="font-[family-name:var(--font-playfair)] font-normal text-2xl text-foreground">
+                  Harmony AI Planner
                 </h3>
                 <div className="flex items-center gap-2 mt-1">
                   <span className="text-yellow-500 text-sm">★★★★★</span>
@@ -23,10 +23,10 @@ export function HarmonyAppPromotion() {
                 </div>
               </div>
             </div>
-            
+
             <p className="text-muted-foreground leading-relaxed">
-              Your AI executive assistant for Gmail & Google Calendar. Voice control emails, 
-              schedule meetings & manage tasks hands-free while walking or driving.
+              Plan your weeks, plan your life. Define your mission, plan weeks around your roles,
+              and stay on track every day with AI guidance.
             </p>
 
             <div className="flex justify-start">
@@ -45,38 +45,38 @@ export function HarmonyAppPromotion() {
           <div className="lg:w-80 lg:flex-shrink-0">
             <div className="grid grid-cols-1 gap-4">
               <div className="flex items-start gap-3">
-                <div className="text-2xl flex-shrink-0">📧</div>
+                <div className="text-2xl flex-shrink-0">🎯</div>
                 <div>
-                  <h4 className="font-semibold text-sm text-foreground mb-1">Voice Email Control</h4>
+                  <h4 className="font-semibold text-sm text-foreground mb-1">Personal Mission</h4>
                   <p className="text-xs text-muted-foreground">
-                    Listen to emails & reply with voice commands
+                    Define your deeper why with a mission statement
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="text-2xl flex-shrink-0">📅</div>
+                <div className="text-2xl flex-shrink-0">📋</div>
                 <div>
-                  <h4 className="font-semibold text-sm text-foreground mb-1">Calendar Management</h4>
+                  <h4 className="font-semibold text-sm text-foreground mb-1">Role-Based Planning</h4>
                   <p className="text-xs text-muted-foreground">
-                    Schedule meetings & manage events hands-free
+                    Plan weeks around work, family, and personal growth
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <div className="text-2xl flex-shrink-0">🤖</div>
                 <div>
-                  <h4 className="font-semibold text-sm text-foreground mb-1">AI Voice Agent</h4>
+                  <h4 className="font-semibold text-sm text-foreground mb-1">AI-Powered Guidance</h4>
                   <p className="text-xs text-muted-foreground">
-                    Your personal AI assistant for productivity
+                    Get goal suggestions and daily nudges to stay on track
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="text-2xl flex-shrink-0">🔒</div>
+                <div className="text-2xl flex-shrink-0">🎉</div>
                 <div>
-                  <h4 className="font-semibold text-sm text-foreground mb-1">Privacy First</h4>
+                  <h4 className="font-semibold text-sm text-foreground mb-1">Engaging Experience</h4>
                   <p className="text-xs text-muted-foreground">
-                    Your data stays private & secure
+                    Celebrate progress with confetti and stay motivated
                   </p>
                 </div>
               </div>

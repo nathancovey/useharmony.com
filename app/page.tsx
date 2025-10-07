@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { ScrollStorySectionWrapper } from "@/components/ScrollStorySection"
 
 export const metadata: Metadata = {
-  title: "Harmony App – Work-Life Harmony Planner",
+  title: "Harmony AI Planner – Effective Weekly Planning",
   description: "Harmony helps you craft a personal mission, plan weeks around your roles, and stay on track daily with AI guidance.",
   keywords: [
     "work life harmony",

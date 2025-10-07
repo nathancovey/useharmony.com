@@ -11,7 +11,7 @@ export function PricingSection() {
     <section id="pricing" className="w-full py-8 md:py-16 lg:py-20 bg-background">
       <div className="container px-4 md:px-6 max-w-[1000px] mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl tracking-tight sm:text-5xl bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text pb-1">
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl tracking-tight sm:text-5xl bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text pb-2">
             Simple pricing
           </h2>
           <p className="max-w-[450px] text-muted-foreground md:text-xl/snug lg:text-base/snug xl:text-xl/snug">

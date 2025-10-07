@@ -133,19 +133,19 @@ const portableTextComponents = {
   },
   block: {
     h1: ({ children }: any) => (
-      <h1 className="font-[family-name:var(--font-playfair)] text-3xl mt-12 mb-6 text-foreground">{children}</h1>
+      <h1 className="font-[family-name:var(--font-playfair)] text-3xl mt-12 mb-6 text-foreground" style={{ fontWeight: 400 }}>{children}</h1>
     ),
     h2: ({ children }: any) => (
-      <h2 className="font-[family-name:var(--font-playfair)] text-2xl mt-10 mb-4 text-foreground">{children}</h2>
+      <h2 className="font-[family-name:var(--font-playfair)] text-3xl mt-10 mb-4 text-foreground" style={{ fontWeight: 400 }}>{children}</h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="font-[family-name:var(--font-playfair)] text-xl mt-8 mb-3 text-foreground">{children}</h3>
+      <h3 className="font-[family-name:var(--font-playfair)] text-xl mt-8 mb-3 text-foreground" style={{ fontWeight: 400 }}>{children}</h3>
     ),
     h4: ({ children }: any) => (
-      <h4 className="font-[family-name:var(--font-playfair)] text-lg mt-6 mb-2 text-foreground">{children}</h4>
+      <h4 className="font-[family-name:var(--font-playfair)] text-lg mt-6 mb-2 text-foreground" style={{ fontWeight: 400 }}>{children}</h4>
     ),
     normal: ({ children }: any) => (
-      <p className="text-foreground leading-relaxed mb-4">{children}</p>
+      <p className="text-lg text-foreground leading-relaxed mb-4">{children}</p>
     ),
     blockquote: ({ children }: any) => (
       <blockquote className="border-l-4 border-primary pl-6 py-2 my-6 bg-muted/50 rounded-r-lg">
@@ -155,15 +155,15 @@ const portableTextComponents = {
   },
   list: {
     bullet: ({ children }: any) => (
-      <ul className="list-disc list-inside space-y-2 mb-4 text-foreground">{children}</ul>
+      <ul className="list-disc list-outside pl-6 space-y-2 mb-4 text-lg text-foreground">{children}</ul>
     ),
     number: ({ children }: any) => (
-      <ol className="list-decimal list-inside space-y-2 mb-4 text-foreground">{children}</ol>
+      <ol className="list-decimal list-outside pl-6 space-y-2 mb-4 text-lg text-foreground">{children}</ol>
     ),
   },
   listItem: {
-    bullet: ({ children }: any) => <li className="leading-relaxed">{children}</li>,
-    number: ({ children }: any) => <li className="leading-relaxed">{children}</li>,
+    bullet: ({ children }: any) => <li className="leading-relaxed text-lg">{children}</li>,
+    number: ({ children }: any) => <li className="leading-relaxed text-lg">{children}</li>,
   },
   marks: {
     strong: ({ children }: any) => <strong className="font-semibold">{children}</strong>,
@@ -260,9 +260,36 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
 
       <header className="mb-12">
         <div className="mb-8">
-          <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl mb-6 text-foreground text-left">
+          <h1 className="font-[family-name:var(--font-playfair)] font-normal text-4xl md:text-5xl mb-6 text-foreground text-left">
             {post.title}
           </h1>
+
+          {post.subtitle && (
+            <p className="text-xl text-muted-foreground text-left mb-4">
+              {post.subtitle}
+            </p>
+          )}
+
+          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
+            {post.author && (
+              <>
+                <div className="flex items-center gap-2">
+                  {post.author.image && (
+                    <Image
+                      src={urlFor(post.author.image).width(64).height(64).quality(90).url()}
+                      alt={post.author.name}
+                      width={32}
+                      height={32}
+                      className="rounded-full"
+                    />
+                  )}
+                  <span>{post.author.name}</span>
+                </div>
+                <span>•</span>
+              </>
+            )}
+            <time dateTime={post.publishedAt}>{formattedDate}</time>
+          </div>
         </div>
 
         {post.featuredImage && (
@@ -276,38 +303,9 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
             />
           </div>
         )}
-
-        <div className="mb-8 pb-6 border-b border-border">
-          {post.subtitle && (
-            <p className="text-xl text-muted-foreground text-left mb-4">
-              {post.subtitle}
-            </p>
-          )}
-
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <time dateTime={post.publishedAt}>{formattedDate}</time>
-            {post.author && (
-              <>
-                <span>•</span>
-                <div className="flex items-center gap-2">
-                  {post.author.image && (
-                    <Image
-                      src={urlFor(post.author.image).width(64).height(64).quality(90).url()}
-                      alt={post.author.name}
-                      width={32}
-                      height={32}
-                      className="rounded-full"
-                    />
-                  )}
-                  <span>{post.author.name}</span>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
       </header>
 
-      <div className="prose prose-lg max-w-none">
+      <div className="max-w-none">
         <PortableText value={post.body} components={portableTextComponents} />
       </div>
     </>
