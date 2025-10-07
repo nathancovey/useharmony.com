@@ -34,7 +34,7 @@ export default async function BlogPage() {
     <div className="min-h-screen bg-background">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl mb-4">
             Harmony AI Blog
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -44,7 +44,7 @@ export default async function BlogPage() {
 
         {posts.length === 0 ? (
           <div className="text-center py-16">
-            <h2 className="text-2xl font-semibold mb-4">No posts yet</h2>
+            <h2 className="font-[family-name:var(--font-playfair)] text-2xl mb-4">No posts yet</h2>
             <p className="text-muted-foreground">Check back soon for new content!</p>
           </div>
         ) : (

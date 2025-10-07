@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { HarmonyWordmark } from "@/components/icons/HarmonyWordmark"
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon"
@@ -7,7 +7,7 @@ import { SlackIcon } from "@/components/icons/SlackIcon"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
 import AnnouncementBar from "@/components/AnnouncementBar"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, type CSSProperties } from "react"
 import { IOS_APP_STORE_URL } from "@/lib/constants"
 import { Menu, X, ChevronDown, Target, Mail, HelpCircle, BookOpen, ExternalLink } from "lucide-react"
 import { motion, AnimatePresence } from "motion/react"
@@ -15,6 +15,7 @@ import { motion, AnimatePresence } from "motion/react"
 export function MainLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const pathname = usePathname()
+  const isHome = pathname === "/"
   const headerWrapperRef = useRef<HTMLDivElement>(null)
   const [headerHeight, setHeaderHeight] = useState(80) // reasonable default in px
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -61,16 +62,9 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
   }, [pathname])
 
 
-  const scrollToSection = (sectionId: string) => {
-    // If we're on the homepage, scroll to the section
-    if (pathname === '/') {
-      const element = document.getElementById(sectionId)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }
-    } else {
-      // If we're on another page, navigate to homepage with hash
-      router.push(`/#${sectionId}`)
+  const navigateToFaq = () => {
+    if (pathname !== '/faq') {
+      router.push('/faq')
     }
     setIsMobileMenuOpen(false)
     setIsAboutDropdownOpen(false)
@@ -99,7 +93,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
           target="_blank"
           rel="noopener noreferrer"
         />
-        <header className="px-4 lg:px-6 h-16 flex items-center bg-background shadow-sm border-b">
+        <header className="px-4 lg:px-6 py-5 flex items-center bg-background shadow-sm border-b">
         <div className="flex items-center justify-between w-full max-w-[1000px] mx-auto">
           <Link className="flex items-center justify-center" href="/" aria-label="Harmony Home">
             <span className="sr-only">Harmony Home</span>
@@ -108,36 +102,18 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
           
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex gap-6 items-center">
-            <button 
-              className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
-              onClick={() => scrollToSection('use-cases')}
-            >
-              Use Cases
-            </button>
-            <button 
-              className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
-              onClick={() => scrollToSection('features')}
-            >
-              Tools
-            </button>
-            <button 
-              className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
-              onClick={() => scrollToSection('reviews')}
+            <Link
+              className="text-sm font-medium hover:text-primary transition-colors"
+              href="/reviews"
             >
               Reviews
-            </button>
-            <button 
-              className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
-              onClick={() => scrollToSection('pricing')}
+            </Link>
+            <Link
+              className="text-sm font-medium hover:text-primary transition-colors"
+              href="/pricing"
             >
               Pricing
-            </button>
-            <button 
-              className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
-              onClick={() => scrollToSection('privacy')}
-            >
-              Privacy
-            </button>
+            </Link>
             
             {/* About Dropdown */}
             <div 
@@ -180,10 +156,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                     
                     <button
                       className="p-3 rounded-md border hover:bg-muted transition-colors group text-left cursor-pointer"
-                      onClick={() => {
-                        scrollToSection('faq')
-                        setIsAboutDropdownOpen(false)
-                      }}
+                      onClick={navigateToFaq}
                     >
                       <div className="flex items-center gap-2 mb-1">
                         <HelpCircle className="h-4 w-4 text-primary" />
@@ -283,36 +256,20 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                 exit={{ y: -20, opacity: 0 }}
                 transition={{ duration: 0.3, delay: 0.1, ease: "easeInOut" }}
               >
-                <button 
+                <Link
                   className="text-left text-base font-medium hover:text-primary transition-colors"
-                  onClick={() => scrollToSection('use-cases')}
-                >
-                  Use Cases
-                </button>
-                <button 
-                  className="text-left text-base font-medium hover:text-primary transition-colors"
-                  onClick={() => scrollToSection('features')}
-                >
-                  Tools
-                </button>
-                <button 
-                  className="text-left text-base font-medium hover:text-primary transition-colors"
-                  onClick={() => scrollToSection('reviews')}
+                  href="/reviews"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Reviews
-                </button>
-                <button 
+                </Link>
+                <Link
                   className="text-left text-base font-medium hover:text-primary transition-colors"
-                  onClick={() => scrollToSection('pricing')}
+                  href="/pricing"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Pricing
-                </button>
-                <button 
-                  className="text-left text-base font-medium hover:text-primary transition-colors"
-                  onClick={() => scrollToSection('privacy')}
-                >
-                  Privacy
-                </button>
+                </Link>
                 
                 {/* Mobile About Section */}
                 <div className="border-t pt-4">
@@ -334,7 +291,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
                     </Link>
                     <button
                       className="block text-left text-base hover:text-primary transition-colors"
-                      onClick={() => scrollToSection('faq')}
+                      onClick={navigateToFaq}
                     >
                       FAQ
                     </button>
@@ -365,7 +322,13 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         </header>
       </div>
 
-      <main className="flex-1" style={{ paddingTop: headerHeight }}>
+      <main
+        className={isHome ? "flex-1 pt-[calc(var(--header-height)-48px)]" : "flex-1"}
+        style={{
+          paddingTop: isHome ? undefined : headerHeight,
+          "--header-height": `${headerHeight}px`
+        } as CSSProperties & { "--header-height"?: string }}
+      >
         {children}
       </main>
 
@@ -386,34 +349,28 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
             </div>
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-12">
               <div className="flex flex-col gap-2">
-                <h4 className="text-base font-medium text-foreground mb-1">Company</h4>
+                <h4 className="font-[family-name:var(--font-playfair)] text-base text-foreground mb-1">Company</h4>
                 <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="/company">
                   About
                 </Link>
                 <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="/blog">
                   Blog
                 </Link>
-                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="https://new.useharmony.com/changelog" target="_blank" rel="noopener noreferrer">
-                  Changelog
-                </Link>
-                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="https://new.useharmony.com/feature-request" target="_blank" rel="noopener noreferrer">
-                  Give Feedback
+                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="/contact">
+                  Contact Us
                 </Link>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-base font-medium text-foreground mb-1">Legal</h4>
+                <h4 className="font-[family-name:var(--font-playfair)] text-base text-foreground mb-1">Legal</h4>
                 <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="/terms">
                   Terms of Service
                 </Link>
                 <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="/privacy">
                   Privacy Policy
                 </Link>
-                <Link className="text-sm hover:underline underline-offset-4 text-muted-foreground" href="/contact">
-                  Contact Us
-                </Link>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-base font-medium text-foreground mb-1">Connect</h4>
+                <h4 className="font-[family-name:var(--font-playfair)] text-base text-foreground mb-1">Connect</h4>
                 <div className="flex gap-4">
                   <Link href="https://www.linkedin.com/company/useharmony/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
                     <span className="sr-only">LinkedIn</span>

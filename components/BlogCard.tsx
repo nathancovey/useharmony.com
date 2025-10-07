@@ -37,7 +37,7 @@ export function BlogCard({ post }: BlogCardProps) {
               </>
             )}
           </div>
-          <h2 className="text-xl font-semibold line-clamp-2 group-hover:text-primary transition-colors">
+          <h2 className="font-[family-name:var(--font-playfair)] text-xl line-clamp-2 group-hover:text-primary transition-colors">
             {post.title}
           </h2>
           {post.subtitle && (

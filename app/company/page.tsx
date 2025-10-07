@@ -54,7 +54,7 @@ export default function CompanyPage() {
         <div className="container mx-auto px-4">
           <Card className="max-w-2xl mx-auto backdrop-blur-md bg-white/10 dark:bg-white/5 border-white/20 hover:shadow-md transition-shadow">
             <CardContent className="p-8 md:p-10 text-left">
-              <h1 className="text-3xl font-bold mb-8 text-foreground leading-tight">
+              <h1 className="font-[family-name:var(--font-playfair)] text-3xl mb-8 text-foreground leading-tight">
                 Mission
               </h1>
               <div className="space-y-6">
@@ -73,7 +73,7 @@ export default function CompanyPage() {
         <div className="container mx-auto px-4">
           <Card className="max-w-2xl mx-auto backdrop-blur-md bg-white/10 dark:bg-white/5 border-white/20 hover:shadow-md transition-shadow">
             <CardContent className="p-8 md:p-10 text-left">
-              <h1 className="text-3xl font-bold mb-8 text-foreground leading-tight">
+              <h1 className="font-[family-name:var(--font-playfair)] text-3xl mb-8 text-foreground leading-tight">
                 Careers
               </h1>
               <div className="space-y-4">

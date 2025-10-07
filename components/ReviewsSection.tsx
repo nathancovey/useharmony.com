@@ -2,7 +2,7 @@ import { Star } from "lucide-react"
 
 export function ReviewsSection() {
   return (
-    <section id="reviews" className="w-full py-12 md:py-24 lg:py-32 bg-muted/30">
+    <section id="reviews" className="w-full py-8 md:py-12 lg:py-16 bg-muted/30">
       <div className="container px-4 md:px-6 max-w-[1200px] mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           {/* Rating Badge */}
@@ -15,7 +15,7 @@ export function ReviewsSection() {
             <span>4.9/5</span>
           </div>
           
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text pb-1">
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl tracking-tight sm:text-5xl bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text pb-1">
             Loved by users worldwide
           </h2>
           <p className="max-w-[450px] text-muted-foreground md:text-xl/snug lg:text-base/snug xl:text-xl/snug">

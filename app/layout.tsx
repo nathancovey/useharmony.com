@@ -1,15 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { MainLayout } from "../components/MainLayout";
-import { Toaster } from "@/components/ui/sonner";
+import { Inter, Playfair_Display } from "next/font/google"
+import "./globals.css"
+import { MainLayout } from "../components/MainLayout"
+import { Toaster } from "@/components/ui/sonner"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-});
+})
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+})
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -96,7 +101,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
@@ -113,7 +118,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} antialiased`}
+        className={`${inter.variable} ${playfair.variable} antialiased`}
       >
         <MainLayout>{children}</MainLayout>
         <SpeedInsights />
@@ -121,5 +126,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  );
+  )
 }

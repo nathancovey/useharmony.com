@@ -133,16 +133,16 @@ const portableTextComponents = {
   },
   block: {
     h1: ({ children }: any) => (
-      <h1 className="text-3xl font-bold mt-12 mb-6 text-foreground">{children}</h1>
+      <h1 className="font-[family-name:var(--font-playfair)] text-3xl mt-12 mb-6 text-foreground">{children}</h1>
     ),
     h2: ({ children }: any) => (
-      <h2 className="text-2xl font-semibold mt-10 mb-4 text-foreground">{children}</h2>
+      <h2 className="font-[family-name:var(--font-playfair)] text-2xl mt-10 mb-4 text-foreground">{children}</h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-xl font-semibold mt-8 mb-3 text-foreground">{children}</h3>
+      <h3 className="font-[family-name:var(--font-playfair)] text-xl mt-8 mb-3 text-foreground">{children}</h3>
     ),
     h4: ({ children }: any) => (
-      <h4 className="text-lg font-semibold mt-6 mb-2 text-foreground">{children}</h4>
+      <h4 className="font-[family-name:var(--font-playfair)] text-lg mt-6 mb-2 text-foreground">{children}</h4>
     ),
     normal: ({ children }: any) => (
       <p className="text-foreground leading-relaxed mb-4">{children}</p>
@@ -260,7 +260,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
 
       <header className="mb-12">
         <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground text-left leading-normal">
+          <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl mb-6 text-foreground text-left">
             {post.title}
           </h1>
         </div>

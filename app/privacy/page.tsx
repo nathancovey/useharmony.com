@@ -32,12 +32,12 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div className="container max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
+      <h1 className="font-[family-name:var(--font-playfair)] text-3xl mb-4">Privacy Policy</h1>
       <p className="text-gray-500 mb-8">Last updated: July 20, 2025</p>
       
       <div className="space-y-6">
         <section>
-          <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
+          <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">1. Introduction</h2>
           <p className="mb-4">
             Harmony is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our application. We adhere to strict data protection standards and comply with the{' '}
             <a href="https://developers.google.com/terms/api-services-user-data-policy" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
@@ -48,7 +48,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">2. Google Account Integration</h2>
+          <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">2. Google Account Integration</h2>
           <div className="ml-4">
             <h3 className="text-xl font-medium mb-2">2.1 Authentication and Access</h3>
             <ul className="list-disc ml-6 space-y-2 mb-4">
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">3. Data Access and Usage</h2>
+          <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">3. Data Access and Usage</h2>
           <div className="ml-4">
               <h3 className="text-xl font-medium mb-2">3.1 Google User Data</h3>
               <p className="mb-4">
@@ -101,14 +101,14 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">4. Voice Command Processing</h2>
+          <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">4. Voice Command Processing</h2>
           <p className="mb-4">
             Voice commands are processed through OpenAI&apos;s services. The minimal text necessary to fulfill your request (such as snippets of email, calendar, or contact content) may be included in these requests. All transmissions are encrypted and nothing is stored after processing.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">5. Your Rights and Controls</h2>
+          <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">5. Your Rights and Controls</h2>
           <ul className="list-disc ml-6 space-y-2 mb-4">
             <li>Right to revoke access to your Google account at any time</li>
             <li>Right to request deletion of any cached data</li>
@@ -119,14 +119,14 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">6. Limited Use Disclosure</h2>
+          <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">6. Limited Use Disclosure</h2>
           <p className="mb-4">
             We affirm our use of information received from Google APIs adheres to the <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy#limited-use" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Limited use of user data</a> requirement of the <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Google Workspace API User Data and Developer Policy</a>.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">7. Data Retention and Deletion</h2>
+          <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">7. Data Retention and Deletion</h2>
           <ul className="list-disc ml-6 space-y-2 mb-4">
             <li>Email data is processed in real-time only - no storage occurs anywhere</li>
             <li>OAuth tokens are retained only while your account is active and are deleted immediately when you revoke access or delete your account</li>
@@ -136,21 +136,21 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">8. Children&apos;s Privacy</h2>
+          <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">8. Children&apos;s Privacy</h2>
           <p className="mb-4">
             Our service is not intended for users under 13 years of age. We do not knowingly collect personal information from children under 13.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">9. Changes to Privacy Policy</h2>
+          <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">9. Changes to Privacy Policy</h2>
           <p className="mb-4">
             We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and, when appropriate, sending you a notification.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">10. Contact Us</h2>
+          <h2 className="text-2xl font-[family-name:var(--font-playfair)] mb-4">10. Contact Us</h2>
           <p className="mb-4">
             If you have any questions about this Privacy Policy or our data practices, please contact us at{' '}
             <a href="mailto:legal@useharmony.com" className="text-blue-600 hover:underline">

@@ -43,7 +43,7 @@ export default function ContactPage() {
       />
       <div className="container mx-auto px-4 py-16 max-w-2xl">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold tracking-tight mb-4">Contact Us</h1>
+          <h1 className="font-[family-name:var(--font-playfair)] text-3xl tracking-tight mb-4">Contact Us</h1>
           <p className="text-lg text-muted-foreground">
             We’d love to hear from you. Get in touch with our team.
           </p>
