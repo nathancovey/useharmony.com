@@ -44,32 +44,32 @@ export const metadata: Metadata = {
       },
     ],
   },
-  title: "Harmony AI - Voice Assistant for Email & Calendar",
-  description: "AI executive assistant for Gmail & Google Calendar. Voice control your emails, schedule meetings & manage tasks hands-free while walking or driving.",
-  keywords: ["AI executive assistant", "AI voice assistant", "AI agent", "Gmail assistant", "Google Calendar assistant", "voice email", "voice calendar", "productivity"],
+  title: "Harmony AI - Work-Life Harmony Planner",
+  description: "AI planner for mission-driven living. Create your Personal Mission Statement, plan weeks around life roles, and achieve work-life harmony with AI guidance.",
+  keywords: ["AI planner", "work life harmony", "weekly planning app", "role based planning", "personal mission statement", "life planner", "AI life coach", "goal setting app", "productivity planner", "time blocking"],
   authors: [{ name: "Nathan Covey", url: "https://x.com/nathan_covey" }],
   creator: "Nathan Covey",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.useharmony.com",
-    title: "Harmony AI - Voice Assistant for Email & Calendar",
-    description: "AI executive assistant for Gmail & Google Calendar. Voice control your emails, schedule meetings & manage tasks hands-free while walking or driving.",
+    title: "Harmony AI - Work-Life Harmony Planner",
+    description: "AI planner for mission-driven living. Create your Personal Mission Statement, plan weeks around life roles, and achieve work-life harmony with AI guidance.",
     siteName: "Harmony",
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Harmony - AI Email Voice Assistant",
+        alt: "Harmony - AI Planner for Work-Life Harmony",
         type: "image/png"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harmony AI - Voice Assistant for Email & Calendar",
-    description: "AI executive assistant for Gmail & Google Calendar. Voice control your emails, schedule meetings & manage tasks hands-free while walking or driving.",
+    title: "Harmony AI - Work-Life Harmony Planner",
+    description: "AI planner for mission-driven living. Create your Personal Mission Statement, plan weeks around life roles, and achieve work-life harmony with AI guidance.",
     creator: "@nathan_covey"
   },
   robots: {
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     google: 'your-google-site-verification-code-here',
   },
   category: 'technology',
-  applicationName: 'Harmony AI Executive Assistant',
+  applicationName: 'Harmony AI Planner',
   appleWebApp: {
     title: 'Harmony AI',
     statusBarStyle: 'default',

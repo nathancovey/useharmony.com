@@ -6,10 +6,16 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Contact - Harmony AI",
-  description: "Contact Harmony AI executive assistant support team. Get help with Gmail & calendar management, voice commands, and AI agent features.",
-  keywords: ["contact", "support", "AI executive assistant", "AI voice assistant", "AI agent", "Gmail assistance", "calendar assistance", "customer service", "slack community"],
+  description: "Contact Harmony AI support team. Get help with weekly planning, mission statements, roles, AI features, and achieving work-life harmony.",
+  keywords: ["contact", "support", "AI planner", "planning app help", "weekly planner support", "mission statement help", "customer service", "slack community"],
   alternates: {
     canonical: "https://www.useharmony.com/contact"
+  },
+  openGraph: {
+    title: "Contact - Harmony AI",
+    description: "Need help with Harmony? Contact our support team or join our Slack community.",
+    url: "https://www.useharmony.com/contact",
+    type: "website"
   }
 }
 

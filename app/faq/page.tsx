@@ -3,7 +3,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 export const metadata: Metadata = {
   title: "FAQ - Harmony AI",
-  description: "Answers to common questions about Harmony AI and how the voice assistant works."
+  description: "Answers to common questions about Harmony AI, the planner that helps you achieve work-life harmony through mission-driven weekly planning.",
+  keywords: ["harmony faq", "planning app questions", "weekly planner help", "mission statement guide", "role-based planning"],
+  alternates: {
+    canonical: "https://www.useharmony.com/faq"
+  },
+  openGraph: {
+    title: "FAQ - Harmony AI",
+    description: "Get answers about Personal Mission Statements, weekly planning, roles, AI assistance, and achieving work-life harmony.",
+    url: "https://www.useharmony.com/faq",
+    type: "website"
+  }
 }
 
 export default function FAQPage() {

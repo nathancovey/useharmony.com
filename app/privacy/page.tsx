@@ -3,14 +3,14 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "Privacy - Harmony AI",
-  description: "Privacy Policy for Harmony AI executive assistant. Learn how we protect your Gmail & calendar data with secure AI agent technology.",
-  keywords: ["privacy policy", "data protection", "Gmail privacy", "calendar privacy", "AI executive assistant", "AI voice assistant", "AI agent privacy", "voice command privacy"],
+  description: "Privacy Policy for Harmony AI planner. Learn how we protect your planning data, mission statement, and calendar information with secure encryption.",
+  keywords: ["privacy policy", "data protection", "planning app privacy", "calendar privacy", "AI planner", "mission statement privacy", "secure planning app"],
   alternates: {
     canonical: "https://www.useharmony.com/privacy"
   },
   openGraph: {
     title: "Privacy Policy - Harmony AI",
-    description: "Learn how Harmony protects your Gmail & calendar data. Your emails and calendar stay secure with our AI agent technology.",
+    description: "Learn how Harmony protects your planning data and calendar information. Your data stays secure with encryption and strict privacy policies.",
     url: "https://www.useharmony.com/privacy",
     type: "website",
     images: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Harmony - AI Email Voice Assistant",
+        alt: "Harmony - AI Planner for Work-Life Harmony",
         type: "image/png",
       },
     ],

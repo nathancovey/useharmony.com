@@ -3,14 +3,14 @@ import { Card, CardContent } from '../../components/ui/card'
 
 export const metadata: Metadata = {
   title: "Company - Harmony AI",
-  description: "Learn about Harmony's mission to build the greatest AI executive assistant for Gmail & calendar management. Meet our team building the future of AI agents.",
-  keywords: ["company", "mission", "vision", "AI executive assistant", "AI voice assistant", "AI agent", "careers", "team", "calendar management"],
+  description: "Learn about Harmony's mission to help people focus on what truly matters in life through mission-driven planning and AI guidance.",
+  keywords: ["company", "mission", "vision", "AI planner", "work life harmony", "mission driven planning", "careers", "team", "life planning"],
   alternates: {
     canonical: "https://www.useharmony.com/company"
   },
   openGraph: {
     title: "Company - Harmony AI",
-    description: "Learn about Harmony's mission to build the greatest AI executive assistant for Gmail & calendar management. Meet our team building AI agents.",
+    description: "Learn about Harmony's mission to help people focus on what truly matters in life through mission-driven planning and AI guidance.",
     url: "https://www.useharmony.com/company",
     type: "website",
     images: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Harmony - AI Executive Assistant",
+        alt: "Harmony - AI Planner for Work-Life Harmony",
         type: "image/png",
       },
     ],
