@@ -34,7 +34,7 @@ const stories: Story[] = [
     description: "First, take a step back. What do you really want in life? Harmony will help you create a Personal Mission Statement, establishing your deeper why. You really can't think about what's next week until you know what's at the end."
   },
   {
-    image: "/images/sync.png",
+    image: "/images/roles.png",
     title: "Plan your weeks based on roles",
     description: "We've found planning at the weekly level, based on roles, to be very effective. Daily planning or to do lists are a good start, but they're too short sighted. The week is a perfect frame of reference. Harmony will guide you every week in thoughtful planning sessions and suggest goals based on your mission."
   },
@@ -54,7 +54,7 @@ function CallToAction() {
   return (
     <section className="bg-background border-t">
       <div className="max-w-[800px] mx-auto px-4 py-20 flex flex-col items-center gap-6 text-center">
-        <h3 className="text-4xl bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text">
+        <h3 className="font-[family-name:var(--font-playfair)] font-normal text-4xl bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text">
           Step into work-life harmony
         </h3>
         <p className="text-lg text-muted-foreground max-w-[540px]">
@@ -174,7 +174,7 @@ export function ScrollStorySection() {
                   />
                 </div>
               </div>
-              <h2 className="text-4xl text-center bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text py-2">
+              <h2 className="font-[family-name:var(--font-playfair)] font-normal text-4xl text-center bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text py-2">
                 {story.title}
               </h2>
               <p className="text-lg text-muted-foreground text-center max-w-[500px]">
@@ -224,7 +224,7 @@ export function ScrollStorySection() {
                 style={{ opacity: index === 0 ? 1 : 0 }}
                 className="absolute max-w-[700px]"
               >
-                <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6 bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text pb-2 text-center lg:text-left">
+                <h2 className="font-[family-name:var(--font-playfair)] font-normal text-4xl md:text-5xl lg:text-6xl mb-6 bg-gradient-to-r from-primary to-[#8B97FF] text-transparent bg-clip-text pb-2 text-center lg:text-left">
                   {story.title}
                 </h2>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-[500px] text-center lg:text-left">
