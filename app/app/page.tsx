@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { HarmonyAppPromotion } from "@/components/HarmonyAppPromotion"
 
 export const metadata: Metadata = {
   robots: {
@@ -9,8 +10,10 @@ export const metadata: Metadata = {
 
 export default function AppPage() {
   return (
-    <div className="flex h-[50vh] items-center justify-center bg-background">
-      <p className="text-foreground">Opening Harmony...</p>
+    <div className="min-h-screen bg-background">
+      <div className="max-w-3xl mx-auto px-4 py-16">
+        <HarmonyAppPromotion />
+      </div>
     </div>
   )
 }
