@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "YMY32G8F5F.ai.com.harmony",
+        "paths": ["/app", "/app/*"]
+      }
+    ]
+  }
+}
