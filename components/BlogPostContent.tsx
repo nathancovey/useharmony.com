@@ -204,7 +204,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
   return (
     <>
       {/* Breadcrumbs */}
-      <nav aria-label="Breadcrumb" className="mb-8">
+      <nav aria-label="Breadcrumb" className="mb-6">
         <ol className="flex items-center space-x-2 text-sm text-muted-foreground min-w-0">
           <li className="flex-shrink-0">
             <Link 
