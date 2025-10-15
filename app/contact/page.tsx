@@ -7,7 +7,6 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Contact - Harmony AI",
   description: "Contact Harmony AI support team. Get help with weekly planning, mission statements, roles, AI features, and achieving work-life harmony.",
-  keywords: ["contact", "support", "AI planner", "planning app help", "weekly planner support", "mission statement help", "customer service", "slack community"],
   alternates: {
     canonical: "https://www.useharmony.com/contact"
   },
@@ -15,7 +14,23 @@ export const metadata: Metadata = {
     title: "Contact - Harmony AI",
     description: "Need help with Harmony? Contact our support team or join our Slack community.",
     url: "https://www.useharmony.com/contact",
-    type: "website"
+    type: "website",
+    siteName: "Harmony",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Harmony - AI Planner for Work-Life Harmony",
+        type: "image/png"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact - Harmony AI",
+    description: "Need help with Harmony? Contact our support team or join our Slack community.",
+    images: ["/opengraph-image.png"]
   }
 }
 

@@ -4,18 +4,6 @@ import { ScrollStorySectionWrapper } from "@/components/ScrollStorySection"
 export const metadata: Metadata = {
   title: "Harmony AI Planner – Effective Weekly Planning",
   description: "Harmony helps you craft a personal mission, plan weeks around your roles, and stay on track daily with AI guidance.",
-  keywords: [
-    "work life harmony",
-    "weekly planning app",
-    "role based planning",
-    "personal mission statement",
-    "life planner",
-    "ai life coach",
-    "ai planning assistant",
-    "time blocking app",
-    "goal setting app",
-    "productivity coach"
-  ],
   alternates: {
     canonical: "https://www.useharmony.com"
   },

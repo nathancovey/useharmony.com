@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "Terms - Harmony AI",
   description: "Terms of Service for Harmony AI planner. Legal terms for using our AI-powered planning app for mission-driven living and work-life harmony.",
-  keywords: ["terms of service", "legal terms", "terms and conditions", "AI planner", "planning app legal", "weekly planner terms", "mission statement app legal"],
   alternates: {
     canonical: "https://www.useharmony.com/terms"
   },
@@ -13,19 +12,22 @@ export const metadata: Metadata = {
     description: "Legal terms and conditions for using Harmony, the AI planner for work-life harmony.",
     url: "https://www.useharmony.com/terms",
     type: "website",
+    siteName: "Harmony",
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Harmony - AI Planner for Work-Life Harmony",
-        type: "image/png",
-      },
-    ],
+        type: "image/png"
+      }
+    ]
   },
-  robots: {
-    index: true,
-    follow: true
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service - Harmony AI",
+    description: "Legal terms and conditions for using Harmony, the AI planner for work-life harmony.",
+    images: ["/opengraph-image.png"]
   }
 }
 

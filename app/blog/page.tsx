@@ -7,7 +7,9 @@ export const revalidate = 60
 export const metadata: Metadata = {
   title: 'Blog - Harmony AI',
   description: 'Latest insights on mission-driven planning, work-life harmony, weekly goal setting, AI productivity tools, and life balance from the Harmony team.',
-  keywords: ['harmony blog', 'planning tips', 'work life harmony', 'mission statement guide', 'weekly planning', 'productivity', 'life balance'],
+  alternates: {
+    canonical: 'https://www.useharmony.com/blog'
+  },
   openGraph: {
     title: 'Blog - Harmony AI',
     description: 'Latest insights on mission-driven planning, work-life harmony, weekly goal setting, and achieving life balance from the Harmony team.',
@@ -19,12 +21,16 @@ export const metadata: Metadata = {
         url: '/opengraph-image.png',
         width: 1200,
         height: 630,
-        alt: 'Harmony - AI Planner for Work-Life Harmony'
+        alt: 'Harmony - AI Planner for Work-Life Harmony',
+        type: 'image/png'
       }
     ]
   },
-  alternates: {
-    canonical: 'https://www.useharmony.com/blog'
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog - Harmony AI',
+    description: 'Latest insights on mission-driven planning, work-life harmony, weekly goal setting, and achieving life balance from the Harmony team.',
+    images: ['/opengraph-image.png']
   }
 }
 

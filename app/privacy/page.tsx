@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "Privacy - Harmony AI",
   description: "Privacy Policy for Harmony AI planner. Learn how we protect your planning data, mission statement, and calendar information with secure encryption.",
-  keywords: ["privacy policy", "data protection", "planning app privacy", "calendar privacy", "AI planner", "mission statement privacy", "secure planning app"],
   alternates: {
     canonical: "https://www.useharmony.com/privacy"
   },
@@ -13,19 +12,22 @@ export const metadata: Metadata = {
     description: "Learn how Harmony protects your planning data and calendar information. Your data stays secure with encryption and strict privacy policies.",
     url: "https://www.useharmony.com/privacy",
     type: "website",
+    siteName: "Harmony",
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Harmony - AI Planner for Work-Life Harmony",
-        type: "image/png",
-      },
-    ],
+        type: "image/png"
+      }
+    ]
   },
-  robots: {
-    index: true,
-    follow: true
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy - Harmony AI",
+    description: "Learn how Harmony protects your planning data and calendar information. Your data stays secure with encryption and strict privacy policies.",
+    images: ["/opengraph-image.png"]
   }
 }
 

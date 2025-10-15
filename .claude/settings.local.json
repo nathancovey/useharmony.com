@@ -3,7 +3,9 @@
     "allow": [
       "Bash(rm:*)",
       "Bash(npm run lint)",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:dminhvu.com)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"

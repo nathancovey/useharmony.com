@@ -26,28 +26,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.useharmony.com'),
   icons: {
-    icon: [
-      {
-        url: '/favicon.ico',
-        type: 'image/x-icon',
-      },
-    ],
-    shortcut: [
-      {
-        url: '/favicon.ico',
-        type: 'image/x-icon',
-      },
-    ],
-    apple: [
-      {
-        url: '/favicon.ico',
-        type: 'image/x-icon',
-      },
-    ],
+    icon: '/favicon.ico',
   },
   title: "Harmony AI Planner - Plan your weeks effectively",
   description: "AI planner for mission-driven living. Create your Personal Mission Statement, plan weeks around life roles, and achieve work-life harmony with AI guidance.",
-  keywords: ["AI planner", "work life harmony", "weekly planning app", "role based planning", "personal mission statement", "life planner", "AI life coach", "goal setting app", "productivity planner", "time blocking"],
   authors: [{ name: "Nathan Covey", url: "https://x.com/nathan_covey" }],
   creator: "Nathan Covey",
   openGraph: {
@@ -71,7 +53,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Harmony AI Planner - Effective Weekly Planning",
     description: "AI planner for mission-driven living. Create your Personal Mission Statement, plan weeks around life roles, and achieve work-life harmony with AI guidance.",
-    creator: "@nathan_covey"
+    creator: "@nathan_covey",
+    images: ["/opengraph-image.png"]
   },
   robots: {
     index: true,
@@ -86,16 +69,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-site-verification-code-here',
-  },
-  category: 'technology',
-  applicationName: 'Harmony AI Planner',
-  appleWebApp: {
-    title: 'Harmony AI',
-    statusBarStyle: 'default',
-    capable: true,
   },
 };
 
