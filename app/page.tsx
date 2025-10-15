@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     canonical: "https://www.useharmony.com"
   },
   openGraph: {
-    title: "Harmony App – Work-Life Harmony Planner",
+    title: "Harmony AI Planner – Plan your weeks effectively",
     description: "Discover work-life harmony with Harmony. Define your mission, plan weeks around roles, and act daily with supportive nudges.",
     url: "https://www.useharmony.com",
     type: "website"
   },
   twitter: {
-    title: "Harmony App – Work-Life Harmony Planner",
+    title: "Harmony AI Planner – Plan your weeks effectively",
     description: "Harmony blends mission-driven planning and AI guidance so every role in your life gets the care it deserves."
   }
 }
