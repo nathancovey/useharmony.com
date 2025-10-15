@@ -45,7 +45,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  title: "Harmony AI - Work-Life Harmony Planner",
+  title: "Harmony AI Planner - Plan your weeks effectively",
   description: "AI planner for mission-driven living. Create your Personal Mission Statement, plan weeks around life roles, and achieve work-life harmony with AI guidance.",
   keywords: ["AI planner", "work life harmony", "weekly planning app", "role based planning", "personal mission statement", "life planner", "AI life coach", "goal setting app", "productivity planner", "time blocking"],
   authors: [{ name: "Nathan Covey", url: "https://x.com/nathan_covey" }],
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.useharmony.com",
-    title: "Harmony AI - Work-Life Harmony Planner",
+    title: "Harmony AI Planner - Plan your weeks effectively",
     description: "AI planner for mission-driven living. Create your Personal Mission Statement, plan weeks around life roles, and achieve work-life harmony with AI guidance.",
     siteName: "Harmony",
     images: [
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harmony AI - Work-Life Harmony Planner",
+    title: "Harmony AI Planner - Effective Weekly Planning",
     description: "AI planner for mission-driven living. Create your Personal Mission Statement, plan weeks around life roles, and achieve work-life harmony with AI guidance.",
     creator: "@nathan_covey"
   },
