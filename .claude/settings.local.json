@@ -5,7 +5,9 @@
       "Bash(npm run lint)",
       "WebSearch",
       "WebFetch(domain:medium.com)",
-      "WebFetch(domain:dminhvu.com)"
+      "WebFetch(domain:dminhvu.com)",
+      "Bash(ls:*)",
+      "WebFetch(domain:posthog.com)"
     ],
     "deny": [],
     "defaultMode": "acceptEdits"
